@@ -4,19 +4,18 @@ import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { Carousel } from "./components/nav/Carousel";
-import { Login } from "./components/user/Login";
-import { Register } from "./components/user/Register";
+import { Register } from "./components/auth/Register";
+import { Login } from "./components/auth/Login";
 import { Forgotpassword } from "./components/user/Forgotpassword";
 import { useState } from "react";
 import { AdultOnly } from "./components/AdultOnly";
 import { NavbarComponent } from "./components/NavbarComponent";
 import { Home } from "./components/Home";
+import { MyModal } from "./components/user/MyModal";
 
 const Contener = styled.div``;
 
 function App() {
-  const text: any = useSelector((state) => state);
-
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -31,8 +30,17 @@ function App() {
         handleShow={handleShow}
         handleShowR={handleShowR}
       ></NavbarComponent>
-      <Login handleClose={handleClose} show={show} />
-      <Register handleCloseR={handleCloseR} showR={showR} />
+
+      <MyModal
+        child={Register(handleCloseR)}
+        handleCloseR={handleCloseR}
+        showR={showR}
+      />
+      <MyModal
+        child={Login(handleClose)}
+        handleCloseR={handleClose}
+        showR={show}
+      />
       <Routes>
         <Route path={"/"} element={<Home />} />
       </Routes>
