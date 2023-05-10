@@ -9,13 +9,10 @@ export const MyModal = (props) => {
       // className="modal show"
       // style={{ display: "block", position: "initial" }}
     >
-      <Modal.Dialog>
-        <Modal.Header closeButton>
-          <Modal.Title>Register</Modal.Title>
-        </Modal.Header>
-
-        <Modal.Body>{props.child}</Modal.Body>
-      </Modal.Dialog>
+      <Modal.Header closeButton>
+        <Modal.Title>{props.title}</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>{props.child}</Modal.Body>
     </Modal>
   );
 };
