@@ -21,6 +21,7 @@ export const Register = (handleCloseR) => {
         console.log(jwt);
         const userRef = doc(db, "users", jwt.user.uid);
         setDoc(userRef, { email: email });
+        window.localStorage.setItem("user", JSON.stringify(jwt.user));
         alert("Thanks for registration!");
       })
       .catch((e) => {
