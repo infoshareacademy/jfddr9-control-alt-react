@@ -1,9 +1,10 @@
-import { auth } from "../../api/firebase";
+import { auth, db } from "../../api/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { firebaseErrors } from "../../utils/firebaseErrors";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
+import { doc, setDoc } from "firebase/firestore";
 
 export const Register = (handleCloseR) => {
   const [email, setEmail] = useState("");
@@ -18,6 +19,8 @@ export const Register = (handleCloseR) => {
         setPassword("");
         handleCloseR();
         console.log(jwt);
+        const userRef = doc(db, "users", jwt.user.uid);
+        setDoc(userRef, { email: email });
         alert("Thanks for registration!");
       })
       .catch((e) => {
