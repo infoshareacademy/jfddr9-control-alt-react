@@ -2,12 +2,9 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
-export const Login = () => {
+export const Login = (props) => {
   return (
-    <div
-      className="modal show"
-      style={{ display: "block", position: "absolute", top: "0", left: "0" }}
-    >
+    <Modal show={props.show} onHide={props.handleClose}>
       <Modal.Dialog>
         <Modal.Header closeButton>
           <Modal.Title>Log in</Modal.Title>
@@ -26,9 +23,12 @@ export const Login = () => {
             <Button variant="primary" type="submit">
               Log in
             </Button>
+            <Button variant="secondary" onClick={props.handleClose}>
+              Close
+            </Button>
           </Form>
         </Modal.Body>
       </Modal.Dialog>
-    </div>
+    </Modal>
   );
 };

@@ -2,11 +2,14 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
-export const Register = () => {
+export const Register = (props) => {
+  console.log(props.showR);
   return (
-    <div
-      className="modal show"
-      style={{ display: "block", position: "initial" }}
+    <Modal
+      show={props.showR}
+      onHide={props.handleCloseR}
+      // className="modal show"
+      // style={{ display: "block", position: "initial" }}
     >
       <Modal.Dialog>
         <Modal.Header closeButton>
@@ -15,11 +18,11 @@ export const Register = () => {
 
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            {/* <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control type="email" placeholder="Enter email" />
               <Form.Text className="text-muted"></Form.Text>
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
@@ -32,12 +35,15 @@ export const Register = () => {
                 label="By signing up, you agree to our Terms ."
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="secondary" onClick={props.handleCloseR}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={props.handleCloseR}>
               Register
             </Button>
           </Form>
         </Modal.Body>
       </Modal.Dialog>
-    </div>
+    </Modal>
   );
 };
