@@ -56,11 +56,6 @@ function App() {
       <Routes>
         <Route path={"/"} element={<Home />} />
       </Routes>
-
-      {/* <Carousel></Carousel> */}
-      {/* <Login></Login> */}
-      {/* <Forgotpassword></Forgotpassword> */}
-      {/* <Register></Register> */}
     </Contener>
   );
 }

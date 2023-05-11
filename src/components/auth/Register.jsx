@@ -1,10 +1,10 @@
-import { auth, db } from "../../api/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { firebaseErrors } from "../../utils/firebaseErrors";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
+import { auth, db } from "../../api/firebase";
 import { doc, setDoc } from "firebase/firestore";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { firebaseErrors } from "../../utils/firebaseErrors";
 
 export const Register = (handleCloseR) => {
   const [email, setEmail] = useState("");
@@ -27,7 +27,6 @@ export const Register = (handleCloseR) => {
         setEmail("");
         setPassword("");
         handleCloseR();
-        console.log(jwt);
         const userRef = doc(db, "users", jwt.user.uid);
         setDoc(userRef, { email: email });
         window.localStorage.setItem("user", JSON.stringify(jwt.user));
@@ -35,7 +34,6 @@ export const Register = (handleCloseR) => {
         setServerMessage("Thanks for registration!");
       })
       .catch((e) => {
-        console.dir(e);
         setServerMessage(firebaseErrors[e.code]);
       });
   };
@@ -47,7 +45,6 @@ export const Register = (handleCloseR) => {
         <Form.Control
           onChange={(e) => {
             setEmail(e.target.value);
-            console.log(e.target.value);
           }}
           type="email"
           placeholder="Enter email"
@@ -56,7 +53,6 @@ export const Register = (handleCloseR) => {
         <Form.Control.Feedback type="invalid">
           Provide a valid email.
         </Form.Control.Feedback>
-        {/* <Form.Text className="text-muted"></Form.Text> */}
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -64,7 +60,6 @@ export const Register = (handleCloseR) => {
         <Form.Control
           onChange={(e) => {
             setPassword(e.target.value);
-            console.log(e.target.value);
           }}
           type="password"
           placeholder="Password"
@@ -79,7 +74,6 @@ export const Register = (handleCloseR) => {
         <Form.Control
           onChange={(e) => {
             setRepeatPassword(e.target.value);
-            console.log(e.target.value);
           }}
           type="password"
           placeholder="Password"
