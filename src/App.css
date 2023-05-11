@@ -1,120 +1,30 @@
+@import url(./style/button.css);
+@import url(./style/modal.css);
+@import url(./style/nav.css);
+@import url(./style/home.css);
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem;
   text-align: center;
 }
 
 body {
   background-color: black;
 }
+.home {
+  border: 1px solid white;
+  border-radius: 10px;
+}
 .fade {
   background-color: rgba(0, 0, 0, 0.8);
 }
-/* --- modal --- */
-.modal-content {
-  min-height: 300px;
-  width: 600px;
-  box-shadow: 0px 0px 35px 10px rgba(255, 255, 255, 0.5);
-  border: solid 1px rgb(255, 255, 255);
-  background-color: rgb(0, 0, 0);
-  border-radius: 20px;
-  color: white;
-}
-.modal-header {
-  justify-content: center;
-  height: 100px;
-  border: none;
-}
-.modal-logo b span {
-  font-size: 3rem;
-}
-.modal-body {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-body input {
-  color: white;
-  border: 1px solid white;
-  background-color: black;
-  text-align: center;
-}
-.modal-body input:focus {
-  color: white;
-  box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  background-color: black;
-}
-.modal-body input::placeholder {
-  color: white;
-  text-align: center;
-}
-.modal-body .form-check,
-.modal-body .form-label {
-  color: white;
-}
-.modal-footer {
-  border-top: 0 none;
-  display: flex;
-  justify-content: space-around;
-}
-/* --- navbar --- */
-.navbar-nav {
-  margin-top: 30px;
-}
-nav {
-  background: rgba(0, 0, 0, 0.4);
-}
-/* --- button --- */
-.btn,
-.btn:active,
-.btn:hover {
-  padding: 12px 24px;
-  border: 1px solid white;
-  background-color: transparent;
-}
-.btn-primary:hover,
-.btn-primary:active {
-  border: 1px solid greenyellow;
-  color: greenyellow;
-}
-.btn-secondary:hover,
-.btn-secondary:active {
-  border: 1px solid red;
-  color: red;
-}
-.navbar-btn,
-.navbar-btn:active,
-.navbar-btn:hover {
-  border-radius: 5px 5px 0 0;
-  border-bottom: 0;
-}
-/* --- Misc --- */
 .card {
   padding: 2em;
 }
 .read-the-docs {
   color: #888;
-}
-.logo {
-  text-align: center;
-  height: 50px;
-  margin: auto;
-}
-.logo b {
-  font-size: 1rem;
-  color: #fee;
-  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
-    0 0 0.1em #ff4444, 0 10px 3px #000;
-}
-.logo b span {
-  animation: blink linear infinite 2s;
-}
-.logo b span:nth-of-type(2) {
-  animation: blink linear infinite 3s;
 }
 
 @keyframes blink {

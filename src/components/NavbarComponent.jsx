@@ -17,18 +17,16 @@ export const NavbarComponent = (props) => {
         sticky="top"
         className="flex-column pb-0"
       >
-        <Nav>
-          <Navbar.Brand as={NavLink} to="/mixit">
-            <div className="logo modal-logo">
-              <b>
-                <span>Mix.it</span>
-              </b>
-            </div>
-          </Navbar.Brand>
-        </Nav>
+        <Navbar.Brand as={NavLink} to="/mixit">
+          <div className="logo">
+            <b>
+              m<span>i</span>x.<span>it</span>
+            </b>
+          </div>
+        </Navbar.Brand>
 
         {!props.isAuth && (
-          <Nav className="w-100 nav-justified">
+          <Nav className="w-100">
             {/* <Nav.Item>
               <Button variant="primary" type="submit" as={NavLink} to="/">
                 Home

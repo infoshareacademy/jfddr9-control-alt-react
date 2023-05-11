@@ -1,0 +1,24 @@
+.btn,
+.btn:active,
+.btn:hover {
+  padding: 12px 24px;
+  border: 1px solid white;
+  background-color: transparent;
+}
+.btn-primary:hover,
+.btn-primary:active {
+  border: 1px solid greenyellow;
+  color: greenyellow;
+}
+.btn-secondary:hover,
+.btn-secondary:active {
+  border: 1px solid red;
+  color: red;
+}
+.navbar-btn,
+.navbar-btn:active,
+.navbar-btn:hover {
+  margin-left: 10px;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 0;
+}
