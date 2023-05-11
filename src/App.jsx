@@ -32,12 +32,15 @@ function App() {
         child={Register(handleCloseR)}
         handleCloseR={handleCloseR}
         showR={showR}
+        title="Register"
       />
       <MyModal
         child={Login(handleClose)}
         handleCloseR={handleClose}
         showR={show}
+        title="Sign in"
       />
+
       <Routes>
         <Route path={"/"} element={<Home />} />
       </Routes>
