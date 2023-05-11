@@ -2,33 +2,77 @@ import { signOut } from "firebase/auth";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import Row from "react-bootstrap/Row";
 import { NavLink, useNavigate } from "react-router-dom";
 import { auth } from "../api/firebase";
+import { Button, Col } from "react-bootstrap";
 
 export const NavbarComponent = (props) => {
   const navigate = useNavigate();
   return (
     <>
-      <Navbar bg="dark" variant="dark">
-        <Container>
+      <Navbar
+        bg="black"
+        variant="dark"
+        sticky="top"
+        className="flex-column pb-0"
+      >
+        <Nav>
           <Navbar.Brand as={NavLink} to="/mixit">
-            Mix.it
+            <div className="logo modal-logo">
+              <b>
+                <span>Mix.it</span>
+              </b>
+            </div>
           </Navbar.Brand>
-          {!props.isAuth && (
-            <Nav className="me-auto">
-              <Nav.Link as={NavLink} to="/">
+        </Nav>
+
+        {!props.isAuth && (
+          <Nav className="w-100 nav-justified">
+            {/* <Nav.Item>
+              <Button variant="primary" type="submit" as={NavLink} to="/">
                 Home
-              </Nav.Link>
-              <Nav.Link onClick={props.handleShow}>Log in</Nav.Link>
-              <Nav.Link onClick={props.handleShowR}>Register</Nav.Link>
-            </Nav>
-          )}
-          {props.isAuth && (
-            <Nav className="me-auto">
-              <Nav.Link as={NavLink} to="/user">
+              </Button>
+            </Nav.Item> */}
+            <Nav.Item>
+              <Button
+                className="navbar-btn"
+                variant="primary"
+                type="submit"
+                onClick={props.handleShow}
+              >
+                Log in
+              </Button>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Button
+                className="navbar-btn"
+                variant="primary"
+                type="submit"
+                onClick={props.handleShowR}
+              >
+                Register
+              </Button>
+            </Nav.Item>
+          </Nav>
+        )}
+        {props.isAuth && (
+          <Nav className="w-100 nav-justified">
+            <Nav.Item>
+              <Button
+                as={NavLink}
+                to="/user"
+                variant="primary"
+                className="navbar-btn"
+              >
                 User panel
-              </Nav.Link>
-              <Nav.Link
+              </Button>
+            </Nav.Item>
+            <Nav.Item>
+              <Button
+                className="navbar-btn"
+                variant="primary"
                 onClick={() =>
                   signOut(auth)
                     .then(() => alert("Successfully logged out"))
@@ -37,10 +81,10 @@ export const NavbarComponent = (props) => {
                 }
               >
                 Log out
-              </Nav.Link>
-            </Nav>
-          )}
-        </Container>
+              </Button>
+            </Nav.Item>
+          </Nav>
+        )}
       </Navbar>
     </>
   );

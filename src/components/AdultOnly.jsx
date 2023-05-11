@@ -29,17 +29,17 @@ export function AdultOnly() {
         keyboard={false}
       >
         <Modal.Header>
-          <Modal.Title>Jesteś pełnoletni?</Modal.Title>
+          <Modal.Title>Adults only</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Strona zawiera treści nieodpowiednie dla osób poniżej 18 roku życia.
+          <p>You Must Be at Least 18 Years of Age to Enter.</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="primary" onClick={handleAdultClick}>
-            Jestem pełnoletni
+            ENTER
           </Button>
           <Button variant="secondary" onClick={handleNotAdultClick}>
-            Jestem niepełnoletni
+            EXIT
           </Button>
         </Modal.Footer>
       </Modal>
