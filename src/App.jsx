@@ -7,6 +7,7 @@ import { MixIt } from "./components/MixIt";
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./api/firebase";
+import { ModalContainer } from "./components/ModalContainer";
 
 const Contener = styled.div``;
 
@@ -20,7 +21,6 @@ function App() {
       if (user) {
         setIsAuth(true);
         setUser(user);
-        console.log(user);
         navigate("/mixit");
       } else {
         setIsAuth(false);
@@ -35,6 +35,7 @@ function App() {
 
   return (
     <Contener>
+      <ModalContainer isAuth={isAuth} setIsAuth={setIsAuth} />
       <Routes>
         <Route
           path={"/"}
