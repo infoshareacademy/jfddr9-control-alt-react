@@ -22,6 +22,11 @@ export const Register = (handleCloseR) => {
       return;
     }
 
+    if (password !== repeatPassword) {
+      setServerMessage("Passwords are not the same");
+      return;
+    }
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((jwt) => {
         setEmail("");
