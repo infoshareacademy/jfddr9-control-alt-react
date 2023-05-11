@@ -1,0 +1,17 @@
+.home {
+  background-color: rgb(44, 44, 44);
+  color: white;
+}
+
+.tile {
+  padding: 100px 2vw;
+  display: flex;
+  gap: 20px;
+}
+
+.tile div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
