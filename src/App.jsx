@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Home } from "./components/Home";
@@ -8,6 +9,7 @@ import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./api/firebase";
 import { ModalContainer } from "./components/ModalContainer";
+import { UserPanel } from "./components/user/UserPanel";
 
 const Contener = styled.div``;
 
@@ -44,6 +46,10 @@ function App() {
         <Route
           path={"/mixit"}
           element={isAuth ? <MixIt /> : <Navigate to="/" replace />}
+        />
+        <Route
+          path={"/user"}
+          element={isAuth ? <UserPanel /> : <Navigate to="/" replace />}
         />
       </Routes>
     </Contener>

@@ -25,6 +25,9 @@ export const NavbarComponent = (props) => {
           )}
           {props.isAuth && (
             <Nav className="me-auto">
+              <Nav.Link as={NavLink} to="/user">
+                User panel
+              </Nav.Link>
               <Nav.Link
                 onClick={() =>
                   signOut(auth)
