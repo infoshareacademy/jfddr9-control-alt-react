@@ -4,8 +4,9 @@ import { firebaseErrors } from "../../utils/firebaseErrors";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
-
-export const Login = (handleClose) => {
+import { RemindPassword } from "./RemindPassword";
+import { MyModal } from "../user/MyModal";
+export const Login = (handleClose, handleShowRemind) => {
   const [email, setEmail] = useState("");
   const [serverMessage, setServerMessage] = useState("");
   const [password, setPassword] = useState("");
@@ -33,46 +34,56 @@ export const Login = (handleClose) => {
   };
 
   return (
-    <Form noValidate validated={validated} onSubmit={handleLogin}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control
-          onChange={(e) => {
-            setEmail(e.target.value);
-            console.log(e.target.value);
-          }}
-          type="email"
-          placeholder="Enter email"
-          required
-        />
-        <Form.Control.Feedback type="invalid">
-          Provide a valid email.
-        </Form.Control.Feedback>
-        <Form.Text className="text-muted"></Form.Text>
-      </Form.Group>
+    <>
+      <Form noValidate validated={validated} onSubmit={handleLogin}>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            onChange={(e) => {
+              setEmail(e.target.value);
+              console.log(e.target.value);
+            }}
+            type="email"
+            placeholder="Enter email"
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            Provide a valid email.
+          </Form.Control.Feedback>
+          <Form.Text className="text-muted"></Form.Text>
+        </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control
-          required
-          onChange={(e) => {
-            setPassword(e.target.value);
-            console.log(e.target.value);
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            required
+            onChange={(e) => {
+              setPassword(e.target.value);
+              console.log(e.target.value);
+            }}
+            type="password"
+            placeholder="Password"
+          />
+          <Form.Control.Feedback type="invalid">
+            Write your password.
+          </Form.Control.Feedback>
+        </Form.Group>
+        <p class="text-danger">{serverMessage}</p>
+        <Button variant="primary" type="submit">
+          Log in
+        </Button>
+        <Button
+          variant="primary"
+          onClick={() => {
+            handleShowRemind();
           }}
-          type="password"
-          placeholder="Password"
-        />
-        <Form.Control.Feedback type="invalid">
-          Write your password.
-        </Form.Control.Feedback>
-      </Form.Group>
-      <p class="text-danger">{serverMessage}</p>
-      <Button variant="primary" type="submit">
-        Log in
-      </Button>
-      <Button variant="secondary" onClick={handleClose}>
-        Close
-      </Button>
-    </Form>
+        >
+          Forgot password
+        </Button>
+        <Button variant="secondary" onClick={handleClose}>
+          Close
+        </Button>
+      </Form>
+    </>
   );
 };

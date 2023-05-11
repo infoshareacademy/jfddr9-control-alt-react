@@ -9,6 +9,7 @@ import { AdultOnly } from "./components/AdultOnly";
 import { NavbarComponent } from "./components/NavbarComponent";
 import { Home } from "./components/Home";
 import { MyModal } from "./components/user/MyModal";
+import { RemindPassword } from "./components/auth/RemindPassword";
 
 const Contener = styled.div``;
 
@@ -20,6 +21,10 @@ function App() {
   const [showR, setShowR] = useState(false);
   const handleCloseR = () => setShowR(false);
   const handleShowR = () => setShowR(true);
+
+  const [showRemind, setShowRemind] = useState(false);
+  const handleCloseRemind = () => setShowRemind(false);
+  const handleShowRemind = () => setShowRemind(true);
   return (
     <Contener>
       <AdultOnly></AdultOnly>
@@ -35,10 +40,17 @@ function App() {
         title="Register"
       />
       <MyModal
-        child={Login(handleClose)}
+        child={Login(handleClose, handleShowRemind)}
         handleCloseR={handleClose}
         showR={show}
         title="Sign in"
+      />
+      <MyModal
+        child={RemindPassword(handleCloseRemind)}
+        handleCloseR={handleCloseRemind}
+        showR={showRemind}
+        title="
+        Remind password"
       />
 
       <Routes>
