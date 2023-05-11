@@ -1,12 +1,13 @@
 import { Card } from "react-bootstrap";
 import { ModalContainer } from "./ModalContainer";
-export const Home = () => {
+
+export const MixIt = () => {
   return (
     <>
       <ModalContainer />
       <Card>
         <Card.Body>
-          <h1>About the app</h1>
+          <h1>Mixit</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure natus
             rem optio delectus explicabo ab reiciendis. Explicabo laboriosam

@@ -8,7 +8,9 @@ export const NavbarComponent = (props) => {
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">Mix.it</Navbar.Brand>
+          <Navbar.Brand as={NavLink} to="/mixit">
+            Mix.it
+          </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to="/">
               Home

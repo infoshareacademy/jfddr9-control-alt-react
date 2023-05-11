@@ -1,7 +1,6 @@
 import Modal from "react-bootstrap/Modal";
 
-export const MyModal = (props) => {
-  console.log(props.showR);
+export const ModalTemplate = (props) => {
   return (
     <Modal show={props.showR} onHide={props.handleCloseR}>
       <Modal.Header closeButton>
