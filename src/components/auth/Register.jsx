@@ -10,6 +10,7 @@ export const Register = (handleCloseR) => {
   const [email, setEmail] = useState("");
   const [serverMessage, setServerMessage] = useState("");
   const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
   const [validated, setValidated] = useState(false);
   const handleRegister = (e) => {
     e.preventDefault();
@@ -31,6 +32,7 @@ export const Register = (handleCloseR) => {
         setDoc(userRef, { email: email });
         window.localStorage.setItem("user", JSON.stringify(jwt.user));
         alert("Thanks for registration!");
+        setServerMessage("Thanks for registration!");
       })
       .catch((e) => {
         console.dir(e);
@@ -62,6 +64,21 @@ export const Register = (handleCloseR) => {
         <Form.Control
           onChange={(e) => {
             setPassword(e.target.value);
+            console.log(e.target.value);
+          }}
+          type="password"
+          placeholder="Password"
+          required
+        />
+        <Form.Control.Feedback type="invalid">
+          Choose a password.
+        </Form.Control.Feedback>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicReapeatPassword">
+        <Form.Label>Repeat Password</Form.Label>
+        <Form.Control
+          onChange={(e) => {
+            setRepeatPassword(e.target.value);
             console.log(e.target.value);
           }}
           type="password"
