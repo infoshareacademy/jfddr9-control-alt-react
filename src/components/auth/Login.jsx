@@ -1,5 +1,5 @@
 import Form from "react-bootstrap/Form";
-import { Button } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import { useState } from "react";
 import { auth } from "../../api/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -64,20 +64,22 @@ export const Login = (handleClose, handleShowRemind) => {
           </Form.Control.Feedback>
         </Form.Group>
         <p class="text-danger">{serverMessage}</p>
-        <Button variant="primary" type="submit">
-          Log in
-        </Button>
-        <Button
-          variant="primary"
-          onClick={() => {
-            handleShowRemind();
-          }}
-        >
-          Forgot password
-        </Button>
-        <Button variant="secondary" onClick={handleClose}>
-          Close
-        </Button>
+        <Modal.Footer>
+          <Button variant="primary" type="submit">
+            Log in
+          </Button>
+          <Button
+            variant="primary"
+            onClick={() => {
+              handleShowRemind();
+            }}
+          >
+            Forgot password
+          </Button>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
       </Form>
     </>
   );

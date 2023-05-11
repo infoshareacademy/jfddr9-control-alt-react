@@ -1,5 +1,5 @@
 import Form from "react-bootstrap/Form";
-import { Button } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import { useState } from "react";
 import { auth, db } from "../../api/firebase";
 import { doc, setDoc } from "firebase/firestore";
@@ -99,12 +99,14 @@ export const Register = (handleCloseR) => {
         />
       </Form.Group>
       <p class="text-danger">{serverMessage}</p>
-      <Button variant="primary" type="submit">
-        Register
-      </Button>
-      <Button variant="secondary" onClick={handleCloseR}>
-        Close
-      </Button>
+      <Modal.Footer>
+        <Button variant="primary" type="submit">
+          Register
+        </Button>
+        <Button variant="secondary" onClick={handleCloseR}>
+          Close
+        </Button>
+      </Modal.Footer>
     </Form>
   );
 };
