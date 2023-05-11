@@ -1,11 +1,10 @@
-import { auth } from "../../api/firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { firebaseErrors } from "../../utils/firebaseErrors";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
-import { RemindPassword } from "./RemindPassword";
-import { MyModal } from "../user/MyModal";
+import { auth } from "../../api/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { firebaseErrors } from "../../utils/firebaseErrors";
+
 export const Login = (handleClose, handleShowRemind) => {
   const [email, setEmail] = useState("");
   const [serverMessage, setServerMessage] = useState("");
@@ -25,10 +24,8 @@ export const Login = (handleClose, handleShowRemind) => {
         setEmail("");
         setPassword("");
         handleClose();
-        console.log(jwt);
       })
       .catch((e) => {
-        console.dir(e);
         setServerMessage(firebaseErrors[e.code]);
       });
   };
@@ -41,7 +38,6 @@ export const Login = (handleClose, handleShowRemind) => {
           <Form.Control
             onChange={(e) => {
               setEmail(e.target.value);
-              console.log(e.target.value);
             }}
             type="email"
             placeholder="Enter email"
@@ -59,7 +55,6 @@ export const Login = (handleClose, handleShowRemind) => {
             required
             onChange={(e) => {
               setPassword(e.target.value);
-              console.log(e.target.value);
             }}
             type="password"
             placeholder="Password"
