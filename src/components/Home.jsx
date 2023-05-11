@@ -1,9 +1,7 @@
 import { Card } from "react-bootstrap";
-import { ModalContainer } from "./ModalContainer";
 export const Home = () => {
   return (
     <>
-      <ModalContainer />
       <Card>
         <Card.Body>
           <h1>About the app</h1>

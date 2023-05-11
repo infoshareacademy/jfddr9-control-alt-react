@@ -6,7 +6,7 @@ import { RemindPassword } from "./auth/RemindPassword";
 import { Register } from "./auth/Register";
 import { Login } from "./auth/Login";
 
-export const ModalContainer = () => {
+export const ModalContainer = ({ isAuth, setIsAuth }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -24,6 +24,8 @@ export const ModalContainer = () => {
       <NavbarComponent
         handleShow={handleShow}
         handleShowR={handleShowR}
+        isAuth={isAuth}
+        setIsAuth={setIsAuth}
       ></NavbarComponent>
 
       <ModalTemplate
