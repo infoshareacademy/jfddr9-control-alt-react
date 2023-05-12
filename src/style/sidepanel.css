@@ -19,6 +19,9 @@
   padding: 60px;
   transition: 0.5s;
 }
+.no-padding {
+  padding: 0;
+}
 #carouselPanel {
   left: 50px;
 }

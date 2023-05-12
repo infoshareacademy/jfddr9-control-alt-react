@@ -1,21 +1,39 @@
 import { Button, Card } from "react-bootstrap";
 import { SearchByName } from "../SearchByName";
 import { SearchByIngredients } from "../SearchByIngredients";
-
+import { SidePanel } from "../SidePanel";
 import { Carousel } from "../Carousel";
 
 import { useState } from "react";
 
 export const MixIt = () => {
   const [selectedOption, setSelectedOption] = useState(null);
-  function toggleShowSearch() {
-    document.getElementById("searchPanel").classList.toggle("show");
+
+  const [viewName, setViewName] = useState("");
+  const [previousViewName, setPreviousViewName] = useState("");
+
+  function hideAll() {
+    let views = document.querySelectorAll(".show");
+    views.forEach((element) => {
+      if (element !== null) element.classList.remove("show");
+    });
+    setViewName("");
   }
-  function toggleShowDrink() {
-    document.getElementById("drinkPanel").classList.toggle("show");
+  function toggleShow(newViewName) {
+    setPreviousViewName(viewName);
+    hideAll();
+    setViewName(newViewName);
+    let shown = document.getElementById(newViewName);
+    if (shown !== null) shown.classList.add("show");
   }
+
   return (
     <>
+      {/* --- Carousel --- */}
+      <div id="carouselPanel" class="sidepanel no-padding">
+        <Carousel toggleShow={toggleShow} />
+      </div>
+      {/* --- Center - glass and drink --- */}
       <div class="mixit-main">
         <div class="mixit-background">
           <div class="mixit-background-table"></div>
@@ -26,56 +44,46 @@ export const MixIt = () => {
           </div>
         </div>
       </div>
+      {/* --- Side panels --- */}
+      <SidePanel
+        id={"searchByNamePanel"}
+        title={"Search By Name"}
+        description={"Choose your drink"}
+        child={
+          <SearchByName
+            selectedOption={selectedOption}
+            setSelectedOption={setSelectedOption}
+          />
+        }
+      ></SidePanel>
 
+      <SidePanel
+        id={"searchByIngredientPanel"}
+        title={"Search By Ingredients"}
+        description={"Choose your ingredients"}
+        child={<SearchByIngredients />}
+      ></SidePanel>
 
-      <Card>
-        <Card.Body>
-          <h1>Mixit</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure natus
-            rem optio delectus explicabo ab reiciendis. Explicabo laboriosam
-            vitae unde dolorem, enim corporis!
-          </p>
-          <SearchByName />
-          <SearchByIngredients />
-        </Card.Body>
-      </Card>
+      <SidePanel
+        id={"drinkPanel"}
+        title={selectedOption !== null ? selectedOption.label : ""}
+        description={selectedOption !== null ? selectedOption.description : ""}
+      ></SidePanel>
 
-      <div id="carouselPanel" class="sidepanel">
-        <Carousel toggleShowSearch={toggleShowSearch} />
-      </div>
-
-      <div id="searchPanel" class="sidepanel">
-        <h1>Mixit</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure natus
-          rem optio delectus explicabo ab reiciendis. Explicabo laboriosam vitae
-          unde dolorem, enim corporis!
-        </p>
-        <SearchByName
-          selectedOption={selectedOption}
-          setSelectedOption={setSelectedOption}
-        />
-      </div>
-
-      <div id="drinkPanel" class="sidepanel">
-        {!(selectedOption === null) && (
-          <div>
-            <h1>{selectedOption.label}</h1>
-            <p>{selectedOption.description}</p>
-          </div>
-        )}
-      </div>
-      <div>
+      {/* --- Bottom buttons --- */}
+      <div class="bottom-buttons-div">
         {!(selectedOption === null) && (
           <Button
             className="general-btn green-hover"
             onClick={() => {
-              toggleShowDrink();
-              toggleShowSearch();
+              viewName === "drinkPanel"
+                ? toggleShow(previousViewName)
+                : toggleShow("drinkPanel");
             }}
           >
-            Show your drink
+            {viewName === "drinkPanel"
+              ? "Go back to search"
+              : "Show your drink"}
           </Button>
         )}
       </div>

@@ -25,7 +25,13 @@
     #000000 38.54%
   );
 }
-
+.bottom-buttons-div {
+  --width: 200px;
+  width: var(--width);
+  position: fixed;
+  bottom: 20px;
+  right: calc(50vw - (var(--width) / 2));
+}
 /* glass  */
 .glass {
   position: absolute;

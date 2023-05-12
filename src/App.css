@@ -9,14 +9,13 @@
 @import url(./style/sidepanel.css);
 @import url(./style/select-bar.css);
 
-
 /* pages import */
 
 @import url(./style/home.css);
 @import url(./style/mixit.css);
 
 #root {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 2rem;
   text-align: center;
