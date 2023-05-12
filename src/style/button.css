@@ -60,11 +60,11 @@
 
 .green-bg {
   background-color: #02ff02;
+  --bs-btn-active-bg: #02ff02;
+  --bs-btn-active-border-color: #02ff02;
 }
 .green-bg:hover,
 .green-bg:active {
-  --bs-btn-active-bg: #02ff02;
-  --bs-btn-active-border-color: #02ff02;
   background-color: #02ff02;
   border-top: 12px solid #02ff02;
 }
