@@ -4,6 +4,12 @@
 @import url(./style/modal.css);
 @import url(./style/nav.css);
 
+@import url(./style/carousel.css);
+
+@import url(./style/sidepanel.css);
+@import url(./style/select-bar.css);
+
+
 /* pages import */
 
 @import url(./style/home.css);
@@ -18,6 +24,7 @@
 
 body {
   background-color: black;
+  position: relative;
 }
 .home {
   border: 1px solid white;
