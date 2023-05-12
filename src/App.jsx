@@ -10,10 +10,18 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./api/firebase";
 import { ModalContainer } from "./components/ModalContainer";
 import { UserPanel } from "./components/pages/UserPanel";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import {
+  faCheckSquare,
+  faCoffee,
+  faRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Contener = styled.div``;
 
 function App() {
+  library.add(fab, faCheckSquare, faCoffee, faRightFromBracket);
   const [isAuth, setIsAuth] = useState(null);
   const [user, setUser] = useState(null);
   const navigate = useNavigate();

@@ -100,10 +100,10 @@ export const Register = (handleCloseR) => {
       </Form.Group>
       <p class="text-danger">{serverMessage}</p>
       <Modal.Footer>
-        <Button variant="primary" type="submit">
+        <Button className="general-btn green-hover" type="submit">
           Register
         </Button>
-        <Button variant="secondary" onClick={handleCloseR}>
+        <Button className="general-btn red-hover" onClick={handleCloseR}>
           Close
         </Button>
       </Modal.Footer>
