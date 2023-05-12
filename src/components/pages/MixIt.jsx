@@ -1,6 +1,6 @@
 import { Card } from "react-bootstrap";
 import { SearchByName } from "../SearchByName";
-
+import { Carousel } from "../Carousel";
 export const MixIt = () => {
   return (
     <>
@@ -24,6 +24,7 @@ export const MixIt = () => {
             vitae unde dolorem, enim corporis!
           </p>
           <SearchByName />
+          <Carousel />
         </Card.Body>
       </Card>
     </>
