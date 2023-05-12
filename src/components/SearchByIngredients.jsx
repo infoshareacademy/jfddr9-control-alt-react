@@ -28,6 +28,7 @@ export const SearchByIngredients = () => {
 
   return (
     <Select
+      className="select-bar"
       isMulti
       value={selectedOptions}
       onInputChange={(e) => {

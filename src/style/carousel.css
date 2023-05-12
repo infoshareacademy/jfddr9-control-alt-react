@@ -1,9 +1,6 @@
 .carousel-main {
-  height: 400px;
+  height: 100%;
   width: 300px;
-}
-.swiper {
-  background-color: black;
 }
 .swiper-wrapper {
   align-items: center;

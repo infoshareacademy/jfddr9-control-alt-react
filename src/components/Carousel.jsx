@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Pagination } from "swiper";
 
-export const Carousel = ({ toggleShowSearch }) => {
+export const Carousel = ({ toggleShow }) => {
   return (
     <Swiper
       slidesPerView="2"
@@ -17,10 +17,12 @@ export const Carousel = ({ toggleShowSearch }) => {
       className="carousel-main"
     >
       <SwiperSlide className="carousel-tile">
-        <p onClick={toggleShowSearch}>Filter by name</p>
+        <p onClick={() => toggleShow("searchByNamePanel")}>Filter by name</p>
       </SwiperSlide>
       <SwiperSlide className="carousel-tile">
-        <p>Filter by ingredients</p>
+        <p onClick={() => toggleShow("searchByIngredientPanel")}>
+          Filter by ingredients
+        </p>
       </SwiperSlide>
       <SwiperSlide className="carousel-tile">
         <p>Random drink</p>

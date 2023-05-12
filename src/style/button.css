@@ -3,17 +3,24 @@
   border: 1px solid white;
   background-color: transparent;
 }
-.general-btn:hover,
+.general-btn:hover {
+  background-color: transparent;
+}
 .general-btn:active {
   background-color: transparent;
+  --bs-btn-active-color: black;
 }
 .green-hover:hover,
 .green-hover:active {
+  --bs-btn-active-bg: greenyellow;
+  --bs-btn-active-border-color: greenyellow;
   border: 1px solid greenyellow;
   color: greenyellow;
 }
 .red-hover:hover,
 .red-hover:active {
+  --bs-btn-active-bg: red;
+  --bs-btn-active-border-color: red;
   border: 1px solid red;
   color: red;
 }
