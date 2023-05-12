@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import Select from "react-select";
 
-export const SearchByName = () => {
-  const [selectedOption, setSelectedOption] = useState(null);
+export const SearchByName = ({ selectedOption, setSelectedOption }) => {
   const [searchOptions, setSearchOptions] = useState([]);
   const [input, setInput] = useState("");
 
@@ -35,6 +34,7 @@ export const SearchByName = () => {
 
   return (
     <Select
+      className="select-bar"
       value={selectedOption}
       onInputChange={(e) => {
         setInput(e);

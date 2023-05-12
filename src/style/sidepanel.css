@@ -1,0 +1,42 @@
+.sidepanel {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  gap: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 450px;
+  width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 40vh;
+  right: -450px;
+
+  overflow: visible;
+  padding: 60px;
+  transition: 0.5s;
+}
+.show {
+  right: 50px;
+}
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+.openbtn:hover {
+  background-color: #444;
+}

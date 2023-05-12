@@ -59,7 +59,7 @@ export const NavbarComponent = (props) => {
               </Button>
             </Nav.Item>
             <Nav.Item>
-              <Button as={NavLink} to="/user" className="navbar-btn purple-bg">
+              <Button className="navbar-btn purple-bg">
                 <FontAwesomeIcon icon="fa-solid fa-circle-half-stroke" />
               </Button>
             </Nav.Item>
