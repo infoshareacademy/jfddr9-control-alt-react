@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Select from "react-select";
 
-export const SearchBar = () => {
+export const SearchByName = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [searchOptions, setSearchOptions] = useState([]);
   const [input, setInput] = useState("");
