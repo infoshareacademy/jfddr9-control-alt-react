@@ -1,24 +1,80 @@
-.btn,
-.btn:active,
-.btn:hover {
+.general-btn {
   padding: 12px 24px;
   border: 1px solid white;
   background-color: transparent;
 }
-.btn-primary:hover,
-.btn-primary:active {
+.general-btn:hover,
+.general-btn:active {
+  background-color: transparent;
+}
+.green-hover:hover,
+.green-hover:active {
   border: 1px solid greenyellow;
   color: greenyellow;
 }
-.btn-secondary:hover,
-.btn-secondary:active {
+.red-hover:hover,
+.red-hover:active {
   border: 1px solid red;
   color: red;
 }
-.navbar-btn,
-.navbar-btn:active,
-.navbar-btn:hover {
-  margin-left: 10px;
+
+.navbar-btn {
+  color: white;
   border-radius: 5px 5px 0 0;
-  border-bottom: 0;
+  margin-left: 15px;
+  border: none;
+  padding: 12px 25px;
+  transition: 0s;
+}
+.navbar-btn:hover {
+  margin-top: -12px;
+  padding-top: 0;
+  padding-bottom: 24px;
+}
+.navbar-btn:active {
+  margin-top: -6px;
+  padding-top: 0;
+  padding-bottom: 18px;
+}
+.lime-bg {
+  background-color: #93c90f;
+}
+.lime-bg:hover,
+.lime-bg:active {
+  --bs-btn-active-bg: #93c90f;
+  --bs-btn-active-border-color: #93c90f;
+  background-color: #93c90f;
+  border-top: 12px solid #93c90f;
+}
+
+.red-bg {
+  background-color: #ff6961;
+}
+.red-bg:hover,
+.red-bg:active {
+  --bs-btn-active-bg: #ff6961;
+  --bs-btn-active-border-color: #ff6961;
+  background-color: #ff6961;
+  border-top: 12px solid #ff6961;
+}
+
+.green-bg {
+  background-color: #02ff02;
+}
+.green-bg:hover,
+.green-bg:active {
+  --bs-btn-active-bg: #02ff02;
+  --bs-btn-active-border-color: #02ff02;
+  background-color: #02ff02;
+  border-top: 12px solid #02ff02;
+}
+.purple-bg {
+  background-color: #8e01fe;
+}
+.purple-bg:hover,
+.purple-bg:active {
+  --bs-btn-active-bg: #8e01fe;
+  --bs-btn-active-border-color: #8e01fe;
+  background-color: #8e01fe;
+  border-top: 12px solid #8e01fe;
 }

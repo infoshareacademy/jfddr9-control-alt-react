@@ -65,18 +65,18 @@ export const Login = (handleClose, handleShowRemind) => {
         </Form.Group>
         <p class="text-danger">{serverMessage}</p>
         <Modal.Footer>
-          <Button variant="primary" type="submit">
+          <Button className="general-btn green-hover" type="submit">
             Log in
           </Button>
           <Button
-            variant="primary"
+            className="general-btn green-hover"
             onClick={() => {
               handleShowRemind();
             }}
           >
             Forgot password
           </Button>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button className="general-btn red-hover" onClick={handleClose}>
             Close
           </Button>
         </Modal.Footer>

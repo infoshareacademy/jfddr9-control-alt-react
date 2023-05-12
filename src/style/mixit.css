@@ -1,0 +1,122 @@
+.mixit-main {
+  position: relative;
+}
+
+.mixit-background {
+  height: 79vh;
+  position: relative;
+  background: radial-gradient(
+    136.83% 55.75% at 50% 41.78%,
+    #1c1616 28.06%,
+    #000000 100%
+  );
+  mix-blend-mode: normal;
+  border-radius: 10px 10px 0px 0px;
+}
+.mixit-background-table {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(24% 50%, 75% 50%, 100% 100%, 0% 100%);
+  background: radial-gradient(
+    100% 110% at 50% 75%,
+    #383838 8.85%,
+    #000000 38.54%
+  );
+}
+
+/* glass  */
+.glass {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.cylinder {
+  border: 1px solid white;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  height: 350px;
+  width: 300px;
+  border-radius: 150px/50px;
+  background-color: rgba(160, 160, 160, 0.5);
+}
+
+.cylinder::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 95px;
+  width: 300px;
+  border-radius: 150px/50px;
+  border: 1px solid white;
+  background-color: rgba(201, 201, 201, 0.404);
+  content: "";
+  z-index: 10;
+}
+
+.cylinder::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 300px;
+  border-radius: 150px/50px;
+  background-color: rgba(160, 160, 160, 0.1);
+  filter: opacity(90%);
+  content: "";
+}
+
+.water {
+  position: absolute;
+  margin: 0 auto;
+  bottom: 0;
+  height: 300px;
+  width: 300px;
+  border-radius: 150px/50px;
+  background-color: rgb(78, 115, 156);
+  filter: brightness(0.5);
+  transition: 1s ease-out;
+}
+
+.water::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100px;
+  width: 300px;
+  border-radius: 150px/50px;
+  background-color: rgb(105, 104, 167);
+  filter: brightness(0.8);
+  content: "";
+}
+
+.water::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 300px;
+  border-radius: 150px/50px;
+  background-color: rgb(102, 113, 160);
+  filter: brightness(0.6);
+  content: "";
+}
+
+.water--0:checked ~ .cylinder .water {
+  bottom: -50px;
+}
+
+.water--30:checked ~ .cylinder .water {
+  height: calc(250px * 0.3);
+}
+
+.water--50:checked ~ .cylinder .water {
+  height: calc(250px * 0.5);
+}
+
+.water--90:checked ~ .cylinder .water {
+  height: calc(250px * 0.9);
+}

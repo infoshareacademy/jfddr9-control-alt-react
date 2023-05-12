@@ -6,9 +6,15 @@ import Row from "react-bootstrap/Row";
 import { NavLink, useNavigate } from "react-router-dom";
 import { auth } from "../../api/firebase";
 import { Button, Col } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+
+import { fas } from "@fortawesome/free-solid-svg-icons";
 
 export const NavbarComponent = (props) => {
   const navigate = useNavigate();
+  library.add(fas);
+
   return (
     <>
       <Navbar
@@ -33,44 +39,33 @@ export const NavbarComponent = (props) => {
               </Button>
             </Nav.Item> */}
             <Nav.Item>
-              <Button
-                className="navbar-btn"
-                variant="primary"
-                type="submit"
-                onClick={props.handleShow}
-              >
+              <Button className="navbar-btn lime-bg" onClick={props.handleShow}>
                 Log in
               </Button>
             </Nav.Item>
 
             <Nav.Item>
-              <Button
-                className="navbar-btn"
-                variant="primary"
-                type="submit"
-                onClick={props.handleShowR}
-              >
+              <Button className="navbar-btn red-bg" onClick={props.handleShowR}>
                 Register
               </Button>
             </Nav.Item>
           </Nav>
         )}
         {props.isAuth && (
-          <Nav className="w-100 nav-justified">
+          <Nav className="w-100">
             <Nav.Item>
-              <Button
-                as={NavLink}
-                to="/user"
-                variant="primary"
-                className="navbar-btn"
-              >
-                User panel
+              <Button as={NavLink} to="/user" className="navbar-btn green-bg">
+                <FontAwesomeIcon icon="fa-solid fa-user-gear" />
+              </Button>
+            </Nav.Item>
+            <Nav.Item>
+              <Button as={NavLink} to="/user" className="navbar-btn purple-bg">
+                <FontAwesomeIcon icon="fa-solid fa-circle-half-stroke" />
               </Button>
             </Nav.Item>
             <Nav.Item>
               <Button
-                className="navbar-btn"
-                variant="primary"
+                className="navbar-btn red-bg"
                 onClick={() =>
                   signOut(auth)
                     .then(() => alert("Successfully logged out"))
@@ -78,7 +73,7 @@ export const NavbarComponent = (props) => {
                     .then(() => props.setIsAuth(false))
                 }
               >
-                Log out
+                <FontAwesomeIcon icon="fa-solid fa-right-from-bracket" />
               </Button>
             </Nav.Item>
           </Nav>

@@ -35,10 +35,16 @@ export function AdultOnly() {
           <p>You Must Be at Least 18 Years of Age to Enter.</p>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleAdultClick}>
+          <Button
+            className="general-btn green-hover"
+            onClick={handleAdultClick}
+          >
             ENTER
           </Button>
-          <Button variant="secondary" onClick={handleNotAdultClick}>
+          <Button
+            className="general-btn red-hover"
+            onClick={handleNotAdultClick}
+          >
             EXIT
           </Button>
         </Modal.Footer>
