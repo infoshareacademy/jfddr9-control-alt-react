@@ -33,20 +33,6 @@ export const SearchByName = () => {
     fetchNameSearchOptions();
   }, [input]);
 
-  //   useEffect(() => {
-  //     const fetchNameSearchOptions = async () => {
-  //       try {
-  //         const response = await fetch(
-  //           `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${selectedOption.value}`
-  //         );
-  //         const data = await response.json();
-  //       } catch (error) {
-  //         console.error(error);
-  //       }
-  //     };
-  //     fetchNameSearchOptions();
-  //   }, [selectedOption.value]);
-
   return (
     <Select
       value={selectedOption}
