@@ -1,5 +1,6 @@
 import { Button, Card } from "react-bootstrap";
 import { SearchByName } from "../SearchByName";
+import { SearchByIngredients } from "../SearchByIngredients";
 
 import { Carousel } from "../Carousel";
 
@@ -25,6 +26,20 @@ export const MixIt = () => {
           </div>
         </div>
       </div>
+
+
+      <Card>
+        <Card.Body>
+          <h1>Mixit</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure natus
+            rem optio delectus explicabo ab reiciendis. Explicabo laboriosam
+            vitae unde dolorem, enim corporis!
+          </p>
+          <SearchByName />
+          <SearchByIngredients />
+        </Card.Body>
+      </Card>
 
       <div id="carouselPanel" class="sidepanel">
         <Carousel toggleShowSearch={toggleShowSearch} />
