@@ -1,5 +1,6 @@
 import { Card } from "react-bootstrap";
 import { SearchByName } from "../SearchByName";
+import { SearchByIngredients } from "../SearchByIngredients";
 
 export const MixIt = () => {
   return (
@@ -24,6 +25,7 @@ export const MixIt = () => {
             vitae unde dolorem, enim corporis!
           </p>
           <SearchByName />
+          <SearchByIngredients />
         </Card.Body>
       </Card>
     </>
