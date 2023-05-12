@@ -1,4 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "./App.css";
 
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
