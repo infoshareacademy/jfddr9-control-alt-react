@@ -1,3 +1,11 @@
+:root {
+  --logo-blue: #0560f2;
+  --logo-pink: #f205d3;
+  --logo-red: #f20505;
+  --logo-yellow: #e2f205;
+  --logo-green: #05f211;
+}
+
 nav {
   background: rgba(0, 0, 0, 0.4);
 }
@@ -10,13 +18,37 @@ nav {
 }
 .logo b {
   font-size: 5rem;
-  color: #fee;
-  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
-    0 0 0.1em #ff4444, 0 10px 3px #000;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ffffff, 0 0 0.5em #ffffff,
+    0 0 0.1em #ffffff, 0 10px 3px #000;
+  animation: rgb-animation linear infinite 10s;
 }
 .logo b span {
   animation: blink linear infinite 2s;
 }
 .logo b span:nth-of-type(2) {
   animation: blink linear infinite 3s;
+}
+
+@keyframes rgb-animation {
+  10% {
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-blue),
+      0 0 0.5em var(--logo-blue), 0 0 0.1em var(--logo-blue), 0 10px 3px #000;
+  }
+  25% {
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-pink),
+      0 0 0.5em var(--logo-pink), 0 0 0.1em var(--logo-pink), 0 10px 3px #000;
+  }
+  40% {
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-red),
+      0 0 0.5em var(--logo-red), 0 0 0.1em var(--logo-red), 0 10px 3px #000;
+  }
+  60% {
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-yellow),
+      0 0 0.5em var(--logo-yellow), 0 0 0.1em var(--logo-yellow),
+      0 10px 3px #000;
+  }
+  80% {
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-green),
+      0 0 0.5em var(--logo-green), 0 0 0.1em var(--logo-green), 0 10px 3px #000;
+  }
 }
