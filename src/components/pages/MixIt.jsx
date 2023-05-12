@@ -4,7 +4,6 @@ import { SearchByName } from "../SearchByName";
 export const MixIt = () => {
   return (
     <>
-
       <div class="mixit-main">
         <div class="mixit-background">
           <div class="mixit-background-table"></div>
