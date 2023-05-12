@@ -19,6 +19,9 @@
   padding: 60px;
   transition: 0.5s;
 }
+#carouselPanel {
+  left: 50px;
+}
 .show {
   right: 50px;
 }
