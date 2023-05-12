@@ -1,4 +1,5 @@
 import { Card } from "react-bootstrap";
+import { SearchBar } from "../SearchBar";
 
 export const MixIt = () => {
   return (
@@ -11,6 +12,7 @@ export const MixIt = () => {
             rem optio delectus explicabo ab reiciendis. Explicabo laboriosam
             vitae unde dolorem, enim corporis!
           </p>
+          <SearchBar />
         </Card.Body>
       </Card>
     </>
