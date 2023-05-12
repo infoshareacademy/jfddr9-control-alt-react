@@ -3,13 +3,13 @@ import "./App.css";
 
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { Home } from "./components/Home";
-import { MixIt } from "./components/MixIt";
+import { Home } from "./components/pages/Home";
+import { MixIt } from "./components/pages/MixIt";
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./api/firebase";
 import { ModalContainer } from "./components/ModalContainer";
-import { UserPanel } from "./components/user/UserPanel";
+import { UserPanel } from "./components/pages/UserPanel";
 
 const Contener = styled.div``;
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { AdultOnly } from "./AdultOnly";
-import { NavbarComponent } from "./NavbarComponent";
-import { ModalTemplate } from "./user/ModalTemplate";
+import { AdultOnly } from "./auth/AdultOnly";
+import { NavbarComponent } from "./nav/NavbarComponent";
+import { ModalTemplate } from "./ModalTemplate";
 import { RemindPassword } from "./auth/RemindPassword";
 import { Register } from "./auth/Register";
 import { Login } from "./auth/Login";

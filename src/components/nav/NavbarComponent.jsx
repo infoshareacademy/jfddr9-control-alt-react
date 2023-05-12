@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Row from "react-bootstrap/Row";
 import { NavLink, useNavigate } from "react-router-dom";
-import { auth } from "../api/firebase";
+import { auth } from "../../api/firebase";
 import { Button, Col } from "react-bootstrap";
 
 export const NavbarComponent = (props) => {
