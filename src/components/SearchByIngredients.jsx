@@ -5,7 +5,6 @@ export const SearchByIngredients = () => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [searchOptions, setSearchOptions] = useState([]);
   const [input, setInput] = useState("");
-
   useEffect(() => {
     const fetchIngredientSearchOptions = async () => {
       try {
@@ -17,6 +16,7 @@ export const SearchByIngredients = () => {
           value: drink.strIngredient1,
           label: drink.strIngredient1,
         }));
+        console.log("Ingredients:");
         console.log(ingredients);
         setSearchOptions(ingredients);
       } catch (error) {
@@ -25,6 +25,8 @@ export const SearchByIngredients = () => {
     };
     fetchIngredientSearchOptions();
   }, [selectedOptions]);
+  console.log("Selected options:");
+  console.log(selectedOptions);
 
   return (
     <Select

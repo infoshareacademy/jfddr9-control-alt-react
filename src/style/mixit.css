@@ -32,6 +32,11 @@
   bottom: 20px;
   right: calc(50vw - (var(--width) / 2));
 }
+
+.ingredient-list {
+  padding: 0;
+  list-style: none;
+}
 /* glass  */
 .glass {
   position: absolute;
