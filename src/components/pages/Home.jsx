@@ -5,10 +5,7 @@ export const Home = () => {
         <div class="tile">
           <div>
             <p>
-              <img
-                src="C:\Users\natalia\Desktop\INFOSHARE ACADEMY\projekt\jfddr9-control-alt-react\src\components\pictures\drink1.jpg"
-                alt="Neonowy drink"
-              />
+              <img src="" alt="Neonowy drink" />
             </p>
           </div>
           <div>
@@ -19,15 +16,17 @@ export const Home = () => {
               recipe for your favorite cocktail? Now you can have it all in one
               place! Our cocktail recipe app contains (podać liczbę drinków z
               api) recipes for refreshing cocktails, classic drinks, and many
-              more. With our app, you no longer have to search hundreds of
-              websites or cookbooks to find the perfect recipe for your favorite
-              drink. Our app is easy to use and offers plenty of drink recipes
-              for every taste. Additionally, our app allows users to track the
-              drinks they have consumed, as well as calculate their potential
-              blood alcohol content. You can also save your favorite drinks to
-              have them at your fingertips at all times. Stop wasting time
-              searching for the perfect drink recipe - register today and be
-              ready for the party!"
+              more.
+            </p>
+            <p>
+              With our app, you no longer have to search hundreds of websites or
+              cookbooks to find the perfect recipe for your favorite drink. Our
+              app is easy to use and offers plenty of drink recipes for every
+              taste. Additionally, our app allows users to track the drinks they
+              have consumed, as well as calculate their potential blood alcohol
+              content. You can also save your favorite drinks to have them at
+              your fingertips at all times. Stop wasting time searching for the
+              perfect drink recipe - register today and be ready for the party!"
             </p>
           </div>
         </div>
