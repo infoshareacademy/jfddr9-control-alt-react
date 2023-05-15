@@ -5,8 +5,10 @@ export const Home = () => {
         <div class="tile">
           <div>
             <p>
-              zdjęcie strony ze szklanką widocznej po zalogowaniu z widokiem na
-              ulubione itd{" "}
+              <img
+                src="C:\Users\natalia\Desktop\INFOSHARE ACADEMY\projekt\jfddr9-control-alt-react\src\components\pictures\drink1.jpg"
+                alt="Neonowy drink"
+              />
             </p>
           </div>
           <div>
@@ -78,7 +80,7 @@ export const Home = () => {
           <div>zdjęcie jeszcze jakichś funkcji</div>
           <div>jeszcze jedna jakaś funkcja czy opis czegoś </div>
         </div>
-        <div class="tile2">
+        <div class="tile">
           <div>logo infoshare</div>
           <div>nasze zdjęcia, czy cokolwiek co chcemy</div>
           <div>
