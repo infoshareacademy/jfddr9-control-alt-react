@@ -1,5 +1,5 @@
 .home {
-  background-color: rgb(44, 44, 44);
+  background-color: black;
   color: white;
   border-radius: 8;
   animation: boxShadowAnimation 20s infinite ease;
@@ -43,4 +43,16 @@
   width: 50%;
   box-sizing: border-box;
   border-radius: 8px;
+}
+
+.image-container-1 {
+  width: 300px;
+  height: auto;
+}
+
+.image-container-1 img {
+  width: 80%;
+  height: auto;
+  border: 2px solid white;
+  border-radius: 50%;
 }
