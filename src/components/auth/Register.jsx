@@ -98,7 +98,7 @@ export const Register = (handleCloseR) => {
           feedbackType="invalid"
         />
       </Form.Group>
-      <p class="text-danger">{serverMessage}</p>
+      <p className="text-danger">{serverMessage}</p>
       <Modal.Footer>
         <Button className="general-btn green-hover" type="submit">
           Register

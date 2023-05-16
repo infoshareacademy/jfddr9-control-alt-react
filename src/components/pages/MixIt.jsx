@@ -5,13 +5,12 @@ import { SidePanel } from "../SidePanel";
 import { Carousel } from "../Carousel";
 import { useEffect, useState } from "react";
 import { IngredientList } from "../IngredientList";
-
-import { useState } from "react";
 import { SearchRandom } from "../SearchRandom";
 
 export const nameSearchID = "searchByNamePanel";
 export const ingredientSearchID = "searchByIngredientPanel";
 export const drinkPanelID = "drinkPanel";
+export const searchRandomPanelID = "randomDrinkPanel";
 
 export const MixIt = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -74,10 +73,15 @@ export const MixIt = () => {
       ></SidePanel>
 
       <SidePanel
-        id={"searchRandomPanel"}
+        id={searchRandomPanelID}
         title={"Choose random drink"}
         //description={"Choose random drink"}
-        child={<SearchRandom />}
+        child={
+          <SearchRandom
+            setSelectedOption={setSelectedOption}
+            changeView={changeView}
+          />
+        }
       ></SidePanel>
 
       <SidePanel

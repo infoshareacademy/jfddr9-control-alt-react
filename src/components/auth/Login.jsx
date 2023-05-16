@@ -63,7 +63,7 @@ export const Login = (handleClose, handleShowRemind) => {
             Write your password.
           </Form.Control.Feedback>
         </Form.Group>
-        <p class="text-danger">{serverMessage}</p>
+        <p className="text-danger">{serverMessage}</p>
         <Modal.Footer>
           <Button className="general-btn green-hover" type="submit">
             Log in
