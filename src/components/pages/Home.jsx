@@ -1,37 +1,52 @@
 export const Home = () => {
   return (
     <>
-      <div className="home">
-        <div className="tile">
-          <div>
-            <p>
-              zdjęcie strony ze szklanką widocznej po zalogowaniu z widokiem na
-              ulubione itd{" "}
-            </p>
+
+      <div class="home">
+        <div class="tile">
+          <div class="image-container-1">
+            <img
+              src="\src\components\pages\pictures\ludzie.jpg"
+              alt="Wizerunek drinka, który jest przedstawiony jako neon"
+            />
+
           </div>
           <div>
-            <p>
-              Reklama api samej w sobie (oczywiście do przeredagowania, na razie
-              ponglish) "Are you looking for inspiration for unique drinks for
-              your party? Or maybe you want to surprise your friends with a new
-              recipe for your favorite cocktail? Now you can have it all in one
-              place! Our cocktail recipe app contains (podać liczbę drinków z
-              api) recipes for refreshing cocktails, classic drinks, and many
-              more. With our app, you no longer have to search hundreds of
-              websites or cookbooks to find the perfect recipe for your favorite
-              drink. Our app is easy to use and offers plenty of drink recipes
-              for every taste. Additionally, our app allows users to track the
-              drinks they have consumed, as well as calculate their potential
-              blood alcohol content. You can also save your favorite drinks to
-              have them at your fingertips at all times. Stop wasting time
-              searching for the perfect drink recipe - register today and be
-              ready for the party!"
-            </p>
+            <h1>
+              <p>
+                Are you looking for inspiration for unique drinks for your
+                party?
+              </p>
+            </h1>
+            <h3>
+              <p>Or... </p>
+            </h3>
+            <h3>
+              <p>
+                Maybe you want to surprise your friends with a new recipe for
+                your favorite cocktail?
+              </p>
+            </h3>
+            <h2>
+              <p>Now you can have it all in one place! </p>
+              <p>Swipe down and check it out !</p>
+            </h2>
           </div>
         </div>
         <div className="tile">
           <div>
             <p>
+              <p>
+                With our app, you no longer have to search hundreds of websites
+                or cookbooks to find the perfect recipe for your favorite drink.
+                Our app is easy to use and offers plenty of drink recipes for
+                every taste. Additionally, our app allows users to track the
+                drinks they have consumed, as well as calculate their potential
+                blood alcohol content. You can also save your favorite drinks to
+                have them at your fingertips at all times. Stop wasting time
+                searching for the perfect drink recipe - register today and be
+                ready for the party!"
+              </p>
               Reklama finkcji api (NA BRUDNO DO PRZEREDAGOWANIA) "Are you in the
               mood for a cocktail with a specific ingredient, but don't know
               what recipes exist for it? It's easy with our app, which sorts
@@ -78,7 +93,7 @@ export const Home = () => {
           <div>zdjęcie jeszcze jakichś funkcji</div>
           <div>jeszcze jedna jakaś funkcja czy opis czegoś </div>
         </div>
-        <div className="tile2">
+        <div class="tile">
           <div>logo infoshare</div>
           <div>nasze zdjęcia, czy cokolwiek co chcemy</div>
           <div>

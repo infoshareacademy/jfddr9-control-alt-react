@@ -1,12 +1,58 @@
 .home {
-  background-color: rgb(44, 44, 44);
+  background-color: black;
   color: white;
+  border-radius: 8;
+  animation: boxShadowAnimation 20s infinite ease;
+}
+
+/*.gridcontainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}*/
+
+@keyframes boxShadowAnimation {
+  0% {
+    box-shadow: 0px 0px 30px 0px #e60002;
+  }
+  17% {
+    box-shadow: 0px 0px 30px 0px #fffe33;
+  }
+  33% {
+    box-shadow: 0px 0px 30px 0px #02ff02;
+  }
+  50% {
+    box-shadow: 0px 0px 30px 0px #7ff5ff;
+  }
+  67% {
+    box-shadow: 0px 0px 30px 0px #fe3303;
+  }
+  83% {
+    box-shadow: 0px 0px 30px 0px #8e01fe;
+  }
+  100% {
+    box-shadow: 0px 0px 30px 0px #e60002;
+  }
+}
+
+.image-container-1 {
+  width: 300px;
+  height: auto;
+}
+
+.image-container-1 img {
+  width: 80%;
+  height: auto;
+  border: 2px solid white;
+  border-radius: 50%;
 }
 
 .tile {
-  padding: 100px 2vw;
+  padding: 100px 3vw;
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  box-sizing: border-box;
 }
 
 .tile div {
@@ -14,4 +60,7 @@
   justify-content: center;
   align-items: center;
   width: 50%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  flex-wrap: wrap;
 }
