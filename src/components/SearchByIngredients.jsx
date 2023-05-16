@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Select from "react-select";
 
-export const SearchByIngredients = () => {
+export const SearchByIngredients = ({ selectedOption, setSelectedOption }) => {
   const [ingredients, setIngredients] = useState([]);
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [matchingCocktails, setMatchingCocktails] = useState([]);
@@ -76,13 +76,28 @@ export const SearchByIngredients = () => {
         const matchingCocktailsList = data
           .map((response) => response.drinks[0])
           .filter((drink) => drink);
-        setMatchingCocktails(matchingCocktailsList);
+        const drinks = matchingCocktailsList.map((drink) => {
+          const ingredients = Object.keys(drink)
+            .filter((key) => key && key.startsWith("strIngredient"))
+            .map((ingredient) => drink[ingredient])
+            .filter(Boolean);
+          return {
+            value: drink.idDrink,
+            label: drink.strDrink,
+            description: drink.strInstructions,
+            ingredients: ingredients,
+          };
+        });
+        setMatchingCocktails(drinks);
       } catch (error) {
         console.error(error);
       }
     };
     fetchCocktails();
   }, [selectedIngredients]);
+
+  console.log(matchingCocktails);
+  const [input, setInput] = useState("");
 
   return (
     <div>
@@ -93,11 +108,25 @@ export const SearchByIngredients = () => {
         onChange={setSelectedIngredients}
         value={selectedIngredients}
       />
-      <ul>
+      <Select
+        className="select-bar"
+        value={selectedOption}
+        onInputChange={(e) => {
+          setInput(e);
+        }}
+        options={matchingCocktails}
+        onChange={(e) => {
+          console.log(e);
+          setSelectedOption(e);
+        }}
+        placeholder="Search for a cocktail..."
+        isClearable
+      />
+      {/* <ul>
         {matchingCocktails.map((drink) => (
           <li key={drink.idDrink}>{drink.strDrink}</li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };

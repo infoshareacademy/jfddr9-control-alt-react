@@ -69,7 +69,12 @@ export const MixIt = () => {
         id={ingredientSearchID}
         title={"Search By Ingredients"}
         description={"Choose your ingredients"}
-        child={<SearchByIngredients />}
+        child={
+          <SearchByIngredients
+            selectedOption={selectedOption}
+            setSelectedOption={setSelectedOption}
+          />
+        }
       ></SidePanel>
 
       <SidePanel
