@@ -5,21 +5,30 @@ export const Home = () => {
         <div class="tile">
           <div class="image-container-1">
             <img
-              src="\src\components\pages\pictures\BLUE drink.avif"
+              src="\src\components\pages\pictures\ludzie.jpg"
               alt="Wizerunek drinka, który jest przedstawiony jako neon"
             />
           </div>
           <div>
-            <p>
-              Are you looking for inspiration for unique drinks for your party?
-            </p>
-            <p>Or... </p>
-            <p>
-              Maybe you want to surprise your friends with a new recipe for your
-              favorite cocktail?
-            </p>
-            <p>Now you can have it all in one place! </p>
-            <p>Swipe down and check it out !</p>
+            <h1>
+              <p>
+                Are you looking for inspiration for unique drinks for your
+                party?
+              </p>
+            </h1>
+            <h3>
+              <p>Or... </p>
+            </h3>
+            <h3>
+              <p>
+                Maybe you want to surprise your friends with a new recipe for
+                your favorite cocktail?
+              </p>
+            </h3>
+            <h2>
+              <p>Now you can have it all in one place! </p>
+              <p>Swipe down and check it out !</p>
+            </h2>
           </div>
         </div>
         <div class="tile">

@@ -5,6 +5,13 @@
   animation: boxShadowAnimation 20s infinite ease;
 }
 
+/*.gridcontainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}*/
+
 @keyframes boxShadowAnimation {
   0% {
     box-shadow: 0px 0px 30px 0px #e60002;
@@ -29,6 +36,18 @@
   }
 }
 
+.image-container-1 {
+  width: 300px;
+  height: auto;
+}
+
+.image-container-1 img {
+  width: 80%;
+  height: auto;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
 .tile {
   padding: 100px 3vw;
   display: flex;
@@ -43,16 +62,5 @@
   width: 50%;
   box-sizing: border-box;
   border-radius: 8px;
-}
-
-.image-container-1 {
-  width: 300px;
-  height: auto;
-}
-
-.image-container-1 img {
-  width: 80%;
-  height: auto;
-  border: 2px solid white;
-  border-radius: 50%;
+  flex-wrap: wrap;
 }
