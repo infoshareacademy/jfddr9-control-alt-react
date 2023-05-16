@@ -1,10 +1,10 @@
 :root {
-  --logo-blue: #0560f2;
-  --logo-pink: #f205d3;
-  --logo-red: #f20505;
-  --logo-yellow: #e2f205;
-  --logo-green: #05f211;
-}
+  --logo-blue: #7ff5ff;
+  --logo-pink: #8e01fe;
+  --logo-red: #e60002;
+  --logo-yellow: #fffe33;
+  --logo-green: #02ff02;
+} /*Wpisałam kolory z naszego projektu, ale logo wydaje się jakieś jasne, więc chyba ta zmiana, nie powinna być uwzględniona*/
 
 nav {
   background: rgba(0, 0, 0, 0.4);
