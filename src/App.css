@@ -15,7 +15,8 @@
 @import url(./style/mixit.css);
 
 #root {
-  max-width: 128n0px;
+  max-width: 1280px;
+
   margin: 0 auto;
   padding: 0 2rem;
   text-align: center;

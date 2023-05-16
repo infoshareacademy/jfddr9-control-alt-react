@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Pagination } from "swiper";
+
 import { ingredientSearchID, nameSearchID } from "./pages/MixIt";
 export const Carousel = ({ changeView }) => {
   return (
