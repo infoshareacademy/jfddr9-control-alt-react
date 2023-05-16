@@ -3,9 +3,15 @@ import { SearchByName } from "../SearchByName";
 import { SearchByIngredients } from "../SearchByIngredients";
 import { SidePanel } from "../SidePanel";
 import { Carousel } from "../Carousel";
+import { useEffect, useState } from "react";
+import { IngredientList } from "../IngredientList";
 
 import { useState } from "react";
 import { SearchRandom } from "../SearchRandom";
+
+export const nameSearchID = "searchByNamePanel";
+export const ingredientSearchID = "searchByIngredientPanel";
+export const drinkPanelID = "drinkPanel";
 
 export const MixIt = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -13,41 +19,43 @@ export const MixIt = () => {
   const [viewName, setViewName] = useState("");
   const [previousViewName, setPreviousViewName] = useState("");
 
+  function changeView(newViewName) {
+    setPreviousViewName(viewName);
+    setViewName(newViewName);
+  }
+
   function hideAll() {
     let views = document.querySelectorAll(".show");
     views.forEach((element) => {
       if (element !== null) element.classList.remove("show");
     });
-    setViewName("");
   }
-  function toggleShow(newViewName) {
-    setPreviousViewName(viewName);
+  useEffect(() => {
     hideAll();
-    setViewName(newViewName);
-    let shown = document.getElementById(newViewName);
+    let shown = document.getElementById(viewName);
     if (shown !== null) shown.classList.add("show");
-  }
+  }, [viewName]);
 
   return (
     <>
       {/* --- Carousel --- */}
-      <div id="carouselPanel" class="sidepanel no-padding">
-        <Carousel toggleShow={toggleShow} />
+      <div id="carouselPanel" className="sidepanel no-padding">
+        <Carousel changeView={changeView} />
       </div>
       {/* --- Center - glass and drink --- */}
-      <div class="mixit-main">
-        <div class="mixit-background">
-          <div class="mixit-background-table"></div>
+      <div className="mixit-main">
+        <div className="mixit-background">
+          <div className="mixit-background-table"></div>
         </div>
-        <div class="glass">
-          <div class="cylinder">
-            <div class="water"></div>
+        <div className="glass">
+          <div className="cylinder">
+            <div className="water"></div>
           </div>
         </div>
       </div>
       {/* --- Side panels --- */}
       <SidePanel
-        id={"searchByNamePanel"}
+        id={nameSearchID}
         title={"Search By Name"}
         description={"Choose your drink"}
         child={
@@ -59,13 +67,14 @@ export const MixIt = () => {
       ></SidePanel>
 
       <SidePanel
-        id={"searchByIngredientPanel"}
+        id={ingredientSearchID}
         title={"Search By Ingredients"}
         description={"Choose your ingredients"}
         child={<SearchByIngredients />}
       ></SidePanel>
 
       <SidePanel
+
         id={"searchRandomPanel"}
         title={"Choose random drink"}
         //description={"Choose random drink"}
@@ -73,20 +82,29 @@ export const MixIt = () => {
       ></SidePanel>
 
       <SidePanel
-        id={"drinkPanel"}
+
+        id={drinkPanelID}
+
         title={selectedOption !== null ? selectedOption.label : ""}
         description={selectedOption !== null ? selectedOption.description : ""}
+        child={
+          selectedOption !== null ? (
+            <IngredientList list={selectedOption.ingredients} />
+          ) : (
+            <div></div>
+          )
+        }
       ></SidePanel>
 
       {/* --- Bottom buttons --- */}
-      <div class="bottom-buttons-div">
+      <div className="bottom-buttons-div">
         {!(selectedOption === null) && (
           <Button
             className="general-btn green-hover"
             onClick={() => {
               viewName === "drinkPanel"
-                ? toggleShow(previousViewName)
-                : toggleShow("drinkPanel");
+                ? changeView(previousViewName)
+                : changeView(drinkPanelID);
             }}
           >
             {viewName === "drinkPanel"
