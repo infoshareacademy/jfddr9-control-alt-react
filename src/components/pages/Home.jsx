@@ -5,28 +5,21 @@ export const Home = () => {
         <div class="tile">
           <div class="image-container-1">
             <img
-              src="\src\components\pages\pictures\drink1.jpg"
+              src="\src\components\pages\pictures\BLUE drink.avif"
               alt="Wizerunek drinka, który jest przedstawiony jako neon"
             />
           </div>
           <div>
-            <h3>
-              <p>
-                Are you looking for inspiration for unique drinks for your
-                party?
-              </p>
-              <p>
-                Or maybe you want to surprise your friends with a new recipe for
-                your favorite cocktail?
-              </p>{" "}
-              Now you can have it all in one place! Our cocktail recipe app
-              contains many recipes for refreshing cocktails, classic drinks,
-              and many more!{" "}
-              <h2>
-                {" "}
-                <p>Swipe down and check it out !</p>
-              </h2>
-            </h3>
+            <p>
+              Are you looking for inspiration for unique drinks for your party?
+            </p>
+            <p>Or... </p>
+            <p>
+              Maybe you want to surprise your friends with a new recipe for your
+              favorite cocktail?
+            </p>
+            <p>Now you can have it all in one place! </p>
+            <p>Swipe down and check it out !</p>
           </div>
         </div>
         <div class="tile">
