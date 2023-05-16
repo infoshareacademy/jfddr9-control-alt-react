@@ -5,6 +5,7 @@ import { SidePanel } from "../SidePanel";
 import { Carousel } from "../Carousel";
 
 import { useState } from "react";
+import { SearchRandom } from "../SearchRandom";
 
 export const MixIt = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -62,6 +63,13 @@ export const MixIt = () => {
         title={"Search By Ingredients"}
         description={"Choose your ingredients"}
         child={<SearchByIngredients />}
+      ></SidePanel>
+
+      <SidePanel
+        id={"searchRandomPanel"}
+        title={"Choose random drink"}
+        //description={"Choose random drink"}
+        child={<SearchRandom />}
       ></SidePanel>
 
       <SidePanel
