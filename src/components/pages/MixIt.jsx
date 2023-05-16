@@ -1,4 +1,4 @@
-import { Button, Card } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { SearchByName } from "../SearchByName";
 import { SearchByIngredients } from "../SearchByIngredients";
 import { SidePanel } from "../SidePanel";
@@ -6,9 +6,13 @@ import { Carousel } from "../Carousel";
 import { useEffect, useState } from "react";
 import { IngredientList } from "../IngredientList";
 
+import { useState } from "react";
+import { SearchRandom } from "../SearchRandom";
+
 export const nameSearchID = "searchByNamePanel";
 export const ingredientSearchID = "searchByIngredientPanel";
 export const drinkPanelID = "drinkPanel";
+
 export const MixIt = () => {
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -67,6 +71,13 @@ export const MixIt = () => {
         title={"Search By Ingredients"}
         description={"Choose your ingredients"}
         child={<SearchByIngredients />}
+      ></SidePanel>
+
+      <SidePanel
+        id={"searchRandomPanel"}
+        title={"Choose random drink"}
+        //description={"Choose random drink"}
+        child={<SearchRandom />}
       ></SidePanel>
 
       <SidePanel

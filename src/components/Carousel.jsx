@@ -26,7 +26,7 @@ export const Carousel = ({ changeView }) => {
         </p>
       </SwiperSlide>
       <SwiperSlide className="carousel-tile">
-        <p>Random drink</p>
+        <p onClick={() => toggleShow("searchRandomPanel")}>Random drink</p>
       </SwiperSlide>
       <SwiperSlide className="carousel-tile">
         <p>Favorite drinks</p>
