@@ -1,4 +1,4 @@
-import { Button, Card } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { SearchByName } from "../SearchByName";
 import { SearchByIngredients } from "../SearchByIngredients";
 import { SidePanel } from "../SidePanel";
@@ -74,7 +74,6 @@ export const MixIt = () => {
       ></SidePanel>
 
       <SidePanel
-
         id={"searchRandomPanel"}
         title={"Choose random drink"}
         //description={"Choose random drink"}
@@ -82,9 +81,7 @@ export const MixIt = () => {
       ></SidePanel>
 
       <SidePanel
-
         id={drinkPanelID}
-
         title={selectedOption !== null ? selectedOption.label : ""}
         description={selectedOption !== null ? selectedOption.description : ""}
         child={
