@@ -1,6 +1,7 @@
 export const Home = () => {
   return (
     <>
+
       <div class="home">
         <div class="tile">
           <div class="image-container-1">
@@ -8,6 +9,7 @@ export const Home = () => {
               src="\src\components\pages\pictures\ludzie.jpg"
               alt="Wizerunek drinka, który jest przedstawiony jako neon"
             />
+
           </div>
           <div>
             <h1>
@@ -31,7 +33,7 @@ export const Home = () => {
             </h2>
           </div>
         </div>
-        <div class="tile">
+        <div className="tile">
           <div>
             <p>
               <p>
@@ -64,7 +66,7 @@ export const Home = () => {
             <p>zdjęcie sortera</p>
           </div>
         </div>
-        <div class="tile">
+        <div className="tile">
           <div>
             <p>zdjęcie kalku</p>
           </div>
@@ -87,7 +89,7 @@ export const Home = () => {
             control over your alcohol consumption!"
           </div>
         </div>
-        <div class="tile">
+        <div className="tile">
           <div>zdjęcie jeszcze jakichś funkcji</div>
           <div>jeszcze jedna jakaś funkcja czy opis czegoś </div>
         </div>
