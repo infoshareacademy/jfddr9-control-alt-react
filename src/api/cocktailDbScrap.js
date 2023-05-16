@@ -4,7 +4,7 @@ import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
 export const cocktailDbScrap = async () => {
   const lettersAndNumbers = [..."abcdefghijklmnopqrstuvwxyz0123456789"];
 
-  const fetchCocktails = async (letter) => {
+  const fetchCocktailsToFirestore = async (letter) => {
     try {
       const response = await fetch(
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`
@@ -39,6 +39,6 @@ export const cocktailDbScrap = async () => {
   };
 
   for (const letter of lettersAndNumbers) {
-    await fetchCocktails(letter);
+    await fetchCocktailsToFirestore(letter);
   }
 };
