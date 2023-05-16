@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { drinkPanelID } from "./pages/MixIt";
 
-export const SearchRandom = () => {
+export const SearchRandom = ({ setSelectedOption, changeView }) => {
   const [drink, setDrink] = useState(null);
 
   const fetchRandomDrink = async () => {
@@ -15,13 +16,13 @@ export const SearchRandom = () => {
           .map((ingredient) => drink[ingredient])
           .filter(Boolean);
         return {
-          drinkId: drink.idDrink,
-          drinkName: drink.strDrink,
+          value: drink.idDrink,
+          label: drink.strDrink,
           description: drink.strInstructions,
           ingredients: ingredients,
         };
       });
-      setDrink(randomDrink);
+      setSelectedOption(randomDrink[0]);
       console.log(randomDrink);
     } catch (error) {
       console.error(error);
@@ -30,15 +31,22 @@ export const SearchRandom = () => {
 
   return (
     <div>
-      <button onClick={fetchRandomDrink}>Random Drink</button>
-      {drink &&
+      <button
+        onClick={() => {
+          fetchRandomDrink();
+          changeView(drinkPanelID);
+        }}
+      >
+        Random Drink
+      </button>
+      {/* {drink &&
         drink.map((drinkItem) => (
           <div key={drinkItem.drinkId}>
             <h4>Name: {drinkItem.drinkName}</h4>
             <p>Ingredients: {drinkItem.ingredients.join(", ")}</p>
             <p>Description: {drinkItem.description}</p>
           </div>
-        ))}
+        ))} */}
     </div>
   );
 };
