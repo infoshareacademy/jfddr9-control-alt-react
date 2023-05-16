@@ -1,8 +1,8 @@
 export const Home = () => {
   return (
     <>
-      <div class="home">
-        <div class="tile">
+      <div className="home">
+        <div className="tile">
           <div>
             <p>
               zdjęcie strony ze szklanką widocznej po zalogowaniu z widokiem na
@@ -29,7 +29,7 @@ export const Home = () => {
             </p>
           </div>
         </div>
-        <div class="tile">
+        <div className="tile">
           <div>
             <p>
               Reklama finkcji api (NA BRUDNO DO PRZEREDAGOWANIA) "Are you in the
@@ -51,7 +51,7 @@ export const Home = () => {
             <p>zdjęcie sortera</p>
           </div>
         </div>
-        <div class="tile">
+        <div className="tile">
           <div>
             <p>zdjęcie kalku</p>
           </div>
@@ -74,11 +74,11 @@ export const Home = () => {
             control over your alcohol consumption!"
           </div>
         </div>
-        <div class="tile">
+        <div className="tile">
           <div>zdjęcie jeszcze jakichś funkcji</div>
           <div>jeszcze jedna jakaś funkcja czy opis czegoś </div>
         </div>
-        <div class="tile2">
+        <div className="tile2">
           <div>logo infoshare</div>
           <div>nasze zdjęcia, czy cokolwiek co chcemy</div>
           <div>
