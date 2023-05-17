@@ -53,6 +53,11 @@ function App() {
     setText(message);
     setTimeout(() => shown.classList.remove("show-toasty"), 4000);
   };
+  const changeTheme = () => {
+    console.log("sdfg");
+    let rootm = document.querySelector(":root");
+    if (rootm != null) rootm.classList.toggle("lightmode");
+  };
   return (
     <Contener>
       <ToastMessage text={text}></ToastMessage>
@@ -60,22 +65,24 @@ function App() {
         isAuth={isAuth}
         setIsAuth={setIsAuth}
         createToast={createToast}
+        changeTheme={changeTheme}
       />
-      <Routes>
-        <Route
-          path={"/"}
-          element={!isAuth ? <Home /> : <Navigate to="/mixit" replace />}
-        />
-        <Route
-          path={"/mixit"}
-          element={isAuth ? <MixIt /> : <Navigate to="/" replace />}
-        />
-        <Route
-          path={"/user"}
-          element={isAuth ? <UserPanel /> : <Navigate to="/" replace />}
-        />
-      </Routes>
-
+      <div className="main-container">
+        <Routes>
+          <Route
+            path={"/"}
+            element={!isAuth ? <Home /> : <Navigate to="/mixit" replace />}
+          />
+          <Route
+            path={"/mixit"}
+            element={isAuth ? <MixIt /> : <Navigate to="/" replace />}
+          />
+          <Route
+            path={"/user"}
+            element={isAuth ? <UserPanel /> : <Navigate to="/" replace />}
+          />
+        </Routes>
+      </div>
     </Contener>
   );
 }

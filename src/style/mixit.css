@@ -7,8 +7,8 @@
   position: relative;
   background: radial-gradient(
     136.83% 55.75% at 50% 41.78%,
-    #1c1616 28.06%,
-    #000000 100%
+    var(--mixit-bg-lighter-gradient) 28.06%,
+    var(--mixit-bg-darker-gradient) 100%
   );
   mix-blend-mode: normal;
   border-radius: 10px 10px 0px 0px;
@@ -21,8 +21,8 @@
   clip-path: polygon(24% 50%, 75% 50%, 100% 100%, 0% 100%);
   background: radial-gradient(
     100% 110% at 50% 75%,
-    #383838 8.85%,
-    #000000 38.54%
+    var(--mixit-table-lighter-gradient) 8.85%,
+    var(--mixit-table-darker-gradient) 38.54%
   );
 }
 .bottom-buttons-div {

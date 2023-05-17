@@ -3,11 +3,16 @@
   --color-dm-primary: #ffffff;
   --color-dm-secondary: #7c7c7c;
   --color-dm-background: #000000;
+  /* Dla zmiennych nav-bara */
+  --color-dm-background-rbg: 0, 0, 0;
+  /* Mixit table i Background */
+  --mixit-bg-lighter-gradient: #1c1616;
+  --mixit-bg-darker-gradient: #000000;
 
-  /* light mode */
-  --color-lm-primary: #000000;
-  --color-lm-secondary: #7c7c7c;
-  --color-lm-background: #ffffff;
+  --mixit-table-lighter-gradient: #383838;
+  --mixit-table-darker-gradient: #000000;
+  /* Pół-przeroczyste */
+  --color-dm-background-see-through: rgba(0, 0, 0, 0.5);
 
   /* colors */
   --color-blue: #01fff4;
@@ -17,11 +22,23 @@
   --color-green: #7cff01;
 
   /* resources */
+  --color-button-teal: #01fff4;
   --color-button-lime: #b7ff00;
   --color-buttom-red: #ff6961;
   --color-button-purple: #8e01fe;
   --color-frame: #ffffff;
   --color-liquid: #fe0400;
+}
+.lightmode {
+  --color-dm-primary: #000000;
+  --color-dm-secondary: #7c7c7c;
+  --color-dm-background: #ffffff;
+  --color-dm-background-rbg: 255, 255, 255;
+  --mixit-bg-lighter-gradient: #ffffff;
+  --mixit-bg-darker-gradient: #d6d6d6;
+  --mixit-table-lighter-gradient: #ffffff;
+  --mixit-table-darker-gradient: #cecece;
+  --color-dm-background-see-through: rgba(0, 0, 0, 0.1);
 }
 
 /* KEYFRAMES */
