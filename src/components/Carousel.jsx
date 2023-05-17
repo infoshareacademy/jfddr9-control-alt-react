@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Pagination } from "swiper";
+import { Mousewheel, Pagination } from "swiper";
 
 import {
   ingredientSearchID,
@@ -15,10 +15,11 @@ export const Carousel = ({ changeView }) => {
       centeredSlides="true"
       direction={"vertical"}
       loop={true}
+      mousewheel={true}
       pagination={{
         clickable: true,
       }}
-      modules={[Pagination]}
+      modules={[Mousewheel, Pagination]}
       className="carousel-main"
     >
       <SwiperSlide className="carousel-tile">

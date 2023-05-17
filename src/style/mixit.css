@@ -45,14 +45,14 @@
   transform: translateX(-50%);
 }
 .cylinder {
-  border: 1px solid white;
+  border: 1px solid var(--color-dm-primary);
   position: relative;
   overflow: hidden;
   margin: 0 auto;
   height: 350px;
   width: 300px;
   border-radius: 150px/50px;
-  background-color: rgba(160, 160, 160, 0.5);
+  background-color: rgba(173, 170, 170, 0.5);
 }
 
 .cylinder::before {
@@ -62,8 +62,7 @@
   height: 95px;
   width: 300px;
   border-radius: 150px/50px;
-  border: 1px solid white;
-  background-color: rgba(201, 201, 201, 0.404);
+  border: 1px solid var(--color-dm-primary);
   content: "";
   z-index: 10;
 }
@@ -87,7 +86,7 @@
   height: 300px;
   width: 300px;
   border-radius: 150px/50px;
-  background-color: rgb(78, 115, 156);
+  background-color: var(--color-liquid);
   filter: brightness(0.5);
   transition: 1s ease-out;
 }
@@ -99,7 +98,7 @@
   height: 100px;
   width: 300px;
   border-radius: 150px/50px;
-  background-color: rgb(105, 104, 167);
+  background-color: var(--color-liquid);
   filter: brightness(0.8);
   content: "";
 }
@@ -111,7 +110,7 @@
   height: 100px;
   width: 300px;
   border-radius: 150px/50px;
-  background-color: rgb(102, 113, 160);
+  background-color: var(--color-liquid);
   filter: brightness(0.6);
   content: "";
 }
