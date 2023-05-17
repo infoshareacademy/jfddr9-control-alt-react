@@ -49,20 +49,22 @@ function App() {
   return (
     <Contener>
       <ModalContainer isAuth={isAuth} setIsAuth={setIsAuth} />
-      <Routes>
-        <Route
-          path={"/"}
-          element={!isAuth ? <Home /> : <Navigate to="/mixit" replace />}
-        />
-        <Route
-          path={"/mixit"}
-          element={isAuth ? <MixIt /> : <Navigate to="/" replace />}
-        />
-        <Route
-          path={"/user"}
-          element={isAuth ? <UserPanel /> : <Navigate to="/" replace />}
-        />
-      </Routes>
+      <div className="main-container">
+        <Routes>
+          <Route
+            path={"/"}
+            element={!isAuth ? <Home /> : <Navigate to="/mixit" replace />}
+          />
+          <Route
+            path={"/mixit"}
+            element={isAuth ? <MixIt /> : <Navigate to="/" replace />}
+          />
+          <Route
+            path={"/user"}
+            element={isAuth ? <UserPanel /> : <Navigate to="/" replace />}
+          />
+        </Routes>
+      </div>
     </Contener>
   );
 }
