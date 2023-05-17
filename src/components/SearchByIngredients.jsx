@@ -120,11 +120,6 @@ export const SearchByIngredients = ({ selectedOption, setSelectedOption }) => {
         placeholder="Search for a cocktail..."
         isClearable
       />
-      {/* <ul>
-        {matchingCocktails.map((drink) => (
-          <li key={drink.idDrink}>{drink.strDrink}</li>
-        ))}
-      </ul> */}
     </div>
   );
 };

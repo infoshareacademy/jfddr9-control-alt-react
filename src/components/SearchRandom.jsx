@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { drinkPanelID } from "./pages/MixIt";
 import { Button } from "react-bootstrap";
 
 export const SearchRandom = ({ setSelectedOption, changeView }) => {
-  const [drink, setDrink] = useState(null);
-
+  // const [drink, setDrink] = useState(null);
   const fetchRandomDrink = async () => {
     try {
       const response = await fetch(
@@ -40,14 +38,6 @@ export const SearchRandom = ({ setSelectedOption, changeView }) => {
       >
         Random Drink
       </Button>
-      {/* {drink &&
-        drink.map((drinkItem) => (
-          <div key={drinkItem.drinkId}>
-            <h4>Name: {drinkItem.drinkName}</h4>
-            <p>Ingredients: {drinkItem.ingredients.join(", ")}</p>
-            <p>Description: {drinkItem.description}</p>
-          </div>
-        ))} */}
     </div>
   );
 };

@@ -54,7 +54,6 @@ function App() {
     setTimeout(() => shown.classList.remove("show-toasty"), 4000);
   };
   const changeTheme = () => {
-    console.log("sdfg");
     let rootm = document.querySelector(":root");
     if (rootm != null) rootm.classList.toggle("lightmode");
   };
