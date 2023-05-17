@@ -5,6 +5,8 @@ import { SidePanel } from "../SidePanel";
 import { Carousel } from "../Carousel";
 import { useEffect, useState } from "react";
 import { IngredientList } from "../IngredientList";
+/*import { useState } from "react";*/
+
 import { SearchRandom } from "../SearchRandom";
 
 export const nameSearchID = "searchByNamePanel";

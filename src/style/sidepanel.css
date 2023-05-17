@@ -8,7 +8,7 @@
   border-radius: 5px;
   gap: 40px;
   background-color: rgba(0, 0, 0, 0.5);
-  height: 450px;
+  height: 450px; /*Hej co myślisz o tym, żeby wysokość tego elementu wynosiła 550px? Czy wtedy lista i nazwa drinka będą zawsze mieścić się w ramce? Patrzyłam w devtools, że chyba zmienia to widok?- NK*/
   width: 450px;
   position: fixed;
   z-index: 1;
