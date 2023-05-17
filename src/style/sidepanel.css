@@ -19,6 +19,9 @@
   padding: 60px;
   transition: 0.5s;
 }
+#drinkPanel .sidepanel-content {
+  overflow-y: auto;
+}
 .no-padding {
   padding: 0;
 }

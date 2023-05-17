@@ -2,7 +2,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Pagination } from "swiper";
 
-import { ingredientSearchID, nameSearchID } from "./pages/MixIt";
+import {
+  ingredientSearchID,
+  nameSearchID,
+  searchRandomPanelID,
+} from "./pages/MixIt";
 export const Carousel = ({ changeView }) => {
   return (
     <Swiper
@@ -26,7 +30,7 @@ export const Carousel = ({ changeView }) => {
         </p>
       </SwiperSlide>
       <SwiperSlide className="carousel-tile">
-        <p onClick={() => toggleShow("searchRandomPanel")}>Random drink</p>
+        <p onClick={() => changeView(searchRandomPanelID)}>Random drink</p>
       </SwiperSlide>
       <SwiperSlide className="carousel-tile">
         <p>Favorite drinks</p>

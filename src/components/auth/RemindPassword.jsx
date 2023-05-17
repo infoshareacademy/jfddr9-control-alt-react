@@ -45,7 +45,7 @@ export const RemindPassword = (handleCloseR) => {
           Provide a valid email.
         </Form.Control.Feedback>
       </Form.Group>
-      <p class="text-danger">{serverMessage}</p>
+      <p className="text-danger">{serverMessage}</p>
       <Button className="general-btn green-hover" type="submit">
         Send email
       </Button>

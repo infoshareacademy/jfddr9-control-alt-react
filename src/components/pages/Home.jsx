@@ -106,8 +106,8 @@ export const Home = () => {
             />
           </div>
         </div>
-
         <div className="tile">
+
           <div>
             <h2>
               Are you in the mood for a cocktail with a specific ingredient?
