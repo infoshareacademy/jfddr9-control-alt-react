@@ -11,7 +11,7 @@
   align-items: center;
   width: 220px;
   border-radius: 10px;
-  background-color: rgb(0, 0, 0);
+  background-color: var(var(--color-dm-background));
   color: var(--color-dm-primary);
   border: 1px solid var(--color-dm-primary);
 }

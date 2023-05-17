@@ -14,7 +14,12 @@ nav {
   width: 60%;
   margin-top: 0;
 }
-
+.bg-black {
+  /* --bs-black-rgb: var(--color-dm-primary); */
+  /* background-color: rgba(var(--bs-black-rgb),var(--bs-bg-opacity))!important */
+  --bs-black-rgb: var(--color-dm-background-rbg);
+  --bs-bg-opacity: 1;
+}
 .logo {
   text-align: center;
   margin: auto;

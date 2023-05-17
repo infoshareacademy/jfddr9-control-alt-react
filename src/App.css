@@ -28,7 +28,7 @@ body {
   position: relative;
 }
 .fade {
-  background-color: var(--color-dm-background);
+  /* background-color: var(--color-dm-background); */
 }
 .card {
   padding: 2em;

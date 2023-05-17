@@ -8,7 +8,12 @@ import { Login } from "./auth/Login";
 import { LogOutComponent } from "./auth/LogOutComponent";
 import { auth } from "../api/firebase";
 import { ToastMessage } from "./ToastMessage";
-export const ModalContainer = ({ isAuth, setIsAuth, createToast }) => {
+export const ModalContainer = ({
+  isAuth,
+  setIsAuth,
+  createToast,
+  changeTheme,
+}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -34,6 +39,7 @@ export const ModalContainer = ({ isAuth, setIsAuth, createToast }) => {
         handleShowLogOut={handleShowLogOut}
         isAuth={isAuth}
         setIsAuth={setIsAuth}
+        changeTheme={changeTheme}
       ></NavbarComponent>
 
       <ModalTemplate

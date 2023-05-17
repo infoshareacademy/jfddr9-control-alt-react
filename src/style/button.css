@@ -17,7 +17,8 @@
 
 .general-btn {
   padding: 12px 24px;
-  border: 1px solid white;
+  color: var(--color-dm-primary);
+  border: 1px solid var(--color-dm-primary);
   background-color: transparent;
 }
 .general-btn:hover {
@@ -53,8 +54,9 @@
 .navbar-btn:hover,
 .navbar-btn:focus,
 .navbar-btn:active {
-  color: var(--color-dm-background);
-  --bs-btn-active-color: var(--color-dm-background);
+  /* Niech zostanie czarne -czytelniejsze */
+  color: black;
+  --bs-btn-active-color: black;
 }
 
 .navbar-btn:hover {
@@ -108,4 +110,14 @@
   --bs-btn-active-border-color: var(--color-button-purple);
   background-color: var(--color-button-purple);
   border-top: 12px solid var(--color-button-purple);
+}
+.teal-bg {
+  background-color: var(--color-button-teal);
+}
+.teal-bg:hover,
+.teal-bg:active {
+  --bs-btn-active-bg: var(--color-button-teal);
+  --bs-btn-active-border-color: var(--color-button-teal);
+  background-color: var(--color-button-teal);
+  border-top: 12px solid var(--color-button-teal);
 }

@@ -56,7 +56,7 @@ export const NavbarComponent = (props) => {
         {props.isAuth && (
           <Nav>
             <Nav.Item>
-              <Button as={NavLink} to="/" className="navbar-btn green-bg">
+              <Button as={NavLink} to="/" className="navbar-btn teal-bg">
                 <FontAwesomeIcon icon="fa-solid fa-martini-glass" />
               </Button>
             </Nav.Item>
@@ -66,7 +66,10 @@ export const NavbarComponent = (props) => {
               </Button>
             </Nav.Item>
             <Nav.Item>
-              <Button className="navbar-btn purple-bg">
+              <Button
+                className="navbar-btn purple-bg"
+                onClick={props.changeTheme}
+              >
                 <FontAwesomeIcon icon="fa-solid fa-circle-half-stroke" />
               </Button>
             </Nav.Item>
