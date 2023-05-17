@@ -1,8 +1,9 @@
 export const Home = () => {
   return (
     <>
+      <div className="home-container"></div>
       <div className="home">
-        <div className="tile">
+        <div className="home-tile">
           <div className="image-container">
             <img
               src="\src\components\pages\pictures\drink-editv.png"
@@ -15,7 +16,7 @@ export const Home = () => {
             <p>Sign now =link do rejestracji? or swipe down to check it out!</p>
           </div>
         </div>
-        <div className="tile">
+        <div className="home-tile">
           <div>
             <h2>
               Are you in the mood for a cocktail with a specific ingredient?
@@ -36,7 +37,7 @@ export const Home = () => {
             />
           </div>
         </div>
-        <div className="tile">
+        <div className="home-tile">
           <div className="image-container">
             <img
               src="\src\components\pages\pictures\drink-editv.png"
@@ -59,7 +60,7 @@ export const Home = () => {
             </p>
           </div>
         </div>
-        <div className="tile">
+        <div className="home-tile">
           <div>
             <h2>
               Are you in the mood for a cocktail with a specific ingredient?
@@ -80,7 +81,7 @@ export const Home = () => {
             />
           </div>
         </div>
-        <div className="tile">
+        <div className="home-tile">
           <div className="image-container">
             <img
               src="\src\components\pages\pictures\drink-editv.png"
@@ -93,7 +94,7 @@ export const Home = () => {
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
           </div>
         </div>
-        <div className="tile">
+        <div className="home-tile">
           <div>
             <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h2>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
@@ -106,7 +107,8 @@ export const Home = () => {
             />
           </div>
         </div>
-        <div className="tile">
+
+        <div className="home-tile">
           <div>
             <h2>
               Are you in the mood for a cocktail with a specific ingredient?

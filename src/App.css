@@ -1,3 +1,5 @@
+@import url(./style/colors.css);
+
 /* resources import */
 
 @import url(./style/button.css);
@@ -14,30 +16,22 @@
 @import url(./style/home.css);
 @import url(./style/mixit.css);
 
-#root {
+.main-container {
   max-width: 1280px;
-
   margin: 0 auto;
   padding: 0 2rem;
   text-align: center;
 }
 
 body {
-  background-color: black;
+  background-color: var(--color-dm-background);
   position: relative;
 }
-.home {
-  border: 1px solid white;
-  border-radius: 10px;
-}
 .fade {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--color-dm-background);
 }
 .card {
   padding: 2em;
-}
-.read-the-docs {
-  color: #888;
 }
 
 @keyframes blink {

@@ -7,11 +7,14 @@
 } /*Wpisałam kolory z naszego projektu, ale logo wydaje się jakieś jasne, więc chyba ta zmiana, nie powinna być uwzględniona*/
 
 nav {
-  background: rgba(0, 0, 0, 0.4);
+  display: contents;
+  width: 100%;
 }
 .navbar-nav {
+  width: 60%;
   margin-top: 0;
 }
+
 .logo {
   text-align: center;
   margin: auto;
@@ -20,35 +23,11 @@ nav {
   font-size: 5rem;
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ffffff, 0 0 0.5em #ffffff,
     0 0 0.1em #ffffff, 0 10px 3px #000;
-  animation: rgb-animation linear infinite 10s;
+  animation: rgb-text-animation linear infinite 10s;
 }
 .logo b span {
   animation: blink linear infinite 2s;
 }
 .logo b span:nth-of-type(2) {
   animation: blink linear infinite 3s;
-}
-
-@keyframes rgb-animation {
-  10% {
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-blue),
-      0 0 0.5em var(--logo-blue), 0 0 0.1em var(--logo-blue), 0 10px 3px #000;
-  }
-  25% {
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-pink),
-      0 0 0.5em var(--logo-pink), 0 0 0.1em var(--logo-pink), 0 10px 3px #000;
-  }
-  40% {
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-red),
-      0 0 0.5em var(--logo-red), 0 0 0.1em var(--logo-red), 0 10px 3px #000;
-  }
-  60% {
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-yellow),
-      0 0 0.5em var(--logo-yellow), 0 0 0.1em var(--logo-yellow),
-      0 10px 3px #000;
-  }
-  80% {
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-green),
-      0 0 0.5em var(--logo-green), 0 0 0.1em var(--logo-green), 0 10px 3px #000;
-  }
 }

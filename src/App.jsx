@@ -75,6 +75,7 @@ function App() {
           element={isAuth ? <UserPanel /> : <Navigate to="/" replace />}
         />
       </Routes>
+
     </Contener>
   );
 }

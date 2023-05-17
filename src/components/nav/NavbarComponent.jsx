@@ -34,7 +34,7 @@ export const NavbarComponent = (props) => {
         </Navbar.Brand>
 
         {!props.isAuth && (
-          <Nav className="w-100">
+          <Nav>
             {/* <Nav.Item>
               <Button variant="primary" type="submit" as={NavLink} to="/">
                 Home
@@ -54,7 +54,7 @@ export const NavbarComponent = (props) => {
           </Nav>
         )}
         {props.isAuth && (
-          <Nav className="w-100">
+          <Nav>
             <Nav.Item>
               <Button as={NavLink} to="/" className="navbar-btn green-bg">
                 <FontAwesomeIcon icon="fa-solid fa-martini-glass" />
