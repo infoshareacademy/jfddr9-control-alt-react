@@ -6,7 +6,7 @@ export const Home = () => {
         <div className="home-tile">
           <div className="image-container">
             <img
-              src="\src\components\pages\pictures\drink-editv.png"
+              src="src\components\pages\pictures\drink-editv.png"
               alt="Photo of Drink made from Neon"
             />
           </div>
@@ -32,7 +32,7 @@ export const Home = () => {
           </div>
           <div className="image-container">
             <img
-              src="\src\components\pages\pictures\drink-editv.png"
+              src="src\components\pages\pictures\drink-editv.png"
               alt="Picture showing the drink menu"
             />
           </div>
@@ -40,7 +40,7 @@ export const Home = () => {
         <div className="home-tile">
           <div className="image-container">
             <img
-              src="\src\components\pages\pictures\drink-editv.png"
+              src="src\components\pages\pictures\drink-editv.png"
               alt="Photo of Drink made from Neon"
             />
           </div>
@@ -76,7 +76,7 @@ export const Home = () => {
           </div>
           <div className="image-container">
             <img
-              src="\src\components\pages\pictures\drink-editv.png"
+              src="src\components\pages\pictures\drink-editv.png"
               alt="Picture showing the drink menu"
             />
           </div>
@@ -84,7 +84,7 @@ export const Home = () => {
         <div className="home-tile">
           <div className="image-container">
             <img
-              src="\src\components\pages\pictures\drink-editv.png"
+              src="src\components\pages\pictures\drink-editv.png"
               alt="Photo of Drink made from Neon"
             />
           </div>
@@ -102,7 +102,7 @@ export const Home = () => {
           </div>
           <div className="image-container">
             <img
-              src="\src\components\pages\pictures\drink-editv.png"
+              src="src\components\pages\pictures\drink-editv.png"
               alt="Picture showing the drink menu"
             />
           </div>
