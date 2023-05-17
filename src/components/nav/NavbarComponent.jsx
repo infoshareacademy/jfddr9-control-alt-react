@@ -1,21 +1,13 @@
-import { signOut } from "firebase/auth";
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Row from "react-bootstrap/Row";
 import { NavLink, useNavigate } from "react-router-dom";
-import { auth } from "../../api/firebase";
-import { Button, Col } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-
 import { fas } from "@fortawesome/free-solid-svg-icons";
-import { toastyy } from "../ToastMessage";
 
 export const NavbarComponent = (props) => {
-  const navigate = useNavigate();
   library.add(fas);
-
   return (
     <>
       <Navbar
@@ -35,11 +27,6 @@ export const NavbarComponent = (props) => {
 
         {!props.isAuth && (
           <Nav>
-            {/* <Nav.Item>
-              <Button variant="primary" type="submit" as={NavLink} to="/">
-                Home
-              </Button>
-            </Nav.Item> */}
             <Nav.Item>
               <Button className="navbar-btn lime-bg" onClick={props.handleShow}>
                 Log in
@@ -49,6 +36,14 @@ export const NavbarComponent = (props) => {
             <Nav.Item>
               <Button className="navbar-btn red-bg" onClick={props.handleShowR}>
                 Register
+              </Button>
+            </Nav.Item>
+            <Nav.Item>
+              <Button
+                className="navbar-btn purple-bg"
+                onClick={props.changeTheme}
+              >
+                <FontAwesomeIcon icon="fa-solid fa-circle-half-stroke" />
               </Button>
             </Nav.Item>
           </Nav>
