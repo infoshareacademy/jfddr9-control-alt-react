@@ -51,6 +51,7 @@
   flex-wrap: wrap;
 }
 
+
 .home-tile p {
   font-size: 25px;
   text-shadow: 1px 1px 2px var(--color-dm-secondary);

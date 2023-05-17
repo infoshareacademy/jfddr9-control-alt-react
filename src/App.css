@@ -66,3 +66,27 @@ body {
     text-shadow: inherit;
   }
 }
+
+.toasty {
+  /* border: solid 1px rgb(255, 255, 255); */
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  color: white;
+  border: 1px solid white;
+  height: 100px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  z-index: 10000000;
+  position: fixed;
+  bottom: -150px;
+  left: calc((100%-100px) / 2);
+}
+.show-toasty {
+  bottom: 10vh;
+}
+.toasty p {
+  margin: 0;
+}

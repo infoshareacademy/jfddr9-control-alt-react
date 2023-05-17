@@ -30,7 +30,7 @@ export const Home = () => {
               aut enim sed assumenda dolorem vero ab.
             </p>
           </div>
-          <div class="image-container">
+          <div className="image-container">
             <img
               src="\src\components\pages\pictures\drink-editv.png"
               alt="Picture showing the drink menu"
@@ -74,7 +74,7 @@ export const Home = () => {
               aut enim sed assumenda dolorem vero ab.
             </p>
           </div>
-          <div class="image-container">
+          <div className="image-container">
             <img
               src="\src\components\pages\pictures\drink-editv.png"
               alt="Picture showing the drink menu"
@@ -100,13 +100,14 @@ export const Home = () => {
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
           </div>
-          <div class="image-container">
+          <div className="image-container">
             <img
               src="\src\components\pages\pictures\drink-editv.png"
               alt="Picture showing the drink menu"
             />
           </div>
         </div>
+
         <div className="home-tile">
           <div>
             <h2>

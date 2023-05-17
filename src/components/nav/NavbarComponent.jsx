@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
 import { fas } from "@fortawesome/free-solid-svg-icons";
+import { toastyy } from "../ToastMessage";
 
 export const NavbarComponent = (props) => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ export const NavbarComponent = (props) => {
         sticky="top"
         className="flex-column pb-0"
       >
+        {props.child}
         <Navbar.Brand as={NavLink} to="/mixit">
           <div className="logo">
             <b>
@@ -54,6 +56,11 @@ export const NavbarComponent = (props) => {
         {props.isAuth && (
           <Nav>
             <Nav.Item>
+              <Button as={NavLink} to="/" className="navbar-btn green-bg">
+                <FontAwesomeIcon icon="fa-solid fa-martini-glass" />
+              </Button>
+            </Nav.Item>
+            <Nav.Item>
               <Button as={NavLink} to="/user" className="navbar-btn green-bg">
                 <FontAwesomeIcon icon="fa-solid fa-user-gear" />
               </Button>
@@ -66,12 +73,7 @@ export const NavbarComponent = (props) => {
             <Nav.Item>
               <Button
                 className="navbar-btn red-bg"
-                onClick={() =>
-                  signOut(auth)
-                    .then(() => alert("Successfully logged out"))
-                    .then(() => navigate("/"))
-                    .then(() => props.setIsAuth(false))
-                }
+                onClick={props.handleShowLogOut}
               >
                 <FontAwesomeIcon icon="fa-solid fa-right-from-bracket" />
               </Button>
