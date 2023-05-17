@@ -24,7 +24,6 @@ export const SearchRandom = ({ setSelectedOption, changeView }) => {
         };
       });
       setSelectedOption(randomDrink[0]);
-      console.log(randomDrink);
     } catch (error) {
       console.error(error);
     }

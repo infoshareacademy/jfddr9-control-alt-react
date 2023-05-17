@@ -41,7 +41,6 @@ export const SearchByName = ({ selectedOption, setSelectedOption }) => {
       }}
       options={searchOptions}
       onChange={(e) => {
-        console.log(e);
         setSelectedOption(e);
       }}
       placeholder="Search for a cocktail..."
