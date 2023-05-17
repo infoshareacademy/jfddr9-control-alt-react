@@ -6,8 +6,7 @@ import { RemindPassword } from "./auth/RemindPassword";
 import { Register } from "./auth/Register";
 import { Login } from "./auth/Login";
 import { LogOutComponent } from "./auth/LogOutComponent";
-import { auth } from "../api/firebase";
-import { ToastMessage } from "./ToastMessage";
+
 export const ModalContainer = ({
   isAuth,
   setIsAuth,

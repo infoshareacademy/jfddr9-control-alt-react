@@ -5,8 +5,6 @@ import { SidePanel } from "../SidePanel";
 import { Carousel } from "../Carousel";
 import { useEffect, useState } from "react";
 import { IngredientList } from "../IngredientList";
-/*import { useState } from "react";*/
-
 import { SearchRandom } from "../SearchRandom";
 
 export const nameSearchID = "searchByNamePanel";
@@ -16,7 +14,6 @@ export const searchRandomPanelID = "randomDrinkPanel";
 
 export const MixIt = () => {
   const [selectedOption, setSelectedOption] = useState(null);
-
   const [viewName, setViewName] = useState("");
   const [previousViewName, setPreviousViewName] = useState("");
 
@@ -82,7 +79,6 @@ export const MixIt = () => {
       <SidePanel
         id={searchRandomPanelID}
         title={"Choose random drink"}
-        //description={"Choose random drink"}
         child={
           <SearchRandom
             setSelectedOption={setSelectedOption}

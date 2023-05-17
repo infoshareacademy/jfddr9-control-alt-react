@@ -1,9 +1,7 @@
 import { Button, Modal } from "react-bootstrap";
 import { signOut } from "firebase/auth";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { auth } from "../../api/firebase";
-// import { useState } from "react";
-import { ToastMessage } from "../ToastMessage";
 
 export const LogOutComponent = (handleCloseLogOut, setIsAuth, createToast) => {
   const navigate = useNavigate();
