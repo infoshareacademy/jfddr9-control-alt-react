@@ -17,7 +17,7 @@
 }
 
 .swiper-slide-active {
-  background-color: var(--color-dm-background);
+  background-color: var(--color-dm-background-see-through-7);
   width: 230px;
 }
 .swiper-pagination-bullet {

@@ -33,14 +33,25 @@ export const MixIt = () => {
       if (element !== null) element.classList.remove("show");
     });
   }
+
   useEffect(() => {
     hideAll();
     let shown = document.getElementById(viewName);
     if (shown !== null) shown.classList.add("show");
   }, [viewName]);
 
+  const [height, setWaterHeight] = useState(160);
+
+  function glassPour() {
+    const ingredientsCount = selectedOption.ingredients.length;
+    let waterHeightStep = 220 / ingredientsCount;
+    setWaterHeight(height - waterHeightStep);
+  }
+  document.documentElement.style.setProperty("--liquid-height", `${height}px`);
+
   return (
     <>
+      <button style={{ height: 20, width: 50 }} onClick={glassPour}></button>
       {/* --- Carousel --- */}
       <div id="carouselPanel" className="sidepanel no-padding">
         <Carousel changeView={changeView} />
@@ -48,13 +59,22 @@ export const MixIt = () => {
       {/* --- Center - glass and drink --- */}
       <div className="mixit-main">
         <div className="mixit-background">
-          <div className="mixit-background-table"></div>
-        </div>
-        <div className="glass">
-          <div className="cylinder">
-            <div className="water"></div>
+          {/* <div className='mixit-background-table'></div> */}
+          <div className="cup-containter">
+            <div className="cup">
+              <div className="wave liquid"></div>
+              <div className="handle"></div>
+              <div className="flow"></div>
+            </div>
           </div>
         </div>
+
+        {/* R.I.P STARA SZKLANKA */}
+        {/* <div className='glass'>
+					<div className='cylinder'>
+						<div className='water' id='water'></div>
+					</div>
+				</div> */}
       </div>
       {/* --- Side panels --- */}
       <SidePanel
