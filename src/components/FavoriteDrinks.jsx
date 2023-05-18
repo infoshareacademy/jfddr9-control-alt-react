@@ -98,7 +98,7 @@ export const FavoriteDrinks = ({ selectedOption, currentView }) => {
     };
 
     fetchFavoriteDrinkNames();
-  }, []);
+  }, [selectedOption]);
 
   return (
     <>
@@ -112,11 +112,11 @@ export const FavoriteDrinks = ({ selectedOption, currentView }) => {
         />
       )}
 
-      {selectedOption !== null && currentView !== "drinkPanel" && (
+      {currentView !== "drinkPanel" && (
         <div>
           {favoriteDrinkNames.length > 0 ? (
             favoriteDrinkNames.map((strDrink) => {
-              return <p key={strDrink}>{strDrink}</p>;
+              return <p key={strDrink}>{strDrink} </p>;
             })
           ) : (
             <p>No favorite drinks</p>
