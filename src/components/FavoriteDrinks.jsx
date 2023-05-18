@@ -4,11 +4,13 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import { auth, db } from "../api/firebase";
 import {
+  query,
   updateDoc,
   doc,
   getDoc,
-  collection,
   getDocs,
+  collection,
+  where,
 } from "firebase/firestore";
 
 export const FavoriteDrinks = ({ selectedOption, currentView }) => {
@@ -18,7 +20,6 @@ export const FavoriteDrinks = ({ selectedOption, currentView }) => {
   useEffect(() => {
     const checkIfFavorite = async () => {
       const userId = auth.currentUser.uid;
-
       const userRef = doc(db, "users", userId);
 
       const docSnap = await getDoc(userRef);
@@ -37,7 +38,6 @@ export const FavoriteDrinks = ({ selectedOption, currentView }) => {
 
   const handleFavoriteClick = async () => {
     const userId = auth.currentUser.uid;
-
     const userRef = doc(db, "users", userId);
 
     const docSnap = await getDoc(userRef);
@@ -52,7 +52,6 @@ export const FavoriteDrinks = ({ selectedOption, currentView }) => {
         );
       } else {
         updatedFavorites = [...favorites, selectedOption.value];
-        console.log(selectedOption.value);
       }
 
       await updateDoc(userRef, { favorites: updatedFavorites });
@@ -65,35 +64,34 @@ export const FavoriteDrinks = ({ selectedOption, currentView }) => {
   useEffect(() => {
     const fetchFavoriteDrinkNames = async () => {
       const userId = auth.currentUser.uid;
-      //console.log(userId);
       const userRef = doc(db, "users", userId);
 
       try {
         const userDoc = await getDoc(userRef);
-        //console.log(userDoc);
-
         let drinkNames = [];
+
         if (userDoc.exists()) {
-          // ulubione drinki
           const favorites = userDoc.data().favorites || [];
-          console.log(favorites);
+          const queries = favorites.map((idDrink) => {
+            return query(
+              collection(db, "cocktails"),
+              where("idDrink", "==", idDrink)
+            );
+          });
 
-          drinkNames = await Promise.all(
-            favorites.map(async (idDrink) => {
-              const drinkRef = doc(db, "cocktails", idDrink);
-              console.log(idDrink);
+          const querySnapshot = await Promise.all(queries.map(getDocs));
 
-              const drinkDoc = await getDoc(drinkRef);
-              console.log(drinkDoc);
-
-              if (drinkDoc.exists()) {
-                return drinkDoc.data().strDrink || "";
-              }
-            })
-          );
+          drinkNames = querySnapshot.map((snapshot) => {
+            const drinkDoc = snapshot.docs[0];
+            if (drinkDoc && drinkDoc.exists()) {
+              return drinkDoc.data().strDrink || "";
+            }
+            return null;
+          });
         }
 
         setFavoriteDrinkNames(drinkNames.filter(Boolean));
+        console.log(drinkNames);
       } catch (error) {
         console.log("Error", error);
       }
