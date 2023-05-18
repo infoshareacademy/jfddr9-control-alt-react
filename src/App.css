@@ -84,7 +84,8 @@ body {
   z-index: 10000000;
   position: fixed;
   bottom: -150px;
-  left: calc((100%-100px) / 2);
+  left: 50%;
+  transform: translateX(-50%);
 }
 .show-toasty {
   bottom: 10vh;
