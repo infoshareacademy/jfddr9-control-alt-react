@@ -1,18 +1,30 @@
-import { Card } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
+import { FavoriteDrinksUserPanel } from "../FavouriteDrinksUserPanel";
+import { useEffect, useState } from "react";
+import { ChangeEmail } from "../auth/ChangeEmail";
 export const UserPanel = () => {
+  const [showInput, setShowInput] = useState(false);
   return (
     <>
-      <Card>
-        <Card.Body>
-          <h1>User Panel</h1>
+      <div className="userpanel userpanel-background">
+        <div className="userpanel-header">
+          <h1>User panel</h1>
           <p>
-            TODO: - edycja ulubionych drinków - zmiana maila Lorem ipsum dolor
-            sit amet consectetur, adipisicing elit. Iure natus rem optio
-            delectus explicabo ab reiciendis. Explicabo laboriosam vitae unde
-            dolorem, enim corporis!
-          </p>
-        </Card.Body>
-      </Card>
+            Here you can change your email and edit you favourites list below.
+          </p>{" "}
+        </div>
+        <div className="userpanel-change-email">
+          <Button
+            onClick={() => setShowInput(!showInput)}
+            className="general-btn green-hover"
+          >
+            {showInput ? "Hide" : "Change your email"}
+          </Button>
+          {showInput ? <ChangeEmail /> : <div></div>}
+        </div>
+
+        <FavoriteDrinksUserPanel></FavoriteDrinksUserPanel>
+      </div>
     </>
   );
 };

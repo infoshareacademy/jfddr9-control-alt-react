@@ -13,52 +13,7 @@ import {
   where,
 } from "firebase/firestore";
 
-export const FavoriteDrinks = ({ selectedOption, currentView }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
-  library.add(far);
-
-  useEffect(() => {
-    const checkIfFavorite = async () => {
-      const userId = auth.currentUser.uid;
-      const userRef = doc(db, "users", userId);
-
-      const docSnap = await getDoc(userRef);
-      if (docSnap.exists()) {
-        const userData = docSnap.data();
-        const favorites = userData.favorites || [];
-        const isFavorite = favorites.includes(selectedOption.value);
-        setIsFavorite(isFavorite);
-      }
-    };
-
-    if (selectedOption) {
-      checkIfFavorite();
-    }
-  }, [selectedOption]);
-
-  const handleFavoriteClick = async () => {
-    const userId = auth.currentUser.uid;
-    const userRef = doc(db, "users", userId);
-
-    const docSnap = await getDoc(userRef);
-    if (docSnap.exists()) {
-      const userData = docSnap.data();
-      const favorites = userData.favorites || [];
-
-      let updatedFavorites;
-      if (isFavorite) {
-        updatedFavorites = favorites.filter(
-          (idDrink) => idDrink !== selectedOption.value
-        );
-      } else {
-        updatedFavorites = [...favorites, selectedOption.value];
-      }
-
-      await updateDoc(userRef, { favorites: updatedFavorites });
-      setIsFavorite(!isFavorite);
-    }
-  };
-
+export const FavoriteDrinks = ({ isFavorite }) => {
   const [favoriteDrinkNames, setFavoriteDrinkNames] = useState([]);
 
   useEffect(() => {
@@ -98,31 +53,21 @@ export const FavoriteDrinks = ({ selectedOption, currentView }) => {
     };
 
     fetchFavoriteDrinkNames();
-  }, [selectedOption]);
+  }, [isFavorite]);
 
   return (
     <>
-      {selectedOption !== null && currentView === "drinkPanel" && (
-        <FontAwesomeIcon
-          icon={isFavorite ? ["fas", "heart"] : ["far", "heart"]}
-          onClick={() => {
-            handleFavoriteClick();
-          }}
-          size="2x"
-        />
-      )}
-
-      {currentView !== "drinkPanel" && (
-        <div>
-          {favoriteDrinkNames.length > 0 ? (
-            favoriteDrinkNames.map((strDrink) => {
+      <div>
+        {favoriteDrinkNames.length > 0 ? (
+          <>
+            {favoriteDrinkNames.map((strDrink) => {
               return <p key={strDrink}>{strDrink} </p>;
-            })
-          ) : (
-            <p>No favorite drinks</p>
-          )}
-        </div>
-      )}
+            })}
+          </>
+        ) : (
+          <h3>No favourite drinks</h3>
+        )}
+      </div>
     </>
   );
 };
