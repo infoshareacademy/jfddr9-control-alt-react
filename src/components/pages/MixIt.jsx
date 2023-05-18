@@ -97,7 +97,12 @@ export const MixIt = () => {
         title={"Favorite drinks"}
         child={
           <>
-            <FavoriteDrinks isFavorite={isFavorite} />
+            <FavoriteDrinks
+              isFavorite={isFavorite}
+              setSelectedOption={setSelectedOption}
+              changeView={changeView}
+              viewName={viewName}
+            />
           </>
         }
       ></SidePanel>
