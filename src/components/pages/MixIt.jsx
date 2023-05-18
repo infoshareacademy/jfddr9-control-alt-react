@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { IngredientList } from "../IngredientList";
 import { SearchRandom } from "../SearchRandom";
 import { FavoriteDrinks } from "../FavoriteDrinks";
+import { FavouriteDrinkButton } from "../FavouriteDrinkButton";
 
 export const nameSearchID = "searchByNamePanel";
 export const ingredientSearchID = "searchByIngredientPanel";
@@ -19,6 +20,7 @@ export const MixIt = () => {
   const [viewName, setViewName] = useState("");
   const [previousViewName, setPreviousViewName] = useState("");
   const [favoriteDrinkNames, setFavoriteDrinkNames] = useState([]);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   function changeView(newViewName) {
     setPreviousViewName(viewName);
@@ -95,10 +97,7 @@ export const MixIt = () => {
         title={"Favorite drinks"}
         child={
           <>
-            <FavoriteDrinks
-              selectedOption={selectedOption}
-              favoriteDrinkNames={favoriteDrinkNames}
-            />
+            <FavoriteDrinks isFavorite={isFavorite} />
           </>
         }
       ></SidePanel>
@@ -114,9 +113,10 @@ export const MixIt = () => {
             ) : (
               <div></div>
             )}
-            <FavoriteDrinks
+            <FavouriteDrinkButton
               selectedOption={selectedOption}
-              currentView={viewName}
+              isFavorite={isFavorite}
+              setIsFavorite={setIsFavorite}
             />
           </>
         }
