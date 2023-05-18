@@ -19,20 +19,20 @@ export const FavouriteDrinkButton = ({
 }) => {
   library.add(far);
 
+  const checkIfFavorite = async () => {
+    const userId = auth.currentUser.uid;
+    const userRef = doc(db, "users", userId);
+
+    const docSnap = await getDoc(userRef);
+    if (docSnap.exists()) {
+      const userData = docSnap.data();
+      const favorites = userData.favorites || [];
+      const isFavorite = favorites.includes(selectedOption.value);
+      setIsFavorite(isFavorite);
+    }
+  };
+
   useEffect(() => {
-    const checkIfFavorite = async () => {
-      const userId = auth.currentUser.uid;
-      const userRef = doc(db, "users", userId);
-
-      const docSnap = await getDoc(userRef);
-      if (docSnap.exists()) {
-        const userData = docSnap.data();
-        const favorites = userData.favorites || [];
-        const isFavorite = favorites.includes(selectedOption.value);
-        setIsFavorite(isFavorite);
-      }
-    };
-
     if (selectedOption) {
       checkIfFavorite();
     }
