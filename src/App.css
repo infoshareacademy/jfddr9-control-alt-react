@@ -25,12 +25,13 @@
 }
 
 body {
+  font-family: "Tilt Neon", cursive;
   background-color: var(--color-dm-background);
   position: relative;
 }
-.fade {
-  /* background-color: var(--color-dm-background); */
-}
+/* .fade {
+  background-color: var(--color-dm-background);
+} */
 .card {
   padding: 2em;
 }
