@@ -99,6 +99,7 @@ export const MixIt = () => {
           <>
             <FavoriteDrinks
               isFavorite={isFavorite}
+              selectedOption={selectedOption}
               setSelectedOption={setSelectedOption}
               changeView={changeView}
               viewName={viewName}
