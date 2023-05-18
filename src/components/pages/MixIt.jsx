@@ -6,16 +6,19 @@ import { Carousel } from "../Carousel";
 import { useEffect, useState } from "react";
 import { IngredientList } from "../IngredientList";
 import { SearchRandom } from "../SearchRandom";
+import { FavoriteDrinks } from "../FavoriteDrinks";
 
 export const nameSearchID = "searchByNamePanel";
 export const ingredientSearchID = "searchByIngredientPanel";
 export const drinkPanelID = "drinkPanel";
 export const searchRandomPanelID = "randomDrinkPanel";
+export const favoritesPanelID = "favoritesPanel";
 
 export const MixIt = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [viewName, setViewName] = useState("");
   const [previousViewName, setPreviousViewName] = useState("");
+  const [favoriteDrinkNames, setFavoriteDrinkNames] = useState([]);
 
   function changeView(newViewName) {
     setPreviousViewName(viewName);
@@ -88,15 +91,34 @@ export const MixIt = () => {
       ></SidePanel>
 
       <SidePanel
+        id={favoritesPanelID}
+        title={"Favorite drinks"}
+        child={
+          <>
+            <FavoriteDrinks
+              selectedOption={selectedOption}
+              favoriteDrinkNames={favoriteDrinkNames}
+            />
+          </>
+        }
+      ></SidePanel>
+
+      <SidePanel
         id={drinkPanelID}
         title={selectedOption !== null ? selectedOption.label : ""}
         description={selectedOption !== null ? selectedOption.description : ""}
         child={
-          selectedOption !== null ? (
-            <IngredientList list={selectedOption.ingredients} />
-          ) : (
-            <div></div>
-          )
+          <>
+            {selectedOption !== null ? (
+              <IngredientList list={selectedOption.ingredients} />
+            ) : (
+              <div></div>
+            )}
+            <FavoriteDrinks
+              selectedOption={selectedOption}
+              currentView={viewName}
+            />
+          </>
         }
       ></SidePanel>
 
