@@ -5,155 +5,145 @@ export const Home = () => {
       <div className="home">
         <div className="home-tile">
           <div className="image-container">
-            <img
-              src="src/components/pages/pictures/drink-editv.png"
-              alt="Photo of Drink made from Neon"
-            />
+            <img src="/cocktail-home.png" alt="Photo of Drink made from Neon" />
           </div>
           <div>
-            <h1>Are you looking for an inspiration for unique drinks?</h1>
-            <p>Use our app to suprise your friends with a new cocktails!</p>
-            <p>Sign now =link do rejestracji? or swipe down to check it out!</p>
-          </div>
-        </div>
-        <div className="home-tile">
-          <div>
-            <h2>
-              Are you in the mood for a cocktail with a specific ingredient?
-            </h2>
+            <h1>
+              Welcome to our exciting platform dedicated to cocktail mixing!
+            </h1>
+            <br />
             <p>
-              It's easy with our app, which sorts drinks by specific cocktail
-              ingredients!
+              Whether you're a seasoned bartender or just starting your mixology
+              journey, our website is the perfect source of inspiration and
+              knowledge.
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
-              aut enim sed assumenda dolorem vero ab.
-            </p>
-          </div>
-          <div className="image-container">
-            <img
-              src="src/components/pages/pictures/drink-editv.png"
-              alt="Picture showing the drink menu"
-            />
-          </div>
-        </div>
-        <div className="home-tile">
-          <div className="image-container">
-            <img
-              src="src/components/pages/pictures/drink-editv.png"
-              alt="Photo of Drink made from Neon"
-            />
-          </div>
-          <div>
-            <h2>
-              You no longer have to look through hundreds of websites to find
-              the perfect recipe for a drink!
-            </h2>
-            <p>
-              The App is easy to use and offers a wide variety of drink recipes
-              to suit every taste!
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-              nostrum tenetur eligendi porro corrupti sapiente maiores error
-              quas eius.
+              Browse recipes, add them to your favorites, and let us guide you
+              through the fascinating world of cocktails!
             </p>
           </div>
         </div>
         <div className="home-tile">
           <div>
-            <h2>
-              Are you in the mood for a cocktail with a specific ingredient?
-            </h2>
+            <h2>Craving a cocktail made with your favorite ingredients?</h2>
             <p>
-              It's easy with our app, which sorts drinks by specific cocktail
-              ingredients!
+              Our advanced search tool allows you to find the perfect recipe
+              with ease. Simply enter the ingredients you have on hand, and
+              we'll provide you with matching cocktails.
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
-              aut enim sed assumenda dolorem vero ab.
+              Additionally, you can search our database by cocktail name,
+              discovering new flavors and memorable names that will leave a
+              lasting impression.
             </p>
           </div>
           <div className="image-container">
             <img
-              src="src/components/pages/pictures/drink-editv.png"
-              alt="Picture showing the drink menu"
+              src="/ingredient-search.png"
+              alt="An image of a card with an example of a drink"
             />
           </div>
         </div>
         <div className="home-tile">
           <div className="image-container">
             <img
-              src="src/components/pages/pictures/drink-editv.png"
-              alt="Photo of Drink made from Neon"
+              src="/example-cocktail.png"
+              alt="An image of a card with an example of a drink"
             />
           </div>
-          <div>
-            <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-        </div>
-        <div className="home-tile">
-          <div>
-            <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-          <div className="image-container">
-            <img
-              src="src/components/pages/pictures/drink-editv.png"
-              alt="Picture showing the drink menu"
-            />
-          </div>
-        </div>
-
-        <div className="home-tile">
-          <div>
-            <h2>
-              Are you in the mood for a cocktail with a specific ingredient?
-            </h2>
-            <p>
-              It's easy with our app, which sorts drinks by specific cocktail
-              ingredients!
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
-              aut enim sed assumenda dolorem vero ab.
-            </p>
-          </div>
-
           <div>
             <h2>
               You no longer have to look through hundreds of websites to find
               the perfect recipe for a drink!
             </h2>
             <p>
-              The App is easy to use and offers a wide variety of drink recipes
-              to suit every taste!
+              On our website, you have the option to create a personalized list
+              of favorite cocktails.
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-              nostrum tenetur eligendi porro corrupti sapiente maiores error
-              quas eius.
+              Whether you've discovered a new flavor that captivates you or
+              simply want quick access to your go-to drinks, our 'Favorites'
+              feature lets you organize your collection and enjoy exquisite
+              mixed beverages at any time."
             </p>
+          </div>
+        </div>
+        <div className="home-tile">
+          <div>
+            <h2>
+              Looking to add an element of surprise to your cocktail experience?
+            </h2>
+            <p>
+              Our website also offers a unique drink randomization feature. With
+              just a click of a button, you can discover exciting new
+              concoctions that you might have never tried before.
+            </p>
+            <p>Cheers to discovering the unexpected!</p>
+          </div>
+          <div className="image-container">
+            <img
+              src="/random-cocktail.png"
+              alt="Picture showing the 'choose random drink card'"
+            />
+          </div>
+        </div>
+        <div className="home-tile">
+          <div className="image-container">
+            <img
+              src="/cocktail-pour.png"
+              alt="Picture showing glass with a liquid in it"
+            />
+          </div>
+          <div>
+            <h2>
+              Experience the joy of virtual mixology with our interactive drink
+              pouring feature.
+            </h2>
+            <p>
+              With just a click of the 'Mix' button, you can virtually pour your
+              selected cocktail right before your eyes.
+            </p>
+            <p>
+              {" "}
+              So, grab a virtual shaker, click 'Mix,' and witness the magic
+              unfold as your favorite cocktail comes to life in front of you.
+            </p>
+          </div>
+        </div>
+
+        <div className="home-tile">
+          <div>
+            <h2>
+              We are a group of individuals who share a common passion for web
+              development.
+            </h2>
+            <p>
+              As part of the JFDDR9 course at Infoshare, we have been diving
+              deep into the world of coding and honing our skills in these
+              technologies.
+            </p>
+            <p>
+              Combining our newfound knowledge with our love for cocktails, we
+              embarked on a project that seamlessly blends these two passions.
+              Join us as we bring together the art of mixology and the power of
+              web development.
+            </p>
+          </div>
+          <div className="image-container">
+            <img
+              src="/teamwork.png"
+              alt="Picture showing the 'choose random drink card'"
+            />
           </div>
         </div>
         <div>
           {" "}
-          O NAS: Poziom alku we wkri- wersja robocza. ". After drinking a
-          cocktail, simply check the information about it by adding the drink to
-          your consumed list. Our app, based on the personalized data you have
-          previously provided, will calculate your approximate blood alcohol
-          level. This way, you will have better control over your alcohol
-          consumption and know when to stop drinking to avoid danger to yourself
-          and others. Our app is easy to use and offers an intuitive interface
-          that allows for quick and accurate blood alcohol content tracking.
-          (You can also set your individual alcohol consumption limits and
-          receive notifications when you approach them, to slow down ;).???)
-          Don't risk your life or the lives of others - download our app with a
-          drink counter function today and have control over your alcohol
-          consumption!"
+          Due to the topic of alcohol, our application is for adults only. To
+          take full advantage of its functionality, please register. The content
+          we create for this site is meant to entertain and inspire other
+          responsible adults of legal drinking age to try their hand at making
+          cocktails and learn more about the alcohol and spirits behind the
+          drinks. Don’t drink if you’re not of legal age. Never drink and drive
         </div>
       </div>
     </>

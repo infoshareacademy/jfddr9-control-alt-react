@@ -29,13 +29,13 @@ export const NavbarComponent = (props) => {
           <Nav>
             <Nav.Item>
               <Button className="navbar-btn lime-bg" onClick={props.handleShow}>
-                Log in
+                <FontAwesomeIcon icon="fa-solid fa-right-to-bracket" />
               </Button>
             </Nav.Item>
 
             <Nav.Item>
               <Button className="navbar-btn red-bg" onClick={props.handleShowR}>
-                Register
+                <FontAwesomeIcon icon="fa-solid fa-user-plus" />
               </Button>
             </Nav.Item>
             <Nav.Item>
