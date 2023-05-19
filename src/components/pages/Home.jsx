@@ -5,10 +5,7 @@ export const Home = () => {
       <div className="home">
         <div className="home-tile">
           <div className="image-container">
-            <img
-              src="public/cocktail-home.png"
-              alt="Photo of Drink made from Neon"
-            />
+            <img src="/cocktail-home.png" alt="Photo of Drink made from Neon" />
           </div>
           <div>
             <h1>
@@ -42,7 +39,7 @@ export const Home = () => {
           </div>
           <div className="image-container">
             <img
-              src="public/ingredient-search.png"
+              src="/ingredient-search.png"
               alt="An image of a card with an example of a drink"
             />
           </div>
@@ -50,7 +47,7 @@ export const Home = () => {
         <div className="home-tile">
           <div className="image-container">
             <img
-              src="public/example-cocktail.png"
+              src="/example-cocktail.png"
               alt="An image of a card with an example of a drink"
             />
           </div>
@@ -85,7 +82,7 @@ export const Home = () => {
           </div>
           <div className="image-container">
             <img
-              src="public/random-cocktail.png"
+              src="/random-cocktail.png"
               alt="Picture showing the 'choose random drink card'"
             />
           </div>
@@ -93,7 +90,7 @@ export const Home = () => {
         <div className="home-tile">
           <div className="image-container">
             <img
-              src="public/cocktail-pour.png"
+              src="/cocktail-pour.png"
               alt="Picture showing glass with a liquid in it"
             />
           </div>
@@ -134,7 +131,7 @@ export const Home = () => {
           </div>
           <div className="image-container">
             <img
-              src="public/teamwork.png"
+              src="/teamwork.png"
               alt="Picture showing the 'choose random drink card'"
             />
           </div>
