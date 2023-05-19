@@ -5,8 +5,8 @@ export const Home = () => {
         <div className="tile">
           <div className="image-container">
             <img
-              src="\src\components\pages\pictures\drink-editv.png"
-              alt="Photo of Drink made from Neon"
+              src="\src\components\pages\pictures\PNG\Artboard 1.jpg"
+              alt="Photo of Drinks made from Neon"
             />
           </div>
           <div>
@@ -107,7 +107,6 @@ export const Home = () => {
           </div>
         </div>
         <div className="tile">
-
           <div>
             <h2>
               Are you in the mood for a cocktail with a specific ingredient?
