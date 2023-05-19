@@ -5,6 +5,7 @@ import {
   ingredientSearchID,
   nameSearchID,
   searchRandomPanelID,
+  favoritesPanelID,
 } from "./pages/MixIt";
 export const Carousel = ({ changeView }) => {
   return (
@@ -33,7 +34,7 @@ export const Carousel = ({ changeView }) => {
         <p onClick={() => changeView(searchRandomPanelID)}>Random drink</p>
       </SwiperSlide>
       <SwiperSlide className="carousel-tile">
-        <p>Favorite drinks</p>
+        <p onClick={() => changeView(favoritesPanelID)}>Favorite drinks</p>
       </SwiperSlide>
     </Swiper>
   );

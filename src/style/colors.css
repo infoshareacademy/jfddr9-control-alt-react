@@ -13,6 +13,7 @@
   --mixit-table-darker-gradient: #000000;
   /* Pół-przeroczyste */
   --color-dm-background-see-through: rgba(0, 0, 0, 0.5);
+  --color-dm-background-see-through-7: rgba(0, 0, 0, 0.6);
 
   /* colors */
   --color-blue: #01fff4;
@@ -28,6 +29,12 @@
   --color-button-purple: #8e01fe;
   --color-frame: #ffffff;
   --color-liquid: #660ccc65;
+
+  /* glass animation */
+  --liquid-height: 160px;
+
+  /* 160px = 0%  */
+  /* -60px = 100% */
 }
 .lightmode {
   --color-dm-primary: #000000;
@@ -39,6 +46,7 @@
   --mixit-table-lighter-gradient: #ffffff;
   --mixit-table-darker-gradient: #cecece;
   --color-dm-background-see-through: rgba(0, 0, 0, 0.1);
+  --color-dm-background-see-through-7: rgba(255, 255, 255, 0.1);
 }
 
 /* KEYFRAMES */

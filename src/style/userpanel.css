@@ -1,0 +1,25 @@
+.userpanel {
+  color: var(--color-dm-primary);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  gap: 40px;
+}
+.userpanel-background {
+  height: 79vh;
+  position: relative;
+  background: radial-gradient(
+    136.83% 55.75% at 50% 41.78%,
+    var(--mixit-bg-lighter-gradient) 28.06%,
+    var(--mixit-bg-darker-gradient) 100%
+  );
+  mix-blend-mode: normal;
+}
+.userpanel-change-email {
+  min-height: 216px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}

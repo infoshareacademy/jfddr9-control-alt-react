@@ -33,7 +33,7 @@ export const Register = (handleCloseR, createToast) => {
         setPassword("");
         handleCloseR();
         const userRef = doc(db, "users", jwt.user.uid);
-        setDoc(userRef, { email: email });
+        setDoc(userRef, { email: email, favorites: [] });
         window.localStorage.setItem("user", JSON.stringify(jwt.user));
         createToast("Thanks for registration!");
         setServerMessage("Thanks for registration!");

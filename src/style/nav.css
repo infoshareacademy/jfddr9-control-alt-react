@@ -23,6 +23,8 @@ nav {
 .logo {
   text-align: center;
   margin: auto;
+  font-family: "Pacifico", cursive;
+  /* text-transform: uppercase; */
 }
 .logo b {
   font-size: 5rem;

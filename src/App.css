@@ -15,6 +15,7 @@
 
 @import url(./style/home.css);
 @import url(./style/mixit.css);
+@import url(./style/userpanel.css);
 
 .main-container {
   max-width: 1280px;
@@ -24,12 +25,13 @@
 }
 
 body {
+  font-family: "Tilt Neon", cursive;
   background-color: var(--color-dm-background);
   position: relative;
 }
-.fade {
-  /* background-color: var(--color-dm-background); */
-}
+/* .fade {
+  background-color: var(--color-dm-background);
+} */
 .card {
   padding: 2em;
 }
@@ -82,11 +84,17 @@ body {
   z-index: 10000000;
   position: fixed;
   bottom: -150px;
-  left: calc((100%-100px) / 2);
+  left: 50%;
+  transform: translateX(-50%);
 }
 .show-toasty {
   bottom: 10vh;
 }
 .toasty p {
   margin: 0;
+}
+.centered-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
