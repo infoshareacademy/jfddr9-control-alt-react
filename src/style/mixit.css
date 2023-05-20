@@ -80,6 +80,7 @@
   left: 50%;
   transform: translate(-50%, -75%);
   background: var(--color-dm-background);
+  transition: 0.5s;
 }
 
 .wave:before {

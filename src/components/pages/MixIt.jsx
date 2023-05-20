@@ -40,18 +40,17 @@ export const MixIt = () => {
     if (shown !== null) shown.classList.add("show");
   }, [viewName]);
 
-  function glassPour() {
+  function glassPour(stepCount) {
     const ingredientsCount = selectedOption.ingredients.length;
     let waterHeightStep = 220 / ingredientsCount;
-    setWaterHeight(height - waterHeightStep);
+    let newHeight = 160 - waterHeightStep * stepCount;
+    document.documentElement.style.setProperty(
+      "--liquid-height",
+      `${newHeight}px`
+    );
     console.log("Glass Pour Fn");
-    console.log(height);
+    console.log(newHeight);
   }
-  useEffect(() => {
-    console.log("Main");
-    console.log(height);
-  }, [height]);
-  document.documentElement.style.setProperty("--liquid-height", `${height}px`);
 
   return (
     <>

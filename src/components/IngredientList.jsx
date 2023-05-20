@@ -3,20 +3,19 @@ import React, { useEffect, useState } from "react";
 const Listitem = ({ ingredient, count, glassPour }) => {
   const [visible, setVisible] = useState("");
 
-  const show = async (ms) => {
-    await new Promise((pr) => setTimeout(pr, ms));
+  const show = async (count) => {
+    await new Promise((pr) => setTimeout(pr, count * 1000));
     setVisible("show");
-    glassPour();
+    glassPour(count);
   };
   useEffect(() => {
-    show(1000 * count);
+    show(count);
   }, []);
-  console.log(ingredient);
 
   return <li className={`ingredient ${visible}`}>{ingredient}</li>;
 };
 export const IngredientList = ({ list, glassPour }) => {
-  let count = 1;
+  let count = 0;
   const [showList, setShowList] = useState(false);
   return (
     <div>
@@ -30,7 +29,6 @@ export const IngredientList = ({ list, glassPour }) => {
       {showList && (
         <ul className="ingredients">
           {list.map((ingredient) => {
-            // glassPour();
             count = count + 1;
             return (
               <Listitem
