@@ -98,3 +98,25 @@ body {
   justify-content: center;
   gap: 20px;
 }
+.ingredients {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+.ingredient.show {
+  animation: bounce-in 1s ease-in;
+  display: block;
+}
+.ingredient {
+  display: none;
+}
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -82,7 +82,6 @@ export const FavoriteDrinks = ({
     }
     fetchFavoriteDrinkNames();
   };
-  console.log(isFavorite);
   return (
     <>
       <div>

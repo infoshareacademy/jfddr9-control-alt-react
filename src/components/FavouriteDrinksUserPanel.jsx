@@ -68,7 +68,6 @@ export const FavoriteDrinksUserPanel = () => {
     }
     fetchFavoriteDrinkNames();
   };
-  console.log(favoriteDrinkNames);
   return (
     <>
       <div>

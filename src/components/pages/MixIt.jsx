@@ -21,7 +21,7 @@ export const MixIt = () => {
   const [previousViewName, setPreviousViewName] = useState("");
   const [favoriteDrinkNames, setFavoriteDrinkNames] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
-
+  const [height, setWaterHeight] = useState(160);
   function changeView(newViewName) {
     setPreviousViewName(viewName);
     setViewName(newViewName);
@@ -40,14 +40,17 @@ export const MixIt = () => {
     if (shown !== null) shown.classList.add("show");
   }, [viewName]);
 
-  const [height, setWaterHeight] = useState(160);
-
-  function glassPour() {
+  function glassPour(stepCount) {
     const ingredientsCount = selectedOption.ingredients.length;
     let waterHeightStep = 220 / ingredientsCount;
-    setWaterHeight(height - waterHeightStep);
+    let newHeight = 160 - waterHeightStep * stepCount;
+    document.documentElement.style.setProperty(
+      "--liquid-height",
+      `${newHeight}px`
+    );
+    console.log("Glass Pour Fn");
+    console.log(newHeight);
   }
-  document.documentElement.style.setProperty("--liquid-height", `${height}px`);
 
   return (
     <>
@@ -135,7 +138,10 @@ export const MixIt = () => {
         child={
           <>
             {selectedOption !== null ? (
-              <IngredientList list={selectedOption.ingredients} />
+              <IngredientList
+                list={selectedOption.ingredients}
+                glassPour={glassPour}
+              />
             ) : (
               <div></div>
             )}
