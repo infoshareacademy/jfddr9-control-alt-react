@@ -6,10 +6,9 @@ import { updateEmail } from "firebase/auth";
 import { firebaseErrors } from "../../utils/firebaseErrors";
 import { doc, updateDoc } from "firebase/firestore";
 
-export const ChangeEmail = (handleClose, handleShowRemind) => {
+export const ChangeEmail = (handleClose) => {
   const [email, setEmail] = useState("");
   const [serverMessage, setServerMessage] = useState("");
-  const [password, setPassword] = useState("");
   const [validated, setValidated] = useState(false);
 
   const handleChangeEmail = async (e) => {
@@ -32,7 +31,6 @@ export const ChangeEmail = (handleClose, handleShowRemind) => {
       });
 
       setEmail("");
-      setPassword("");
       handleClose();
     } catch (e) {
       setServerMessage(firebaseErrors[e.code]);
@@ -50,6 +48,7 @@ export const ChangeEmail = (handleClose, handleShowRemind) => {
             }}
             type="email"
             placeholder="Enter email"
+            value={email}
             required
           />
           <Form.Control.Feedback type="invalid">
