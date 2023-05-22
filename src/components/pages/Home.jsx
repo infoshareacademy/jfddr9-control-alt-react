@@ -128,10 +128,7 @@ export const Home = () => {
             <p>OPISY Członków zespołu, kafelki z awatarami</p>
           </div>
           <div className="image-container">
-            <img
-              src="\src\components\pages\pictures\logo infoshare.svg"
-              alt="Logo Infoshare Academy"
-            />
+            <img src="\public\logo infoshare.svg" alt="Logo-InfoshareAcademy" />
           </div>
         </div>
         <div>
