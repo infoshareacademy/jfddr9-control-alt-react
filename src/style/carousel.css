@@ -20,6 +20,10 @@
   background-color: var(--color-dm-background-see-through-7);
   width: 230px;
 }
+.swiper-slide-active p {
+  padding: 10px;
+  cursor: pointer;
+}
 .swiper-pagination-bullet {
   background-color: var(--color-dm-primary);
 }

@@ -20,8 +20,9 @@
 .main-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 2rem;
   text-align: center;
+  border-radius: 0px;
+  overflow: hidden;
 }
 
 body {
@@ -34,6 +35,29 @@ body {
 } */
 .card {
   padding: 2em;
+}
+.user-panel {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.user-panel svg {
+  margin-top: 2px;
+  height: 20px;
+}
+.user-panel svg:hover {
+  cursor: pointer;
+}
+.frame-inner {
+  border-radius: 50px;
+  box-shadow: inset 20px 20px 60px #111111, inset -20px -20px 60px #232323;
+}
+
+#drinkPanel {
+  top: 60%;
+  transform: translateY(-50%);
+  height: 600px;
+  padding: 15px 5px 5px;
 }
 
 @keyframes blink {

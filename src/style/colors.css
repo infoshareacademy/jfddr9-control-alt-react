@@ -28,13 +28,10 @@
   --color-buttom-red: #ff6961;
   --color-button-purple: #8e01fe;
   --color-frame: #ffffff;
-  --color-liquid: #660ccc65;
+  --color-liquid: #d606ff;
 
   /* glass animation */
   --liquid-height: 160px;
-
-  /* 160px = 0%  */
-  /* -60px = 100% */
 }
 .lightmode {
   --color-dm-primary: #000000;
@@ -81,24 +78,24 @@
 
 @keyframes rgb-box-animation {
   0% {
-    box-shadow: 0 -10px 100px, 0 0 1px, 0 0 1em var(--color--dm-primary);
+    box-shadow: 0 0 8px var(--color--dm-primary);
   }
   10% {
-    box-shadow: 0 -10px 100px, 0 0 1px, 0 0 1em var(--logo-blue);
+    box-shadow: 0 0 8px var(--logo-blue);
   }
   25% {
-    box-shadow: 0 -10px 100px, 0 0 1px, 0 0 1em var(--logo-pink);
+    box-shadow: 0 0 8px var(--logo-pink);
   }
   40% {
-    box-shadow: 0 -10px 100px, 0 0 1px, 0 0 1em var(--logo-red);
+    box-shadow: 0 0 8px var(--logo-red);
   }
   60% {
-    box-shadow: 0 -10px 100px, 0 0 1px, 0 0 1em var(--logo-yellow);
+    box-shadow: 0 0 8px var(--logo-yellow);
   }
   80% {
-    box-shadow: 0 -10px 100px, 0 0 1px, 0 0 1em var(--logo-green);
+    box-shadow: 0 0 8px var(--logo-green);
   }
   100% {
-    box-shadow: 0 -10px 100px, 0 0 1px, 0 0 1em var(--color--dm-primary);
+    box-shadow: 0 0 8px var(--color--dm-primary);
   }
 }

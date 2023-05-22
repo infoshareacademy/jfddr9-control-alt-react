@@ -1,7 +1,7 @@
 export const Home = () => {
   return (
     <>
-      <div className="home-container"></div>
+      <div className="home-frame"></div>
       <div className="home">
         <div className="home-tile">
           <div className="image-container">

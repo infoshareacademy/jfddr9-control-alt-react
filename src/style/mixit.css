@@ -12,6 +12,9 @@
   );
   mix-blend-mode: normal;
   border-radius: 10px 10px 0px 0px;
+  background-color: #323232;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .mixit-background-table {
   position: absolute;
@@ -69,6 +72,7 @@
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   overflow: hidden;
+  transition: background 2s;
 }
 .wave:before,
 .wave:after {
