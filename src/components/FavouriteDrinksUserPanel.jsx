@@ -76,7 +76,7 @@ export const FavoriteDrinksUserPanel = () => {
             <h1>Favourite drinks</h1>
             {favoriteDrinkNames.map((drink) => {
               return (
-                <div key={drink.id} className="centered-row">
+                <div key={drink.id} className="user-panel">
                   <p>{drink.name} </p>
 
                   <FontAwesomeIcon

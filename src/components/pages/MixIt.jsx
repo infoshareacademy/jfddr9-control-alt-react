@@ -54,7 +54,7 @@ export const MixIt = () => {
 
   return (
     <>
-      <button style={{ height: 20, width: 50 }} onClick={glassPour}></button>
+      {/* <button style={{ height: 20, width: 50 }} onClick={glassPour}></button> */}
       {/* --- Carousel --- */}
       <div id="carouselPanel" className="sidepanel no-padding">
         <Carousel changeView={changeView} />
