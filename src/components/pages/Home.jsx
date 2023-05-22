@@ -114,25 +114,23 @@ export const Home = () => {
         <div className="home-tile">
           <div>
             <h2>
-              We are a group of individuals who share a common passion for web
+              We are a group of junior front-end developers associated with
+              Infoshare Academy who are united by a common passion for web
               development.
             </h2>
             <p>
-              As part of the JFDDR9 course at Infoshare, we have been diving
-              deep into the world of coding and honing our skills in these
-              technologies.
+              This app is a result of our work during the "Front-End Developer
+              with React" course. The idea to create it was born during a team-
+              building meeting of our group. We had a great time creating it and
+              we hope you will notice our enjoyment while using this app. Lets
+              meet our team:
             </p>
-            <p>
-              Combining our newfound knowledge with our love for cocktails, we
-              embarked on a project that seamlessly blends these two passions.
-              Join us as we bring together the art of mixology and the power of
-              web development.
-            </p>
+            <p>OPISY Członków zespołu, kafelki z awatarami</p>
           </div>
           <div className="image-container">
             <img
-              src="/teamwork.png"
-              alt="Picture showing the 'choose random drink card'"
+              src="\src\components\pages\pictures\logo infoshare.svg"
+              alt="Logo Infoshare Academy"
             />
           </div>
         </div>
