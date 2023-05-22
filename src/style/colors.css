@@ -1,0 +1,101 @@
+:root {
+  /*dark mode*/
+  --color-dm-primary: #ffffff;
+  --color-dm-secondary: #7c7c7c;
+  --color-dm-background: #000000;
+  /* Dla zmiennych nav-bara */
+  --color-dm-background-rbg: 0, 0, 0;
+  /* Mixit table i Background */
+  --mixit-bg-lighter-gradient: #1c1616;
+  --mixit-bg-darker-gradient: #000000;
+
+  --mixit-table-lighter-gradient: #383838;
+  --mixit-table-darker-gradient: #000000;
+  /* Pół-przeroczyste */
+  --color-dm-background-see-through: rgba(0, 0, 0, 0.5);
+  --color-dm-background-see-through-7: rgba(0, 0, 0, 0.6);
+
+  /* colors */
+  --color-blue: #01fff4;
+  --color-pink: #ffffff;
+  --color-red: #fe0000;
+  --color-yellow: #fff205;
+  --color-green: #7cff01;
+
+  /* resources */
+  --color-button-teal: #01fff4;
+  --color-button-lime: #b7ff00;
+  --color-buttom-red: #ff6961;
+  --color-button-purple: #8e01fe;
+  --color-frame: #ffffff;
+  --color-liquid: #d606ff;
+
+  /* glass animation */
+  --liquid-height: 160px;
+}
+.lightmode {
+  --color-dm-primary: #000000;
+  --color-dm-secondary: #7c7c7c;
+  --color-dm-background: #ffffff;
+  --color-dm-background-rbg: 255, 255, 255;
+  --mixit-bg-lighter-gradient: #ffffff;
+  --mixit-bg-darker-gradient: #d6d6d6;
+  --mixit-table-lighter-gradient: #ffffff;
+  --mixit-table-darker-gradient: #cecece;
+  --color-dm-background-see-through: rgba(0, 0, 0, 0.1);
+  --color-dm-background-see-through-7: rgba(255, 255, 255, 0.1);
+}
+
+/* KEYFRAMES */
+
+@keyframes rgb-text-animation {
+  10% {
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-blue),
+      0 0 5em var(--logo-blue), 0 0 0.1em var(--logo-blue),
+      0 10px 3px var(--color-dm-background);
+  }
+  25% {
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-pink),
+      0 0 5em var(--logo-pink), 0 0 0.1em var(--logo-pink),
+      0 10px 3px var(--color-dm-background);
+  }
+  40% {
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-red),
+      0 0 5em var(--logo-red), 0 0 0.1em var(--logo-red),
+      0 10px 3px var(--color-dm-background);
+  }
+  60% {
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-yellow),
+      0 0 5em var(--logo-yellow), 0 0 0.1em var(--logo-yellow),
+      0 10px 3px var(--color-dm-background);
+  }
+  80% {
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-green),
+      0 0 5em var(--logo-green), 0 0 0.1em var(--logo-green),
+      0 10px 3px var(--color-dm-background);
+  }
+}
+
+@keyframes rgb-box-animation {
+  0% {
+    box-shadow: 0 0 8px var(--color--dm-primary);
+  }
+  10% {
+    box-shadow: 0 0 8px var(--logo-blue);
+  }
+  25% {
+    box-shadow: 0 0 8px var(--logo-pink);
+  }
+  40% {
+    box-shadow: 0 0 8px var(--logo-red);
+  }
+  60% {
+    box-shadow: 0 0 8px var(--logo-yellow);
+  }
+  80% {
+    box-shadow: 0 0 8px var(--logo-green);
+  }
+  100% {
+    box-shadow: 0 0 8px var(--color--dm-primary);
+  }
+}

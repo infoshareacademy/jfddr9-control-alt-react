@@ -1,11 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import { Pagination } from "swiper";
+import { Mousewheel, Pagination } from "swiper";
 
 import {
   ingredientSearchID,
   nameSearchID,
   searchRandomPanelID,
+  favoritesPanelID,
 } from "./pages/MixIt";
 export const Carousel = ({ changeView }) => {
   return (
@@ -15,10 +15,11 @@ export const Carousel = ({ changeView }) => {
       centeredSlides="true"
       direction={"vertical"}
       loop={true}
+      mousewheel={true}
       pagination={{
         clickable: true,
       }}
-      modules={[Pagination]}
+      modules={[Mousewheel, Pagination]}
       className="carousel-main"
     >
       <SwiperSlide className="carousel-tile">
@@ -33,7 +34,7 @@ export const Carousel = ({ changeView }) => {
         <p onClick={() => changeView(searchRandomPanelID)}>Random drink</p>
       </SwiperSlide>
       <SwiperSlide className="carousel-tile">
-        <p>Favorite drinks</p>
+        <p onClick={() => changeView(favoritesPanelID)}>Favorite drinks</p>
       </SwiperSlide>
     </Swiper>
   );

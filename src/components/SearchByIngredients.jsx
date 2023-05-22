@@ -96,7 +96,6 @@ export const SearchByIngredients = ({ selectedOption, setSelectedOption }) => {
     fetchCocktails();
   }, [selectedIngredients]);
 
-  console.log(matchingCocktails);
   const [input, setInput] = useState("");
 
   return (
@@ -116,17 +115,11 @@ export const SearchByIngredients = ({ selectedOption, setSelectedOption }) => {
         }}
         options={matchingCocktails}
         onChange={(e) => {
-          console.log(e);
           setSelectedOption(e);
         }}
         placeholder="Search for a cocktail..."
         isClearable
       />
-      {/* <ul>
-        {matchingCocktails.map((drink) => (
-          <li key={drink.idDrink}>{drink.strDrink}</li>
-        ))}
-      </ul> */}
     </div>
   );
 };

@@ -3,12 +3,12 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  color: white;
-  border: 1px solid white;
+  color: var(--color-dm-primary);
+  border: 1px solid var(--color-dm-primary);
   border-radius: 5px;
   gap: 40px;
-  background-color: rgba(0, 0, 0, 0.5);
-  height: 450px; /*Hej co myślisz o tym, żeby wysokość tego elementu wynosiła 550px? Czy wtedy lista i nazwa drinka będą zawsze mieścić się w ramce? Patrzyłam w devtools, że chyba zmienia to widok?- NK*/
+  background-color: var(--color-dm-background-see-through);
+  height: 450px;
   width: 450px;
   position: fixed;
   z-index: 1;
@@ -41,11 +41,11 @@
 .openbtn {
   font-size: 20px;
   cursor: pointer;
-  background-color: #111;
-  color: white;
+  background-color: var(--color-dm-background);
+  color: var(--color-dm-primary);
   padding: 10px 15px;
   border: none;
 }
 .openbtn:hover {
-  background-color: #444;
+  background-color: var(--color-dm-background);
 }

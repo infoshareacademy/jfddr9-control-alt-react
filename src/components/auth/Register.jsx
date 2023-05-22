@@ -6,7 +6,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { firebaseErrors } from "../../utils/firebaseErrors";
 
-export const Register = (handleCloseR) => {
+export const Register = (handleCloseR, createToast) => {
   const [email, setEmail] = useState("");
   const [serverMessage, setServerMessage] = useState("");
   const [password, setPassword] = useState("");
@@ -33,9 +33,9 @@ export const Register = (handleCloseR) => {
         setPassword("");
         handleCloseR();
         const userRef = doc(db, "users", jwt.user.uid);
-        setDoc(userRef, { email: email });
+        setDoc(userRef, { email: email, favorites: [] });
         window.localStorage.setItem("user", JSON.stringify(jwt.user));
-        alert("Thanks for registration!");
+        createToast("Thanks for registration!");
         setServerMessage("Thanks for registration!");
       })
       .catch((e) => {

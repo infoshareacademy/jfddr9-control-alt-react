@@ -5,8 +5,14 @@ import { ModalTemplate } from "./ModalTemplate";
 import { RemindPassword } from "./auth/RemindPassword";
 import { Register } from "./auth/Register";
 import { Login } from "./auth/Login";
+import { LogOutComponent } from "./auth/LogOutComponent";
 
-export const ModalContainer = ({ isAuth, setIsAuth }) => {
+export const ModalContainer = ({
+  isAuth,
+  setIsAuth,
+  createToast,
+  changeTheme,
+}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -18,18 +24,25 @@ export const ModalContainer = ({ isAuth, setIsAuth }) => {
   const [showRemind, setShowRemind] = useState(false);
   const handleCloseRemind = () => setShowRemind(false);
   const handleShowRemind = () => setShowRemind(true);
+
+  const [showLogOut, setShowLogOut] = useState(false);
+  const handleCloseLogOut = () => setShowLogOut(false);
+  const handleShowLogOut = () => setShowLogOut(true);
+
   return (
     <>
       <AdultOnly></AdultOnly>
       <NavbarComponent
         handleShow={handleShow}
         handleShowR={handleShowR}
+        handleShowLogOut={handleShowLogOut}
         isAuth={isAuth}
         setIsAuth={setIsAuth}
+        changeTheme={changeTheme}
       ></NavbarComponent>
 
       <ModalTemplate
-        child={Register(handleCloseR)}
+        child={Register(handleCloseR, createToast)}
         handleCloseR={handleCloseR}
         showR={showR}
         title="Register"
@@ -41,11 +54,18 @@ export const ModalContainer = ({ isAuth, setIsAuth }) => {
         title="Sign in"
       />
       <ModalTemplate
-        child={RemindPassword(handleCloseRemind)}
+        child={RemindPassword(handleCloseRemind, createToast)}
         handleCloseR={handleCloseRemind}
         showR={showRemind}
         title="
       Remind password"
+      />
+      <ModalTemplate
+        child={LogOutComponent(handleCloseLogOut, setIsAuth, createToast)}
+        handleCloseR={handleCloseLogOut}
+        showR={showLogOut}
+        title="
+      Log out?"
       />
     </>
   );

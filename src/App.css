@@ -1,3 +1,5 @@
+@import url(./style/colors.css);
+
 /* resources import */
 
 @import url(./style/button.css);
@@ -13,31 +15,49 @@
 
 @import url(./style/home.css);
 @import url(./style/mixit.css);
+@import url(./style/userpanel.css);
 
-#root {
+.main-container {
   max-width: 1280px;
-
   margin: 0 auto;
-  padding: 0 2rem;
   text-align: center;
+  border-radius: 0px;
+  overflow: hidden;
 }
 
 body {
-  background-color: black;
+  font-family: "Tilt Neon", cursive;
+  background-color: var(--color-dm-background);
   position: relative;
 }
-.home {
-  border: 1px solid white;
-  border-radius: 10px;
-}
-.fade {
-  background-color: rgba(0, 0, 0, 0.8);
-}
+/* .fade {
+  background-color: var(--color-dm-background);
+} */
 .card {
   padding: 2em;
 }
-.read-the-docs {
-  color: #888;
+.user-panel {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.user-panel svg {
+  margin-top: 2px;
+  height: 20px;
+}
+.user-panel svg:hover {
+  cursor: pointer;
+}
+.frame-inner {
+  border-radius: 50px;
+  box-shadow: inset 20px 20px 60px #111111, inset -20px -20px 60px #232323;
+}
+
+#drinkPanel {
+  top: 60%;
+  transform: translateY(-50%);
+  height: 600px;
+  padding: 15px 5px 5px;
 }
 
 @keyframes blink {
@@ -70,5 +90,57 @@ body {
   92.5% {
     color: inherit;
     text-shadow: inherit;
+  }
+}
+
+.toasty {
+  /* border: solid 1px rgb(255, 255, 255); */
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  color: white;
+  border: 1px solid white;
+  height: 100px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  z-index: 10000000;
+  position: fixed;
+  bottom: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.show-toasty {
+  bottom: 10vh;
+}
+.toasty p {
+  margin: 0;
+}
+.centered-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.ingredients {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+.ingredient.show {
+  animation: bounce-in 1s ease-in;
+  display: block;
+}
+.ingredient {
+  display: none;
+}
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
