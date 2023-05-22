@@ -1,20 +1,13 @@
-import { signOut } from "firebase/auth";
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Row from "react-bootstrap/Row";
 import { NavLink, useNavigate } from "react-router-dom";
-import { auth } from "../../api/firebase";
-import { Button, Col } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-
 import { fas } from "@fortawesome/free-solid-svg-icons";
 
 export const NavbarComponent = (props) => {
-  const navigate = useNavigate();
   library.add(fas);
-
   return (
     <>
       <Navbar
@@ -23,6 +16,7 @@ export const NavbarComponent = (props) => {
         sticky="top"
         className="flex-column pb-0"
       >
+        {props.child}
         <Navbar.Brand as={NavLink} to="/mixit">
           <div className="logo">
             <b>
@@ -32,46 +26,52 @@ export const NavbarComponent = (props) => {
         </Navbar.Brand>
 
         {!props.isAuth && (
-          <Nav className="w-100">
-            {/* <Nav.Item>
-              <Button variant="primary" type="submit" as={NavLink} to="/">
-                Home
-              </Button>
-            </Nav.Item> */}
+          <Nav>
             <Nav.Item>
               <Button className="navbar-btn lime-bg" onClick={props.handleShow}>
-                Log in
+                <FontAwesomeIcon icon="fa-solid fa-right-to-bracket" />
               </Button>
             </Nav.Item>
 
             <Nav.Item>
               <Button className="navbar-btn red-bg" onClick={props.handleShowR}>
-                Register
+                <FontAwesomeIcon icon="fa-solid fa-user-plus" />
+              </Button>
+            </Nav.Item>
+            <Nav.Item>
+              <Button
+                className="navbar-btn purple-bg"
+                onClick={props.changeTheme}
+              >
+                <FontAwesomeIcon icon="fa-solid fa-circle-half-stroke" />
               </Button>
             </Nav.Item>
           </Nav>
         )}
         {props.isAuth && (
-          <Nav className="w-100">
+          <Nav>
+            <Nav.Item>
+              <Button as={NavLink} to="/" className="navbar-btn teal-bg">
+                <FontAwesomeIcon icon="fa-solid fa-martini-glass" />
+              </Button>
+            </Nav.Item>
             <Nav.Item>
               <Button as={NavLink} to="/user" className="navbar-btn green-bg">
                 <FontAwesomeIcon icon="fa-solid fa-user-gear" />
               </Button>
             </Nav.Item>
             <Nav.Item>
-              <Button className="navbar-btn purple-bg">
+              <Button
+                className="navbar-btn purple-bg"
+                onClick={props.changeTheme}
+              >
                 <FontAwesomeIcon icon="fa-solid fa-circle-half-stroke" />
               </Button>
             </Nav.Item>
             <Nav.Item>
               <Button
                 className="navbar-btn red-bg"
-                onClick={() =>
-                  signOut(auth)
-                    .then(() => alert("Successfully logged out"))
-                    .then(() => navigate("/"))
-                    .then(() => props.setIsAuth(false))
-                }
+                onClick={props.handleShowLogOut}
               >
                 <FontAwesomeIcon icon="fa-solid fa-right-from-bracket" />
               </Button>

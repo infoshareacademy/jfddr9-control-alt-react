@@ -7,11 +7,14 @@
   position: relative;
   background: radial-gradient(
     136.83% 55.75% at 50% 41.78%,
-    #1c1616 28.06%,
-    #000000 100%
+    var(--mixit-bg-lighter-gradient) 28.06%,
+    var(--mixit-bg-darker-gradient) 100%
   );
   mix-blend-mode: normal;
   border-radius: 10px 10px 0px 0px;
+  background-color: #323232;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .mixit-background-table {
   position: absolute;
@@ -21,8 +24,8 @@
   clip-path: polygon(24% 50%, 75% 50%, 100% 100%, 0% 100%);
   background: radial-gradient(
     100% 110% at 50% 75%,
-    #383838 8.85%,
-    #000000 38.54%
+    var(--mixit-table-lighter-gradient) 8.85%,
+    var(--mixit-table-darker-gradient) 38.54%
   );
 }
 .bottom-buttons-div {
@@ -38,32 +41,112 @@
 }
 
 /* glass  */
-.glass {
+.cup-containter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cup {
+  position: relative;
+  margin-top: 20px;
+  border: 5px solid var(--color-dm-primary);
+  border-color: var(--color-dm-primary);
+  width: 200px;
+  height: 250px;
+  border-radius: 35px;
+  border-top: none;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  box-shadow: inset 0 0 0 5px #000000;
+  /* overflow: hidden; */
+}
+
+.liquid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--color-liquid);
+  box-shadow: inset 0 0 0 5px var(--color-dm-background);
+  border-radius: 30px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  overflow: hidden;
+  transition: background 2s;
+}
+.wave:before,
+.wave:after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 150%;
+  top: var(--liquid-height);
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: var(--color-dm-background);
+  transition: 0.5s;
+}
+
+.wave:before {
+  border-radius: 45%;
+  animation: animate 5s linear infinite,
+    rise 2.5s cubic-bezier(0.07, 0.69, 0.4, 0.61) forwards alternate;
+  background: var(--color-dm-background);
+}
+
+.wave:after {
+  border-radius: 40%;
+  animation: animate 5s linear infinite,
+    rise 2.5s cubic-bezier(0.07, 0.69, 0.4, 0.61) forwards alternate;
+  background: var(--color-dm-background-see-through);
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+/* @keyframes rise {
+	0% {
+		top: 200px;
+	}
+
+	100% {
+		top: -50px;
+	}
+} */
+
+/* STARA SZKLANKA */
+
+/* .glass {
   position: absolute;
   bottom: 25%;
   left: 50%;
   transform: translateX(-50%);
 }
 .cylinder {
-  border: 1px solid white;
+  border: 1px solid var(--color-dm-primary);
   position: relative;
   overflow: hidden;
   margin: 0 auto;
-  height: 350px;
+  height: 360px;
   width: 300px;
-  border-radius: 150px/50px;
-  background-color: rgba(160, 160, 160, 0.5);
+  border-radius: 180px/60px;
+  background-color: rgba(173, 170, 170, 0.5);
 }
 
 .cylinder::before {
   position: absolute;
   left: 0;
   top: 0;
-  height: 95px;
+  height: 100px;
   width: 300px;
-  border-radius: 150px/50px;
-  border: 1px solid white;
-  background-color: rgba(201, 201, 201, 0.404);
+  border-radius: 180px/60px;
+  border: 1px solid var(--color-dm-primary);
   content: "";
   z-index: 10;
 }
@@ -84,12 +167,13 @@
   position: absolute;
   margin: 0 auto;
   bottom: 0;
-  height: 300px;
+  height: 100px;
   width: 300px;
   border-radius: 150px/50px;
-  background-color: rgb(78, 115, 156);
+  background-color: var(--color-liquid);
   filter: brightness(0.5);
-  transition: 1s ease-out;
+  animation: water-level-animation 5s forwards
+    cubic-bezier(0.15, 0.59, 0.58, 0.2);
 }
 
 .water::before {
@@ -98,10 +182,11 @@
   top: 0;
   height: 100px;
   width: 300px;
-  border-radius: 150px/50px;
-  background-color: rgb(105, 104, 167);
+  border-radius: 50%;
+  background-color: var(--color-liquid);
   filter: brightness(0.8);
   content: "";
+  transition: 1s ease-out;
 }
 
 .water::after {
@@ -111,9 +196,10 @@
   height: 100px;
   width: 300px;
   border-radius: 150px/50px;
-  background-color: rgb(102, 113, 160);
+  background-color: var(--color-liquid);
   filter: brightness(0.6);
   content: "";
+  transition: 1s ease-out;
 }
 
 .water--0:checked ~ .cylinder .water {
@@ -131,3 +217,12 @@
 .water--90:checked ~ .cylinder .water {
   height: calc(250px * 0.9);
 }
+
+@keyframes water-level-animation {
+  0% {
+    height: 100px;
+  }
+  100% {
+    height: 300px;
+  }
+} */

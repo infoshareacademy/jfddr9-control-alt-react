@@ -5,7 +5,7 @@ import { auth } from "../../api/firebase";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { firebaseErrors } from "../../utils/firebaseErrors";
 
-export const RemindPassword = (handleCloseR) => {
+export const RemindPassword = (handleCloseR, createToast) => {
   const [email, setEmail] = useState("");
   const [serverMessage, setServerMessage] = useState("");
   const [validated, setValidated] = useState(false);
@@ -21,7 +21,7 @@ export const RemindPassword = (handleCloseR) => {
 
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        alert("Sent email!");
+        createToast("Sent email!");
         handleCloseR();
       })
       .catch((e) => {

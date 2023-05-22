@@ -20,6 +20,7 @@ import {
   faCoffee,
   faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
+import { ToastMessage } from "./components/ToastMessage";
 
 const Contener = styled.div``;
 
@@ -28,7 +29,7 @@ function App() {
   const [isAuth, setIsAuth] = useState(null);
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
-
+  const [text, setText] = useState("No message");
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -46,23 +47,41 @@ function App() {
     return;
   }
 
+  const createToast = (message) => {
+    let shown = document.querySelector(".toasty");
+    if (shown !== null) shown.classList.add("show-toasty");
+    setText(message);
+    setTimeout(() => shown.classList.remove("show-toasty"), 4000);
+  };
+  const changeTheme = () => {
+    let rootm = document.querySelector(":root");
+    if (rootm != null) rootm.classList.toggle("lightmode");
+  };
   return (
     <Contener>
-      <ModalContainer isAuth={isAuth} setIsAuth={setIsAuth} />
-      <Routes>
-        <Route
-          path={"/"}
-          element={!isAuth ? <Home /> : <Navigate to="/mixit" replace />}
-        />
-        <Route
-          path={"/mixit"}
-          element={isAuth ? <MixIt /> : <Navigate to="/" replace />}
-        />
-        <Route
-          path={"/user"}
-          element={isAuth ? <UserPanel /> : <Navigate to="/" replace />}
-        />
-      </Routes>
+      <ToastMessage text={text}></ToastMessage>
+      <ModalContainer
+        isAuth={isAuth}
+        setIsAuth={setIsAuth}
+        createToast={createToast}
+        changeTheme={changeTheme}
+      />
+      <div className="main-container">
+        <Routes>
+          <Route
+            path={"/"}
+            element={!isAuth ? <Home /> : <Navigate to="/mixit" replace />}
+          />
+          <Route
+            path={"/mixit"}
+            element={isAuth ? <MixIt /> : <Navigate to="/" replace />}
+          />
+          <Route
+            path={"/user"}
+            element={isAuth ? <UserPanel /> : <Navigate to="/" replace />}
+          />
+        </Routes>
+      </div>
     </Contener>
   );
 }
