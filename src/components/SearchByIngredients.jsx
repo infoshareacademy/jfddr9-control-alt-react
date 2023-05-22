@@ -1,10 +1,13 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Select from "react-select";
+import { debounce } from "lodash";
 
 export const SearchByIngredients = ({ selectedOption, setSelectedOption }) => {
   const [ingredients, setIngredients] = useState([]);
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [matchingCocktails, setMatchingCocktails] = useState([]);
+  const [isFetchingCocktails, setIsFetchingCocktails] = useState(false);
+  const [cooldown, setCooldown] = useState(false);
 
   useEffect(() => {
     const fetchIngredients = async () => {
@@ -22,65 +25,78 @@ export const SearchByIngredients = ({ selectedOption, setSelectedOption }) => {
         console.error(error);
       }
     };
+
     fetchIngredients();
   }, []);
 
-  useEffect(() => {
-    const fetchCocktails = async () => {
-      try {
-        // If no ingredients are selected, clear the list of matching cocktails.
-        if (selectedIngredients.length === 0) {
-          setMatchingCocktails([]);
-          return;
-        }
+  const debouncedFetchCocktails = useCallback(
+    debounce(async () => {
+      if (selectedIngredients.length === 0) {
+        setMatchingCocktails([]);
+        return;
+      }
 
-        // Create an array to store the IDs of cocktails that match all selected ingredients.
-        let matchingCocktailIds = [];
+      if (cooldown) {
+        return;
+      }
 
-        // Fetch the list of cocktails for each selected ingredient and add their IDs
-        // to the matchingCocktailIds array.
-        for (let i = 0; i < selectedIngredients.length; i++) {
+      setIsFetchingCocktails(true);
+      setCooldown(true);
+
+      const fetchCocktailDetails = async (ingredient) => {
+        try {
           const response = await fetch(
-            `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${selectedIngredients[i].value}`
+            `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient.value}`
           );
           const data = await response.json();
-          // If this is the first ingredient being checked, add all matching cocktail IDs to the array.
-          if (i === 0) {
-            matchingCocktailIds = data.drinks.map((drink) => drink.idDrink);
-          } else {
-            // If this is not the first ingredient being checked, remove IDs that are not present in the current response.
-            const currentIds = data.drinks.map((drink) => drink.idDrink);
-            matchingCocktailIds = matchingCocktailIds.filter((id) =>
-              currentIds.includes(id)
-            );
-          }
+          const matchingCocktailIds = data.drinks.map((drink) => drink.idDrink);
+          return matchingCocktailIds;
+        } catch (error) {
+          console.error(error);
+          return [];
         }
+      };
 
-        // If no cocktails match all selected ingredients, clear the list of matching cocktails.
-        if (matchingCocktailIds.length === 0) {
+      try {
+        const matchingCocktailIds = await Promise.all(
+          selectedIngredients.map((ingredient) =>
+            fetchCocktailDetails(ingredient)
+          )
+        );
+
+        const intersection = matchingCocktailIds.reduce((a, b) =>
+          a.filter((c) => b.includes(c))
+        );
+
+        if (intersection.length === 0) {
           setMatchingCocktails([]);
           return;
         }
 
-        // Fetch the details of the matching cocktails using their IDs and set the
-        // matchingCocktails state to the resulting array.
-        const promises = matchingCocktailIds.map((id) => {
-          return fetch(
-            `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
-          );
-        });
-        const responses = await Promise.all(promises);
-        const data = await Promise.all(
-          responses.map((response) => response.json())
+        const fetchCocktail = async (id) => {
+          try {
+            const response = await fetch(
+              `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
+            );
+            const data = await response.json();
+            return data.drinks[0];
+          } catch (error) {
+            console.error(error);
+            return null;
+          }
+        };
+
+        const matchingCocktailsData = await Promise.all(
+          intersection.map((id) => fetchCocktail(id))
         );
-        const matchingCocktailsList = data
-          .map((response) => response.drinks[0])
-          .filter((drink) => drink);
+
+        const matchingCocktailsList = matchingCocktailsData.filter(Boolean);
         const drinks = matchingCocktailsList.map((drink) => {
           const ingredients = Object.keys(drink)
             .filter((key) => key && key.startsWith("strIngredient"))
             .map((ingredient) => drink[ingredient])
             .filter(Boolean);
+
           return {
             value: drink.idDrink,
             label: drink.strDrink,
@@ -88,15 +104,29 @@ export const SearchByIngredients = ({ selectedOption, setSelectedOption }) => {
             ingredients: ingredients,
           };
         });
+
         setMatchingCocktails(drinks);
       } catch (error) {
         console.error(error);
-      }
-    };
-    fetchCocktails();
-  }, [selectedIngredients]);
+      } finally {
+        setIsFetchingCocktails(false);
 
-  const [input, setInput] = useState("");
+        // Wait for 2 seconds before resetting the cooldown
+        setTimeout(() => {
+          setCooldown(false);
+        }, 2000);
+      }
+    }, 1000),
+    [selectedIngredients]
+  );
+
+  useEffect(() => {
+    debouncedFetchCocktails();
+
+    return () => {
+      debouncedFetchCocktails.cancel();
+    };
+  }, [debouncedFetchCocktails]);
 
   return (
     <div>
@@ -110,15 +140,11 @@ export const SearchByIngredients = ({ selectedOption, setSelectedOption }) => {
       <Select
         className="select-bar"
         value={selectedOption}
-        onInputChange={(e) => {
-          setInput(e);
-        }}
         options={matchingCocktails}
-        onChange={(e) => {
-          setSelectedOption(e);
-        }}
+        onChange={setSelectedOption}
         placeholder="Search for a cocktail..."
         isClearable
+        isLoading={isFetchingCocktails}
       />
     </div>
   );
