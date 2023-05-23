@@ -16,8 +16,21 @@
   );
   mix-blend-mode: normal;
 }
-.userpanel-change-email {
+/* .userpanel-change-email {
   min-height: 216px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.userpanel-change-password {
+  min-height: 216px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+} */
+.userpanel-options {
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,16 +1,17 @@
 import Form from "react-bootstrap/Form";
-import { Button, Modal } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { useState } from "react";
-import { auth } from "../../api/firebase";
+import { auth, db } from "../../api/firebase";
 import { updateEmail } from "firebase/auth";
 import { firebaseErrors } from "../../utils/firebaseErrors";
+import { doc, updateDoc } from "firebase/firestore";
 
-export const ChangeEmail = (handleClose, handleShowRemind) => {
+export const ChangeEmail = ({ handleClose }) => {
   const [email, setEmail] = useState("");
   const [serverMessage, setServerMessage] = useState("");
-  const [password, setPassword] = useState("");
   const [validated, setValidated] = useState(false);
-  const handleChangeEmail = (e) => {
+
+  const handleChangeEmail = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
@@ -19,16 +20,21 @@ export const ChangeEmail = (handleClose, handleShowRemind) => {
       setServerMessage("");
       return;
     }
-    // verifyBeforeUpdateEmail < Robimy to?
-    updateEmail(auth.currentUser, email)
-      .then((jwt) => {
-        setEmail("");
-        setPassword("");
-        handleClose();
-      })
-      .catch((e) => {
-        setServerMessage(firebaseErrors[e.code]);
+
+    try {
+      await updateEmail(auth.currentUser, email);
+
+      // Update email field in Firestore user document
+      const userRef = doc(db, "users", auth.currentUser.uid);
+      await updateDoc(userRef, {
+        email: email,
       });
+
+      setEmail("");
+      handleClose(email);
+    } catch (e) {
+      setServerMessage(firebaseErrors[e.code]);
+    }
   };
 
   return (
@@ -42,6 +48,7 @@ export const ChangeEmail = (handleClose, handleShowRemind) => {
             }}
             type="email"
             placeholder="Enter email"
+            value={email}
             required
           />
           <Form.Control.Feedback type="invalid">
