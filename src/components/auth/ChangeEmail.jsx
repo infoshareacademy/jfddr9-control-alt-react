@@ -6,7 +6,7 @@ import { updateEmail } from "firebase/auth";
 import { firebaseErrors } from "../../utils/firebaseErrors";
 import { doc, updateDoc } from "firebase/firestore";
 
-export const ChangeEmail = (handleClose) => {
+export const ChangeEmail = ({ handleClose }) => {
   const [email, setEmail] = useState("");
   const [serverMessage, setServerMessage] = useState("");
   const [validated, setValidated] = useState(false);
@@ -31,7 +31,7 @@ export const ChangeEmail = (handleClose) => {
       });
 
       setEmail("");
-      handleClose();
+      handleClose(email);
     } catch (e) {
       setServerMessage(firebaseErrors[e.code]);
     }

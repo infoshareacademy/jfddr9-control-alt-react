@@ -3,10 +3,12 @@ import { FavoriteDrinksUserPanel } from "../FavouriteDrinksUserPanel";
 import { useEffect, useState } from "react";
 import { ChangeEmail } from "../auth/ChangeEmail";
 import { ChangePassword } from "../auth/ChangePassword";
+import { auth } from "../../api/firebase";
 
 export const UserPanel = () => {
   const [showEmailInput, setShowEmailInput] = useState(false);
   const [showPasswordInput, setShowPasswordInput] = useState(false);
+  const [userEmail, setUserEmail] = useState("");
 
   const handleEmailButtonClick = () => {
     setShowEmailInput(!showEmailInput);
@@ -18,11 +20,17 @@ export const UserPanel = () => {
     setShowEmailInput(false);
   };
 
+  useEffect(() => {
+    const loggedUser = auth.currentUser.email;
+    setUserEmail(loggedUser);
+  }, [setUserEmail]);
+
   return (
     <>
       <div className="userpanel userpanel-background">
         <div className="userpanel-header">
           <h1>User panel</h1>
+          <p>Your email: {userEmail}</p>
           <p>
             Here you can change your email and edit your favorites list below.
           </p>
@@ -35,7 +43,7 @@ export const UserPanel = () => {
           >
             {showEmailInput ? "Hide" : "Change your email"}
           </Button>
-          {showEmailInput ? <ChangeEmail /> : null}
+          {showEmailInput ? <ChangeEmail handleClose={setUserEmail} /> : null}
 
           <Button
             onClick={handlePasswordButtonClick}
