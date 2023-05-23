@@ -4,6 +4,9 @@ import { useState } from "react";
 import { auth } from "../../api/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { firebaseErrors } from "../../utils/firebaseErrors";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 export const Login = (handleClose, handleShowRemind) => {
   const [email, setEmail] = useState("");
@@ -27,6 +30,23 @@ export const Login = (handleClose, handleShowRemind) => {
       })
       .catch((e) => {
         setServerMessage(firebaseErrors[e.code]);
+      });
+  };
+  const handleGoogleSignIn = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const { user } = result;
+        setEmail(user.email);
+        setPassword(""); // Since Google sign-in doesn't provide a password, clear the password field
+        handleClose();
+        const userRef = doc(db, "users", user.uid);
+        setDoc(userRef, { email: user.email, favorites: [] });
+        createToast("Thanks for logging in!");
+        setServerMessage("Thanks for logging in!");
+      })
+      .catch((error) => {
+        setServerMessage(firebaseErrors[error.code]);
       });
   };
 
@@ -67,6 +87,13 @@ export const Login = (handleClose, handleShowRemind) => {
         <Modal.Footer>
           <Button className="general-btn green-hover" type="submit">
             Log in
+          </Button>
+          <Button
+            className="general-btn google-btn green-hover"
+            onClick={handleGoogleSignIn}
+          >
+            <span>Log in with </span>
+            <FontAwesomeIcon icon={faGoogle} className="google-icon" />
           </Button>
           <Button
             className="general-btn green-hover"
