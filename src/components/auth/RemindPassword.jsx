@@ -4,8 +4,9 @@ import { useState } from "react";
 import { auth } from "../../api/firebase";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { firebaseErrors } from "../../utils/firebaseErrors";
+import { createToast } from "../../App";
 
-export const RemindPassword = (handleCloseR, createToast) => {
+export const RemindPassword = (handleCloseR) => {
   const [email, setEmail] = useState("");
   const [serverMessage, setServerMessage] = useState("");
   const [validated, setValidated] = useState(false);

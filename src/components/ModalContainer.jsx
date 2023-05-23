@@ -7,12 +7,7 @@ import { Register } from "./auth/Register";
 import { Login } from "./auth/Login";
 import { LogOutComponent } from "./auth/LogOutComponent";
 
-export const ModalContainer = ({
-  isAuth,
-  setIsAuth,
-  createToast,
-  changeTheme,
-}) => {
+export const ModalContainer = ({ isAuth, setIsAuth, changeTheme }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -42,7 +37,7 @@ export const ModalContainer = ({
       ></NavbarComponent>
 
       <ModalTemplate
-        child={Register(handleCloseR, createToast)}
+        child={Register(handleCloseR)}
         handleCloseR={handleCloseR}
         showR={showR}
         title="Register"
@@ -54,14 +49,14 @@ export const ModalContainer = ({
         title="Sign in"
       />
       <ModalTemplate
-        child={RemindPassword(handleCloseRemind, createToast)}
+        child={RemindPassword(handleCloseRemind)}
         handleCloseR={handleCloseRemind}
         showR={showRemind}
         title="
       Remind password"
       />
       <ModalTemplate
-        child={LogOutComponent(handleCloseLogOut, setIsAuth, createToast)}
+        child={LogOutComponent(handleCloseLogOut, setIsAuth)}
         handleCloseR={handleCloseLogOut}
         showR={showLogOut}
         title="

@@ -13,6 +13,7 @@ import {
   where,
 } from "firebase/firestore";
 import { drinkPanelID } from "./pages/MixIt";
+import { createToast } from "../App";
 
 export const FavoriteDrinks = ({
   isFavorite,
@@ -61,6 +62,7 @@ export const FavoriteDrinks = ({
       }
       setFavoriteDrinkNames(drinkNames.filter(Boolean));
     } catch (error) {
+      // createToast(error)
       console.log("Error", error);
     }
   };
