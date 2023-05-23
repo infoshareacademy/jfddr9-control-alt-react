@@ -44,16 +44,35 @@ export const FavoriteDrinks = ({
 
         drinkNames = querySnapshot.map((snapshot) => {
           const drinkDoc = snapshot.docs[0];
+
+          const ingredients = [];
+          const measures = [];
           if (drinkDoc && drinkDoc.exists()) {
-            const ingredients = Object.keys(drinkDoc.data())
-              .filter((key) => key && key.startsWith("strIngredient"))
-              .map((ingredient) => drinkDoc.data()[ingredient])
-              .filter(Boolean);
+            Object.entries(drinkDoc.data()).forEach(([key, value]) => {
+              if (key.startsWith("strIngredient") && value) {
+                const ingredientIndex = parseInt(
+                  key.replace("strIngredient", ""),
+                  10
+                );
+                const measureKey = `strMeasure${ingredientIndex}`;
+                const measure = drinkDoc.data()[measureKey] || "";
+
+                ingredients.push(value);
+                measures.push(measure);
+              }
+            });
+
+            const ingredientsWithMeasures = ingredients.map(
+              (ingredient, index) => {
+                const measure = measures[index] || "";
+                return `${measure} ${ingredient}`;
+              }
+            );
             return {
               value: drinkDoc.data().idDrink,
               label: drinkDoc.data().strDrink,
               description: drinkDoc.data().strInstructions,
-              ingredients: ingredients,
+              ingredients: ingredientsWithMeasures,
             };
           }
           return null;
@@ -77,7 +96,7 @@ export const FavoriteDrinks = ({
       const updatedFavorites = favorites.filter(
         (idDrink) => idDrink !== drinkID
       );
-      if (drinkID == selectedOption.value) setSelectedOption(null);
+      // if (drinkID == selectedOption.value) setSelectedOption(null);
       await updateDoc(userRef, { favorites: updatedFavorites });
     }
     fetchFavoriteDrinkNames();
