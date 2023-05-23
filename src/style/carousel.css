@@ -15,7 +15,6 @@
   color: var(--color-dm-primary);
   border: 1px solid var(--color-dm-primary);
 }
-
 .swiper-slide-active {
   background-color: var(--color-dm-background-see-through-7);
   width: 230px;

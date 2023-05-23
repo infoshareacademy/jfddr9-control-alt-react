@@ -6,13 +6,19 @@
   --logo-green: #02ff02;
 } /*Wpisałam kolory z naszego projektu, ale logo wydaje się jakieś jasne, więc chyba ta zmiana, nie powinna być uwzględniona*/
 
-nav {
-  display: contents;
-  width: 100%;
+/* .navbar-nav {
+	width: 100%;
+	max-width: 1280px;
+	display: flex;
+	justify-content: flex-start;
+	margin-left: 55px;
+} */
+.navbar-brand {
+  margin: 0;
+  padding: 0;
 }
 .navbar-nav {
-  width: 60%;
-  margin-top: 0;
+  gap: 15px;
 }
 .bg-black {
   /* --bs-black-rgb: var(--color-dm-primary); */

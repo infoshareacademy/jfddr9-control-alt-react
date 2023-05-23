@@ -17,25 +17,26 @@
 @import url(./style/mixit.css);
 @import url(./style/userpanel.css);
 
-.main-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  text-align: center;
-  border-radius: 0px;
-  overflow: hidden;
-}
-
 body {
   font-family: "Tilt Neon", cursive;
   background-color: var(--color-dm-background);
   position: relative;
 }
-/* .fade {
-  background-color: var(--color-dm-background);
-} */
+h1 {
+  font-weight: bold;
+}
+.main-container {
+  display: flex;
+  justify-content: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  border-radius: 0px;
+  text-align: center;
+}
 .card {
   padding: 2em;
 }
+
 .user-panel {
   display: flex;
   justify-content: center;
@@ -51,6 +52,9 @@ body {
 .frame-inner {
   border-radius: 50px;
   box-shadow: inset 20px 20px 60px #111111, inset -20px -20px 60px #232323;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 
 #drinkPanel {
@@ -134,13 +138,113 @@ body {
 .ingredient {
   display: none;
 }
-@keyframes bounce-in {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
+@media (max-width: 1400px) {
+  .home-frame {
+    width: 95%;
   }
-  100% {
-    opacity: 1;
-    transform: scale(1);
+}
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .navbar {
+    width: 100%;
+    margin: 0px;
+  }
+  .logo b {
+    font-size: 4rem;
+  }
+  .home {
+    margin: 0;
+  }
+  .text-container {
+    padding: 50px;
+  }
+  .home h2 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .home p {
+    font-size: 1.2rem;
+  }
+  .home-tile .text-container {
+    padding: 10px;
+  }
+  .text-container h2 {
+    font-size: 1.4rem;
+  }
+  .text-container p {
+    font-size: 1rem;
+  }
+  .card-text-drink p {
+    font-size: 0.8rem;
+  }
+  .card-text-drink span {
+    font-size: 0.9rem;
+  }
+  .cards-link,
+  .cards-link p {
+    font-size: 0.9rem;
+  }
+  .home-footer {
+    margin: 0 5%;
+  }
+  .home-footer p {
+    font-size: 0.8rem;
+  }
+  .home-footer span {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  .cards {
+    flex-direction: column;
+    height: 800px;
+  }
+  .card-hidden {
+    height: 80%;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .card-name {
+    transform: rotate(0);
+  }
+  .home-footer p {
+    font-size: 0.6rem;
+  }
+  .home-tile {
+    gap: 10px;
+  }
+  .home-tile .text-container {
+    margin: 0 1% 0;
+  }
+}
+@media (max-width: 875px) {
+  .home-tile {
+    flex-direction: column;
+    align-items: center;
+  }
+  .home-tile .image-container {
+    order: 1;
+  }
+  .home-tile .text-container {
+    margin: 0 8% 0;
+    order: 2;
+  }
+}
+@media (max-width: 640px) {
+  .home-tile .text-container {
+    margin: 0 2% 0;
+  }
+}
+@media (max-width: 420px) {
+  .logo b {
+    font-size: 2.8rem;
+  }
+  .nav-item .btn {
+    padding: 2px 28px;
   }
 }

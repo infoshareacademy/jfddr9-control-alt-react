@@ -99,3 +99,23 @@
     box-shadow: 0 0 8px var(--color--dm-primary);
   }
 }
+
+@keyframes opacity-animation {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
