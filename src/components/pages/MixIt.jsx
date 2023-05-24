@@ -19,9 +19,7 @@ export const MixIt = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [viewName, setViewName] = useState("");
   const [previousViewName, setPreviousViewName] = useState("");
-  const [favoriteDrinkNames, setFavoriteDrinkNames] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
-  const [height, setWaterHeight] = useState(160);
   function changeView(newViewName) {
     setPreviousViewName(viewName);
     setViewName(newViewName);

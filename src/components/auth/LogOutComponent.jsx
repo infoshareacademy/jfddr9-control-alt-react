@@ -20,7 +20,7 @@ export const LogOutComponent = (handleCloseLogOut, setIsAuth, createToast) => {
         <p>Do you want to sign out?</p>
         <Modal.Footer>
           <Button className="general-btn green-hover" onClick={handleLogOut}>
-            Log out
+            <span>Log out</span>
           </Button>
           <Button
             className="general-btn red-hover"
@@ -28,7 +28,7 @@ export const LogOutComponent = (handleCloseLogOut, setIsAuth, createToast) => {
               handleCloseLogOut();
             }}
           >
-            Close
+            <span>Close</span>
           </Button>
         </Modal.Footer>
       </div>

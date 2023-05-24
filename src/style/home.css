@@ -177,6 +177,9 @@
   display: flex;
   animation: opacity-animation 2s;
 }
+.card-hidden:not(:hover) a {
+  pointer-events: none;
+}
 .card-text-drink p {
   font-size: 0.8rem;
 }

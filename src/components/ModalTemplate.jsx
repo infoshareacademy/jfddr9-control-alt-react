@@ -2,7 +2,7 @@ import Modal from "react-bootstrap/Modal";
 
 export const ModalTemplate = (props) => {
   return (
-    <Modal show={props.showR} onHide={props.handleCloseR}>
+    <Modal show={props.showR} onHide={props.handleCloseR} centered>
       <Modal.Header>
         <Modal.Title>
           <div className="logo modal-logo">

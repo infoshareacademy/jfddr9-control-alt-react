@@ -1,10 +1,11 @@
 .userpanel {
-  color: var(--color-dm-primary);
-  border-radius: 20px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  width: 100%;
   gap: 40px;
+  border-radius: 20px;
+  color: var(--color-dm-primary);
 }
 .userpanel-background {
   height: 79vh;
@@ -15,6 +16,12 @@
     var(--mixit-bg-darker-gradient) 100%
   );
   mix-blend-mode: normal;
+}
+.userpanel-options {
+  gap: 20px;
+}
+.userpanel h2 {
+  font-weight: bold;
 }
 /* .userpanel-change-email {
   min-height: 216px;
