@@ -64,39 +64,6 @@ h1 {
   padding: 15px 5px 5px;
 }
 
-@keyframes blink {
-  78% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  79% {
-    color: #333;
-  }
-  80% {
-    text-shadow: none;
-  }
-  81% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  82% {
-    color: #333;
-    text-shadow: none;
-  }
-  83% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  92% {
-    color: #333;
-    text-shadow: none;
-  }
-  92.5% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-}
-
 .toasty {
   /* border: solid 1px rgb(255, 255, 255); */
   background-color: rgba(0, 0, 0, 0.8);
@@ -139,6 +106,9 @@ h1 {
   display: none;
 }
 @media (max-width: 1400px) {
+  .main-container {
+    width: 95%;
+  }
   .home-frame {
     width: 95%;
   }
@@ -223,6 +193,26 @@ h1 {
   }
 }
 @media (max-width: 875px) {
+  .userpanel {
+    gap: 20px;
+  }
+  .userpanel h1 {
+    font-size: 1.2rem;
+  }
+  .userpanel h2 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .userpanel p {
+    font-size: 0.8rem;
+  }
+  .userpanel button {
+    padding: 10px;
+    font-size: 0.8rem;
+  }
+  .userpanel-options {
+    gap: 15px;
+  }
   .home-tile {
     flex-direction: column;
     align-items: center;

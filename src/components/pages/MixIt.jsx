@@ -11,7 +11,7 @@ export const MixIt = () => {
   const [viewName, setViewName] = useState("");
   const [previousViewName, setPreviousViewName] = useState("");
   const [isFavorite, setIsFavorite] = useState(false);
-
+  
   function changeView(newViewName) {
     setPreviousViewName(viewName);
     setViewName(newViewName);

@@ -73,7 +73,8 @@
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   overflow: hidden;
-  transition: background 2s;
+  animation: rgb-animation 20s infinite;
+  transition: background 20s;
 }
 .wave:before,
 .wave:after {

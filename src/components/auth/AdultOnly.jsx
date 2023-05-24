@@ -27,12 +27,20 @@ export function AdultOnly() {
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
+        centered
+        className="modal"
       >
         <Modal.Header>
-          <Modal.Title>Adults only</Modal.Title>
+          <Modal.Title>
+            <h1>Adults only</h1>
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>You Must Be at Least 18 Years of Age to Enter.</p>
+          <p>
+            By accessing our website, you confirm that you are of legal drinking
+            age and understand that the content is for informational purposes
+            only.
+          </p>
         </Modal.Body>
         <Modal.Footer>
           <Button

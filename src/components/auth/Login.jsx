@@ -86,7 +86,7 @@ export const Login = (handleClose, handleShowRemind) => {
         <p className="text-danger">{serverMessage}</p>
         <Modal.Footer>
           <Button className="general-btn green-hover" type="submit">
-            Log in
+            <span>Log in</span>
           </Button>
           <Button
             className="general-btn google-btn green-hover"
@@ -101,10 +101,10 @@ export const Login = (handleClose, handleShowRemind) => {
               handleShowRemind();
             }}
           >
-            Forgot password
+            <span>Forgot password</span>
           </Button>
           <Button className="general-btn red-hover" onClick={handleClose}>
-            Close
+            <span>Close</span>
           </Button>
         </Modal.Footer>
       </Form>
