@@ -11,13 +11,24 @@ export const fetchNameSearchOptions = async (setFunction, inputName) => {
         .filter((key) => key && key.startsWith("strIngredient"))
         .map((ingredient) => drink[ingredient])
         .filter(Boolean);
+      const measures = Object.keys(drink)
+        .filter((key) => key && key.startsWith("strMeasure"))
+        .map((measure) => drink[measure])
+        .filter(Boolean);
+
+      const ingredientsWithMeasures = ingredients.map((ingredient, index) => {
+        const measure = measures[index] || "";
+        return `${measure} ${ingredient}`;
+      });
+
       return {
         value: drink.idDrink,
         label: drink.strDrink,
         description: drink.strInstructions,
-        ingredients: ingredients,
+        ingredients: ingredientsWithMeasures,
       };
     });
+
     setFunction(drinks);
   } catch (error) {
     console.error(error);
