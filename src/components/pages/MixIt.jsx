@@ -1,10 +1,24 @@
 import { Button } from "react-bootstrap";
 import { Carousel } from "../Carousel";
+
 import { useState } from "react";
 import { Panel } from "../../utils/panels";
 import { SidePanels } from "../SidePanels";
 import { Glass } from "../Glass";
 import { MixItButton } from "../MixitButton";
+import { useEffect, useState } from "react";
+import { IngredientList } from "../IngredientList";
+import { SearchRandom } from "../SearchRandom";
+import { FavoriteDrinks } from "../FavoriteDrinks";
+import { FavouriteDrinkButton } from "../FavouriteDrinkButton";
+import { DrinkPanel } from "../DrinkPanel";
+
+export const nameSearchID = "searchByNamePanel";
+export const ingredientSearchID = "searchByIngredientPanel";
+export const drinkPanelID = "drinkPanel";
+export const searchRandomPanelID = "randomDrinkPanel";
+export const favoritesPanelID = "favoritesPanel";
+
 
 export const MixIt = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -38,6 +52,7 @@ export const MixIt = () => {
         viewName={viewName}
         setIsFavorite={setIsFavorite}
       />
+
       {/* --- Bottom buttons --- */}
       <MixItButton
         selectedOption={selectedOption}
