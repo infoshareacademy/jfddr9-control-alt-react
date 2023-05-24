@@ -9,7 +9,6 @@ const searchIds = [
   Panel.SEARCH_RANDOM,
   Panel.FAVORITES,
 ];
-
 export const Carousel = ({ changeView }) => {
   return (
     <Swiper
@@ -28,27 +27,17 @@ export const Carousel = ({ changeView }) => {
       modules={[Mousewheel, Pagination]}
       className="carousel-main"
     >
-      <SwiperSlide className="carousel-tile" key={0}>
-        {({ isActive }) => (
-          <p onClick={() => changeView(Panel.NAME_SEARCH)}>Filter by name</p>
-        )}
+      <SwiperSlide className="carousel-tile">
+        <p>Filter by name</p>
       </SwiperSlide>
-      <SwiperSlide className="carousel-tile" key={1}>
-        {({ isActive }) => (
-          <p onClick={() => changeView(Panel.INGREDIENTS)}>
-            Filter by ingredients
-          </p>
-        )}
+      <SwiperSlide className="carousel-tile">
+        <p>Filter by ingredients</p>
       </SwiperSlide>
-      <SwiperSlide className="carousel-tile" key={2}>
-        {({ isActive }) => (
-          <p onClick={() => changeView(Panel.SEARCH_RANDOM)}>Random drink</p>
-        )}
+      <SwiperSlide className="carousel-tile">
+        <p>Random drink</p>
       </SwiperSlide>
-      <SwiperSlide className="carousel-tile" key={3}>
-        {({ isActive }) => (
-          <p onClick={() => changeView(Panel.FAVORITES)}>Favorite drinks</p>
-        )}
+      <SwiperSlide className="carousel-tile">
+        <p>Favorite drinks</p>
       </SwiperSlide>
     </Swiper>
   );

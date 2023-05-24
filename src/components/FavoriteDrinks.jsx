@@ -18,7 +18,6 @@ export const FavoriteDrinks = ({
   isFavorite,
   setSelectedOption,
   changeView,
- 
 }) => {
   const [favoriteDrinkNames, setFavoriteDrinkNames] = useState([]);
   library.add(far);
@@ -95,7 +94,6 @@ export const FavoriteDrinks = ({
       const updatedFavorites = favorites.filter(
         (idDrink) => idDrink !== drinkID
       );
-      // if (drinkID == selectedOption.value) setSelectedOption(null);
       await updateDoc(userRef, { favorites: updatedFavorites });
     }
     fetchFavoriteDrinkNames();
@@ -119,7 +117,6 @@ export const FavoriteDrinks = ({
                     onClick={() => {
                       setSelectedOption(strDrink);
                       changeView(Panel.DRINK_PANEL);
-                      console.log("fav1!");
                     }}
                   >
                     {strDrink.label}

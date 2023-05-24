@@ -45,7 +45,6 @@ export const SearchRandom = ({ setSelectedOption, changeView }) => {
         onClick={() => {
           fetchRandomDrink();
           changeView(Panel.DRINK_PANEL);
-          console.log("object", 'a');
         }}
       >
         Random Drink
