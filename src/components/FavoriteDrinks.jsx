@@ -12,6 +12,7 @@ import {
   collection,
   where,
 } from "firebase/firestore";
+import { Panel } from "../utils/panels";
 import { drinkPanelID } from "./pages/MixIt";
 import { createToast } from "../App";
 
@@ -19,8 +20,6 @@ export const FavoriteDrinks = ({
   isFavorite,
   setSelectedOption,
   changeView,
-  viewName,
-  selectedOption,
 }) => {
   const [favoriteDrinkNames, setFavoriteDrinkNames] = useState([]);
   library.add(far);
@@ -98,7 +97,6 @@ export const FavoriteDrinks = ({
       const updatedFavorites = favorites.filter(
         (idDrink) => idDrink !== drinkID
       );
-      // if (drinkID == selectedOption.value) setSelectedOption(null);
       await updateDoc(userRef, { favorites: updatedFavorites });
     }
     fetchFavoriteDrinkNames();
@@ -121,7 +119,7 @@ export const FavoriteDrinks = ({
                   <p
                     onClick={() => {
                       setSelectedOption(strDrink);
-                      changeView(drinkPanelID);
+                      changeView(Panel.DRINK_PANEL);
                     }}
                   >
                     {strDrink.label}
