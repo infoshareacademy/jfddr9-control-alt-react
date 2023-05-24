@@ -120,6 +120,7 @@ export const FavoriteDrinks = ({
                     onClick={() => {
                       setSelectedOption(strDrink);
                       changeView(drinkPanelID);
+                      console.log("fav1!");
                     }}
                   >
                     {strDrink.label}

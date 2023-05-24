@@ -3,7 +3,7 @@ import { SearchByName } from "../SearchByName";
 import { SearchByIngredients } from "../SearchByIngredients";
 import { SidePanel } from "../SidePanel";
 import { Carousel } from "../Carousel";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { IngredientList } from "../IngredientList";
 import { SearchRandom } from "../SearchRandom";
 import { FavoriteDrinks } from "../FavoriteDrinks";
@@ -21,12 +21,19 @@ export const MixIt = () => {
   const [previousViewName, setPreviousViewName] = useState("");
   const [favoriteDrinkNames, setFavoriteDrinkNames] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
-  const [height, setWaterHeight] = useState(160);
-  function changeView(newViewName) {
+
+  function changeView(newViewName, x) {
     setPreviousViewName(viewName);
     setViewName(newViewName);
+    console.log(x);
   }
 
+  // const changeView = useCallback((newViewName) => {
+  //   setPreviousViewName(viewName);
+  //   setViewName(newViewName);
+  // },[viewName]);
+
+  console.log(viewName);
   function hideAll() {
     let views = document.querySelectorAll(".show");
     views.forEach((element) => {
@@ -163,6 +170,7 @@ export const MixIt = () => {
               viewName === "drinkPanel"
                 ? changeView(previousViewName)
                 : changeView(drinkPanelID);
+              console.log("onclick");
             }}
           >
             {viewName === "drinkPanel"
