@@ -13,8 +13,7 @@
   position: fixed;
   z-index: 1;
   top: 40vh;
-  right: 50px;
-
+  right: 0px;
   overflow: visible;
   padding: 60px;
   transition: 0.5s;
@@ -28,8 +27,6 @@
 #carouselPanel {
   left: 50px;
 }
-
-
 
 .sidepanel .closebtn {
   position: absolute;
