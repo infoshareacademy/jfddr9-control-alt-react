@@ -30,13 +30,10 @@ export const UserPanel = () => {
       <div className="userpanel userpanel-background">
         <div className="userpanel-header">
           <h1>User panel</h1>
-          <p>Your email: {userEmail}</p>
-          <p>
-            Here you can change your email and edit your favorites list below.
-          </p>
+          <p>Hey {userEmail}!</p>
         </div>
-
         <div className="userpanel-options">
+          <h2>Change your email and password.</h2>
           <Button
             onClick={handleEmailButtonClick}
             className="general-btn green-hover"

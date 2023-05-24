@@ -139,7 +139,7 @@ h1 {
   display: none;
 }
 @media (max-width: 1400px) {
-  .home-frame {
+  .main-container {
     width: 95%;
   }
 }
@@ -223,6 +223,26 @@ h1 {
   }
 }
 @media (max-width: 875px) {
+  .userpanel {
+    gap: 20px;
+  }
+  .userpanel h1 {
+    font-size: 1.2rem;
+  }
+  .userpanel h2 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .userpanel p {
+    font-size: 0.8rem;
+  }
+  .userpanel button {
+    padding: 10px;
+    font-size: 0.8rem;
+  }
+  .userpanel-options {
+    gap: 15px;
+  }
   .home-tile {
     flex-direction: column;
     align-items: center;
