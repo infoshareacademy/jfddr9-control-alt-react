@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
+import { describeDrink } from "../gpt";
 
 export const GPTDescribeButton = ({ selectedOption }) => {
   const [description, setDescription] = useState("");

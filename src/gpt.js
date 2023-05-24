@@ -1,7 +1,8 @@
 import { Configuration, OpenAIApi } from "openai";
+
 //TODO get key from firebase
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "",
 });
 const openai = new OpenAIApi(configuration);
 // Jesli ucina odpowiedzi zwieksz max_tokens
@@ -13,7 +14,7 @@ export async function describeDrink(
   openai
     .createCompletion({
       model: "text-davinci-003",
-      prompt: `Describe cocktail named ${drinkName}`,
+      prompt: `Describe cocktail named ${drinkName} in 50 words`,
       max_tokens: 50,
     })
     .then((response) => {

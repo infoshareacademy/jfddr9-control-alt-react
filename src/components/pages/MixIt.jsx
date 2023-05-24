@@ -2,13 +2,8 @@ import { Carousel } from "../Carousel";
 import { useState } from "react";
 import { SidePanels } from "../SidePanels";
 import { Glass } from "../Glass";
-import { MixItButton } from "../MixitButton";
-
-export const nameSearchID = "searchByNamePanel";
-export const ingredientSearchID = "searchByIngredientPanel";
-export const drinkPanelID = "drinkPanel";
-export const searchRandomPanelID = "randomDrinkPanel";
-export const favoritesPanelID = "favoritesPanel";
+import { Button } from "react-bootstrap";
+import { Panel } from "../../utils/panels";
 
 export const MixIt = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -44,13 +39,7 @@ export const MixIt = () => {
       />
 
       {/* --- Bottom buttons --- */}
-      <MixItButton
-        selectedOption={selectedOption}
-        viewName={viewName}
-        changeView={changeView}
-        previousViewName={previousViewName}
-      />
-      {/* <div className="bottom-buttons-div">
+      <div className="bottom-buttons-div">
         {!(selectedOption === null) && (
           <Button
             className="general-btn green-hover"
@@ -65,7 +54,7 @@ export const MixIt = () => {
               : "Show your drink"}
           </Button>
         )}
-      </div> */}
+      </div>
     </>
   );
 };
