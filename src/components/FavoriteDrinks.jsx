@@ -12,14 +12,13 @@ import {
   collection,
   where,
 } from "firebase/firestore";
-import { drinkPanelID } from "./pages/MixIt";
+import { Panel } from "../utils/panels";
 
 export const FavoriteDrinks = ({
   isFavorite,
   setSelectedOption,
   changeView,
-  viewName,
-  selectedOption,
+ 
 }) => {
   const [favoriteDrinkNames, setFavoriteDrinkNames] = useState([]);
   library.add(far);
@@ -119,7 +118,7 @@ export const FavoriteDrinks = ({
                   <p
                     onClick={() => {
                       setSelectedOption(strDrink);
-                      changeView(drinkPanelID);
+                      changeView(Panel.DRINK_PANEL);
                       console.log("fav1!");
                     }}
                   >

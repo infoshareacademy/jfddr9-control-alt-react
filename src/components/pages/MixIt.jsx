@@ -3,49 +3,23 @@ import { SearchByName } from "../SearchByName";
 import { SearchByIngredients } from "../SearchByIngredients";
 import { SidePanel } from "../SidePanel";
 import { Carousel } from "../Carousel";
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import { IngredientList } from "../IngredientList";
 import { SearchRandom } from "../SearchRandom";
 import { FavoriteDrinks } from "../FavoriteDrinks";
 import { FavouriteDrinkButton } from "../FavouriteDrinkButton";
-
-export const nameSearchID = "searchByNamePanel";
-export const ingredientSearchID = "searchByIngredientPanel";
-export const drinkPanelID = "drinkPanel";
-export const searchRandomPanelID = "randomDrinkPanel";
-export const favoritesPanelID = "favoritesPanel";
+import { Panel } from "../../utils/panels";
 
 export const MixIt = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [viewName, setViewName] = useState("");
   const [previousViewName, setPreviousViewName] = useState("");
-  const [favoriteDrinkNames, setFavoriteDrinkNames] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
 
-  function changeView(newViewName, x) {
+  function changeView(newViewName) {
     setPreviousViewName(viewName);
     setViewName(newViewName);
-    console.log(x);
   }
-
-  // const changeView = useCallback((newViewName) => {
-  //   setPreviousViewName(viewName);
-  //   setViewName(newViewName);
-  // },[viewName]);
-
-  console.log(viewName);
-  function hideAll() {
-    let views = document.querySelectorAll(".show");
-    views.forEach((element) => {
-      if (element !== null) element.classList.remove("show");
-    });
-  }
-
-  useEffect(() => {
-    hideAll();
-    let shown = document.getElementById(viewName);
-    if (shown !== null) shown.classList.add("show");
-  }, [viewName]);
 
   function glassPour(stepCount) {
     const ingredientsCount = selectedOption.ingredients.length;
@@ -61,7 +35,6 @@ export const MixIt = () => {
 
   return (
     <>
-      {/* <button style={{ height: 20, width: 50 }} onClick={glassPour}></button> */}
       {/* --- Carousel --- */}
       <div id="carouselPanel" className="sidepanel no-padding">
         <Carousel changeView={changeView} />
@@ -87,79 +60,87 @@ export const MixIt = () => {
 				</div> */}
       </div>
       {/* --- Side panels --- */}
-      <SidePanel
-        id={nameSearchID}
-        title={"Search By Name"}
-        description={"Choose your drink"}
-        child={
-          <SearchByName
-            selectedOption={selectedOption}
-            setSelectedOption={setSelectedOption}
-          />
-        }
-      ></SidePanel>
-
-      <SidePanel
-        id={ingredientSearchID}
-        title={"Search By Ingredients"}
-        description={"Choose your ingredients"}
-        child={
-          <SearchByIngredients
-            selectedOption={selectedOption}
-            setSelectedOption={setSelectedOption}
-          />
-        }
-      ></SidePanel>
-
-      <SidePanel
-        id={searchRandomPanelID}
-        title={"Choose random drink"}
-        child={
-          <SearchRandom
-            setSelectedOption={setSelectedOption}
-            changeView={changeView}
-          />
-        }
-      ></SidePanel>
-
-      <SidePanel
-        id={favoritesPanelID}
-        title={"Favorite drinks"}
-        child={
-          <>
-            <FavoriteDrinks
-              isFavorite={isFavorite}
+      {viewName === Panel.NAME_SEARCH && (
+        <SidePanel
+          title={"Search By Name"}
+          description={"Choose your drink"}
+          child={
+            <SearchByName
               selectedOption={selectedOption}
               setSelectedOption={setSelectedOption}
-              changeView={changeView}
-              viewName={viewName}
             />
-          </>
-        }
-      ></SidePanel>
+          }
+        ></SidePanel>
+      )}
 
-      <SidePanel
-        id={drinkPanelID}
-        title={selectedOption !== null ? selectedOption.label : ""}
-        description={selectedOption !== null ? selectedOption.description : ""}
-        child={
-          <>
-            {selectedOption !== null ? (
-              <IngredientList
-                list={selectedOption.ingredients}
-                glassPour={glassPour}
-              />
-            ) : (
-              <div></div>
-            )}
-            <FavouriteDrinkButton
+      {viewName === Panel.INGREDIENTS && (
+        <SidePanel
+          title={"Search By Ingredients"}
+          description={"Choose your ingredients"}
+          child={
+            <SearchByIngredients
               selectedOption={selectedOption}
-              isFavorite={isFavorite}
-              setIsFavorite={setIsFavorite}
+              setSelectedOption={setSelectedOption}
             />
-          </>
-        }
-      ></SidePanel>
+          }
+        ></SidePanel>
+      )}
+
+      {viewName === Panel.SEARCH_RANDOM && (
+        <SidePanel
+          title={"Choose random drink"}
+          child={
+            <SearchRandom
+              setSelectedOption={setSelectedOption}
+              changeView={changeView}
+            />
+          }
+        ></SidePanel>
+      )}
+
+      {viewName === Panel.FAVORITES && (
+        <SidePanel
+          title={"Favorite drinks"}
+          child={
+            <>
+              <FavoriteDrinks
+                isFavorite={isFavorite}
+                selectedOption={selectedOption}
+                setSelectedOption={setSelectedOption}
+                changeView={changeView}
+                viewName={viewName}
+              />
+            </>
+          }
+        ></SidePanel>
+      )}
+
+      {viewName === Panel.DRINK_PANEL && (
+        <SidePanel
+          // isVisible={viewName === Panel.DRINK_PANEL}
+          title={selectedOption !== null ? selectedOption.label : ""}
+          description={
+            selectedOption !== null ? selectedOption.description : ""
+          }
+          child={
+            <>
+              {selectedOption !== null ? (
+                <IngredientList
+                  list={selectedOption.ingredients}
+                  glassPour={glassPour}
+                />
+              ) : (
+                <div></div>
+              )}
+              <FavouriteDrinkButton
+                selectedOption={selectedOption}
+                isFavorite={isFavorite}
+                setIsFavorite={setIsFavorite}
+              />
+            </>
+          }
+        ></SidePanel>
+      )}
 
       {/* --- Bottom buttons --- */}
       <div className="bottom-buttons-div">
@@ -167,13 +148,13 @@ export const MixIt = () => {
           <Button
             className="general-btn green-hover"
             onClick={() => {
-              viewName === "drinkPanel"
+              viewName === Panel.DRINK_PANEL
                 ? changeView(previousViewName)
-                : changeView(drinkPanelID);
+                : changeView(Panel.DRINK_PANEL);
               console.log("onclick");
             }}
           >
-            {viewName === "drinkPanel"
+            {viewName === Panel.DRINK_PANEL
               ? "Go back to search"
               : "Show your drink"}
           </Button>

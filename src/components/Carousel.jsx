@@ -1,36 +1,20 @@
-import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper";
 
-import {
-  ingredientSearchID,
-  nameSearchID,
-  searchRandomPanelID,
-  favoritesPanelID,
-} from "./pages/MixIt";
-import { useEffect, useRef, useState } from "react";
+import { Panel } from "../utils/panels";
+
+const searchIds = [
+  Panel.NAME_SEARCH,
+  Panel.INGREDIENTS,
+  Panel.SEARCH_RANDOM,
+  Panel.FAVORITES,
+];
 
 export const Carousel = ({ changeView }) => {
-  const swiperSlide = useSwiperSlide();
-  const swiperRef = useRef();
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  useEffect(() => {
-    const searchIds = [
-      nameSearchID,
-      ingredientSearchID,
-      searchRandomPanelID,
-      favoritesPanelID,
-    ];
-    changeView(searchIds[activeSlide], "hej");
-    console.log("useEffect", activeSlide);
-  }, [activeSlide]);
-
   return (
     <Swiper
-      // ref={swiperRef}
       onSlideChange={(swiper) => {
-        setActiveSlide(swiper.realIndex);
-        console.log(swiper);
+        changeView(searchIds[swiper.realIndex]);
       }}
       slidesPerView="2"
       spaceBetween="30"
@@ -46,30 +30,24 @@ export const Carousel = ({ changeView }) => {
     >
       <SwiperSlide className="carousel-tile" key={0}>
         {({ isActive }) => (
-          <p onClick={() => changeView(nameSearchID)}>
-            Filter by name {isActive && changeView(nameSearchID)}
-          </p>
+          <p onClick={() => changeView(Panel.NAME_SEARCH)}>Filter by name</p>
         )}
       </SwiperSlide>
       <SwiperSlide className="carousel-tile" key={1}>
         {({ isActive }) => (
-          <p onClick={() => changeView(ingredientSearchID)}>
-            Filter by ingredients {isActive && changeView(ingredientSearchID)}
+          <p onClick={() => changeView(Panel.INGREDIENTS)}>
+            Filter by ingredients
           </p>
         )}
       </SwiperSlide>
       <SwiperSlide className="carousel-tile" key={2}>
         {({ isActive }) => (
-          <p onClick={() => changeView(searchRandomPanelID)}>
-            Random drink {isActive && changeView(searchRandomPanelID)}
-          </p>
+          <p onClick={() => changeView(Panel.SEARCH_RANDOM)}>Random drink</p>
         )}
       </SwiperSlide>
       <SwiperSlide className="carousel-tile" key={3}>
         {({ isActive }) => (
-          <p onClick={() => changeView(favoritesPanelID)}>
-            Favorite drinks {isActive && changeView(favoritesPanelID)}
-          </p>
+          <p onClick={() => changeView(Panel.FAVORITES)}>Favorite drinks</p>
         )}
       </SwiperSlide>
     </Swiper>

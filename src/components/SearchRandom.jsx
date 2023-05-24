@@ -1,4 +1,4 @@
-import { drinkPanelID } from "./pages/MixIt";
+import { Panel } from "../utils/panels";
 import { Button } from "react-bootstrap";
 
 export const SearchRandom = ({ setSelectedOption, changeView }) => {
@@ -44,8 +44,8 @@ export const SearchRandom = ({ setSelectedOption, changeView }) => {
         className="general-btn green-hover"
         onClick={() => {
           fetchRandomDrink();
-          changeView(drinkPanelID);
-          console.log("object");
+          changeView(Panel.DRINK_PANEL);
+          console.log("object", 'a');
         }}
       >
         Random Drink
