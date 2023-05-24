@@ -6,6 +6,7 @@ import { SearchByName } from "./SearchByName";
 import { SearchRandom } from "./SearchRandom";
 import { SidePanel } from "./SidePanel";
 import { FavoriteDrinks } from "./FavoriteDrinks";
+import { GPTDescribeButton } from "./GPTDescribeButton";
 
 export const SidePanels = ({
   selectedOption,
@@ -48,6 +49,7 @@ export const SidePanels = ({
                 isFavorite={isFavorite}
                 setIsFavorite={setIsFavorite}
               />
+              <GPTDescribeButton selectedOption={selectedOption} />
             </>
           }
         ></SidePanel>

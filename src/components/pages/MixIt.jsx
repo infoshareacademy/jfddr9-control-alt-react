@@ -1,31 +1,16 @@
-import { Button } from "react-bootstrap";
 import { Carousel } from "../Carousel";
-
 import { useState } from "react";
-import { Panel } from "../../utils/panels";
 import { SidePanels } from "../SidePanels";
 import { Glass } from "../Glass";
-import { MixItButton } from "../MixitButton";
-import { useEffect, useState } from "react";
-import { IngredientList } from "../IngredientList";
-import { SearchRandom } from "../SearchRandom";
-import { FavoriteDrinks } from "../FavoriteDrinks";
-import { FavouriteDrinkButton } from "../FavouriteDrinkButton";
-import { DrinkPanel } from "../DrinkPanel";
-
-export const nameSearchID = "searchByNamePanel";
-export const ingredientSearchID = "searchByIngredientPanel";
-export const drinkPanelID = "drinkPanel";
-export const searchRandomPanelID = "randomDrinkPanel";
-export const favoritesPanelID = "favoritesPanel";
-
+import { Button } from "react-bootstrap";
+import { Panel } from "../../utils/panels";
 
 export const MixIt = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [viewName, setViewName] = useState("");
   const [previousViewName, setPreviousViewName] = useState("");
   const [isFavorite, setIsFavorite] = useState(false);
-  
+
   function changeView(newViewName) {
     setPreviousViewName(viewName);
     setViewName(newViewName);
@@ -54,13 +39,7 @@ export const MixIt = () => {
       />
 
       {/* --- Bottom buttons --- */}
-      <MixItButton
-        selectedOption={selectedOption}
-        viewName={viewName}
-        changeView={changeView}
-        previousViewName={previousViewName}
-      />
-      {/* <div className="bottom-buttons-div">
+      <div className="bottom-buttons-div">
         {!(selectedOption === null) && (
           <Button
             className="general-btn green-hover"
@@ -75,7 +54,7 @@ export const MixIt = () => {
               : "Show your drink"}
           </Button>
         )}
-      </div> */}
+      </div>
     </>
   );
 };

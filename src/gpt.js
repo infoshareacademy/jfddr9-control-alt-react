@@ -1,4 +1,5 @@
 import { Configuration, OpenAIApi } from "openai";
+
 //TODO get key from firebase
 const configuration = new Configuration({
   apiKey: "",
@@ -13,7 +14,7 @@ export async function describeDrink(
   openai
     .createCompletion({
       model: "text-davinci-003",
-      prompt: `Describe cocktail named ${drinkName}`,
+      prompt: `Describe cocktail named ${drinkName} in 50 words`,
       max_tokens: 50,
     })
     .then((response) => {
