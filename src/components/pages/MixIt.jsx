@@ -8,6 +8,7 @@ import { IngredientList } from "../IngredientList";
 import { SearchRandom } from "../SearchRandom";
 import { FavoriteDrinks } from "../FavoriteDrinks";
 import { FavouriteDrinkButton } from "../FavouriteDrinkButton";
+import { DrinkPanel } from "../DrinkPanel";
 
 export const nameSearchID = "searchByNamePanel";
 export const ingredientSearchID = "searchByIngredientPanel";
@@ -134,21 +135,12 @@ export const MixIt = () => {
         title={selectedOption !== null ? selectedOption.label : ""}
         description={selectedOption !== null ? selectedOption.description : ""}
         child={
-          <>
-            {selectedOption !== null ? (
-              <IngredientList
-                list={selectedOption.ingredients}
-                glassPour={glassPour}
-              />
-            ) : (
-              <div></div>
-            )}
-            <FavouriteDrinkButton
-              selectedOption={selectedOption}
-              isFavorite={isFavorite}
-              setIsFavorite={setIsFavorite}
-            />
-          </>
+          <DrinkPanel
+            selectedOption={selectedOption !== null ? selectedOption : null}
+            glassPour={glassPour}
+            isFavorite={isFavorite}
+            setIsFavorite={setIsFavorite}
+          />
         }
       ></SidePanel>
 

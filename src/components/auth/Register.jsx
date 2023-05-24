@@ -8,8 +8,9 @@ import { firebaseErrors } from "../../utils/firebaseErrors";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { createToast } from "../../App";
 
-export const Register = (handleCloseR, createToast) => {
+export const Register = (handleCloseR) => {
   const [email, setEmail] = useState("");
   const [serverMessage, setServerMessage] = useState("");
   const [password, setPassword] = useState("");
