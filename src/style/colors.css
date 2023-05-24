@@ -100,6 +100,30 @@
   }
 }
 
+@keyframes rgb-animation {
+  0% {
+    background-color: var(--color--dm-primary);
+  }
+  10% {
+    background-color: var(--logo-blue);
+  }
+  25% {
+    background-color: var(--logo-pink);
+  }
+  40% {
+    background-color: var(--logo-red);
+  }
+  60% {
+    background-color: var(--logo-yellow);
+  }
+  80% {
+    background-color: var(--logo-green);
+  }
+  100% {
+    background-color: var(--color--dm-primary);
+  }
+}
+
 @keyframes opacity-animation {
   from {
     opacity: 0%;
@@ -117,5 +141,37 @@
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79% {
+    color: #333;
+  }
+  80% {
+    text-shadow: none;
+  }
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  82% {
+    color: #333;
+    text-shadow: none;
+  }
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  92% {
+    color: #333;
+    text-shadow: none;
+  }
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
   }
 }

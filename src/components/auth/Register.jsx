@@ -122,7 +122,7 @@ export const Register = (handleCloseR, createToast) => {
       <p className="text-danger">{serverMessage}</p>
       <Modal.Footer>
         <Button className="general-btn green-hover" type="submit">
-          Register
+          <span>Register</span>
         </Button>
         <Button
           className="general-btn google-btn green-hover"
@@ -132,7 +132,7 @@ export const Register = (handleCloseR, createToast) => {
           <FontAwesomeIcon icon={faGoogle} className="google-icon" />
         </Button>
         <Button className="general-btn red-hover" onClick={handleCloseR}>
-          Close
+          <span>Close</span>
         </Button>
       </Modal.Footer>
     </Form>
