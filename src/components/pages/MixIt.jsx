@@ -1,17 +1,8 @@
-import { Button } from "react-bootstrap";
 import { Carousel } from "../Carousel";
-
 import { useState } from "react";
-import { Panel } from "../../utils/panels";
 import { SidePanels } from "../SidePanels";
 import { Glass } from "../Glass";
 import { MixItButton } from "../MixitButton";
-import { useEffect, useState } from "react";
-import { IngredientList } from "../IngredientList";
-import { SearchRandom } from "../SearchRandom";
-import { FavoriteDrinks } from "../FavoriteDrinks";
-import { FavouriteDrinkButton } from "../FavouriteDrinkButton";
-import { DrinkPanel } from "../DrinkPanel";
 
 export const nameSearchID = "searchByNamePanel";
 export const ingredientSearchID = "searchByIngredientPanel";
@@ -19,13 +10,12 @@ export const drinkPanelID = "drinkPanel";
 export const searchRandomPanelID = "randomDrinkPanel";
 export const favoritesPanelID = "favoritesPanel";
 
-
 export const MixIt = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [viewName, setViewName] = useState("");
   const [previousViewName, setPreviousViewName] = useState("");
   const [isFavorite, setIsFavorite] = useState(false);
-  
+
   function changeView(newViewName) {
     setPreviousViewName(viewName);
     setViewName(newViewName);

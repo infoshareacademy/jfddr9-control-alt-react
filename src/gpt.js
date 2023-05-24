@@ -1,7 +1,7 @@
 import { Configuration, OpenAIApi } from "openai";
 //TODO get key from firebase
 const configuration = new Configuration({
-  apiKey: "",
+  apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 // Jesli ucina odpowiedzi zwieksz max_tokens
