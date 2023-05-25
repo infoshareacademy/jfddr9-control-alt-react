@@ -1,4 +1,5 @@
 .modal-content {
+  user-select: none;
   padding: 10px;
 }
 .modal-content {

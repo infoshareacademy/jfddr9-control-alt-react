@@ -1,4 +1,5 @@
 .userpanel {
+  user-select: none;
   padding: 40px;
   display: flex;
   flex-direction: column;

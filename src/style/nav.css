@@ -27,6 +27,7 @@
   --bs-bg-opacity: 1;
 }
 .logo {
+  user-select: none;
   text-align: center;
   margin: auto;
   font-family: "Pacifico", cursive;
