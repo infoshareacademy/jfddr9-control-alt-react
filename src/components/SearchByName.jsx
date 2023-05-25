@@ -34,9 +34,17 @@ export const fetchNameSearchOptions = async (setFunction, inputName) => {
     console.error(error);
   }
 };
-export const SearchByName = ({ selectedOption, setSelectedOption }) => {
+export const SearchByName = ({
+  selectedOption,
+  setSelectedOption,
+  viewName,
+}) => {
   const [searchOptions, setSearchOptions] = useState([]);
   const [input, setInput] = useState("");
+  const [shownOption, setShownOption] = useState("");
+  useEffect(() => {
+    setShownOption("");
+  }, [viewName]);
 
   useEffect(() => {
     fetchNameSearchOptions(setSearchOptions, input);
@@ -44,13 +52,14 @@ export const SearchByName = ({ selectedOption, setSelectedOption }) => {
   return (
     <Select
       className="select-bar"
-      value={selectedOption}
+      value={shownOption}
       onInputChange={(e) => {
         setInput(e);
       }}
       options={searchOptions}
       onChange={(e) => {
         setSelectedOption(e);
+        setShownOption(e);
       }}
       placeholder="Search for a cocktail..."
       isClearable

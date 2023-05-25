@@ -18,6 +18,7 @@ export const FavouriteDrinkButton = ({
   setIsFavorite,
 }) => {
   library.add(far);
+  const [hover, setHover] = useState(false);
 
   const checkIfFavorite = async () => {
     const userId = auth.currentUser.uid;
@@ -63,10 +64,18 @@ export const FavouriteDrinkButton = ({
   return (
     <>
       <FontAwesomeIcon
-        icon={isFavorite ? ["fas", "heart"] : ["far", "heart"]}
+        icon={
+          isFavorite
+            ? hover
+              ? "fa-solid fa-xmark"
+              : ["fas", "heart"]
+            : ["far", "heart"]
+        }
         onClick={() => {
           handleFavoriteClick();
         }}
+        onMouseOver={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
         size="2x"
       />
     </>

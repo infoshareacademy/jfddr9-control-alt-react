@@ -16,31 +16,24 @@ const Listitem = ({ ingredient, count, glassPour }) => {
 };
 export const IngredientList = ({ list, glassPour }) => {
   let count = 0;
-  const [showList, setShowList] = useState(false);
+
   return (
     <div>
       <h4>Ingredients</h4>
-      <Button
-        className="general-btn green-hover"
-        onClick={() => setShowList(true)}
-      >
-        Mix
-      </Button>
-      {showList && (
-        <ul className="ingredients">
-          {list.map((ingredient) => {
-            count = count + 1;
-            return (
-              <Listitem
-                key={ingredient + count}
-                ingredient={ingredient}
-                count={count}
-                glassPour={glassPour}
-              />
-            );
-          })}
-        </ul>
-      )}
+
+      <ul className="ingredients">
+        {list.map((ingredient) => {
+          count = count + 1;
+          return (
+            <Listitem
+              key={ingredient + count}
+              ingredient={ingredient}
+              count={count}
+              glassPour={glassPour}
+            />
+          );
+        })}
+      </ul>
     </div>
   );
 };

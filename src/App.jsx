@@ -65,10 +65,8 @@ function App() {
       />
       <div className="main-container">
         <Routes>
-          <Route
-            path={"/"}
-            element={!isAuth ? <Home /> : <Navigate to="/mixit" replace />}
-          />
+          <Route path={"/"} element={<Home />} />
+          {/* !isAuth ? <Home /> : <Navigate to="/mixit" replace /> */}
           <Route
             path={"/mixit"}
             element={isAuth ? <MixIt /> : <Navigate to="/" replace />}
