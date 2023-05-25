@@ -78,7 +78,7 @@ export const Home = () => {
               <p>Cheers to discovering the unexpected!</p>
             </div>
             <div className="image-container">
-              <div className="background-image image-4"></div>
+              <div className="background-image image-5"></div>
             </div>
           </div>
           <div className="home-tile">
@@ -95,7 +95,7 @@ export const Home = () => {
                 your selected cocktail right before your eyes.
               </p>
               <p>
-                So, grab a virtual shaker, click 'Mix,' and witness the magic
+                So, grab a virtual shaker, click 'Mix' and witness the magic
                 unfold as your favorite cocktail comes to life in front of you.
               </p>
             </div>

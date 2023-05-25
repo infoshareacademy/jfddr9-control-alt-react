@@ -234,6 +234,10 @@
   background-image: var(--background-bg-4);
 }
 
+.image-5 {
+  background-image: var(--background-bg-5);
+}
+
 .image-6 {
   background-image: var(--background-bg-6);
 }

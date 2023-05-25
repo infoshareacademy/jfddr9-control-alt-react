@@ -23,6 +23,7 @@ export const RemindPassword = (handleCloseR) => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
         createToast("Sent email!");
+        setServerMessage("");
         handleCloseR();
       })
       .catch((e) => {

@@ -136,7 +136,7 @@ export const FavoriteDrinks = ({
             })}
           </>
         ) : (
-          <h3>No favourite drinks</h3>
+          <h3>No favorite drinks</h3>
         )}
       </div>
     </>
