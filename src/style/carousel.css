@@ -2,6 +2,9 @@
   height: 100%;
   width: 300px;
 }
+.swiper-mobile {
+  display: none;
+}
 .swiper-wrapper {
   align-items: center;
 }

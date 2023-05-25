@@ -1,36 +1,43 @@
-.sidepanel {
+.panels {
   user-select: none;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-  color: var(--color-dm-primary);
-  border: 1px solid var(--color-dm-primary);
-  border-radius: 5px;
-  gap: 40px;
-  background-color: var(--color-dm-background-see-through);
+  position: fixed;
   height: 450px;
   width: 450px;
-  position: fixed;
-  z-index: 1;
-  top: 40vh;
-  right: 50px;
-  overflow: visible;
-  padding: 60px;
+  color: var(--color-dm-primary);
+  border: 1px solid var(--color-dm-primary);
+  background-color: var(--color-dm-background-see-through);
+  border-radius: 20px;
+  top: calc((100% + 176px) / 2);
+  transform: translateY(-50%);
   transition: 0.5s;
+  z-index: 1;
 }
-
-#drinkPanel .sidepanel-content {
+.sidepanel-left {
+  left: 50px;
+}
+.sidepanel-right {
+  display: flex;
+  align-items: center;
+  right: 50px;
+  padding: 10px;
+}
+.sidepanel-left .sidepanel-content {
   overflow-y: auto;
+}
+.sidepanel-content {
+  margin: auto;
+}
+.sidepanel-content div {
+  margin: auto;
 }
 .no-padding {
   padding: 0;
 }
-#carouselPanel {
+.sidel {
   left: 50px;
 }
 
-.sidepanel .closebtn {
+.panels .closebtn {
   position: absolute;
   top: 0;
   right: 25px;

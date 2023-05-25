@@ -13,7 +13,7 @@ export const GPTDescribeButton = ({ selectedOption }) => {
 
   return (
     <>
-      <p>{description}</p>
+      <p className="ai-response">{description}</p>
       <Button
         className="general-btn green-hover"
         onClick={() => {

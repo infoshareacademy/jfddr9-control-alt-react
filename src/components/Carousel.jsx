@@ -29,10 +29,10 @@ export const Carousel = ({ changeView }) => {
         className="carousel-main swiper-desktop"
       >
         <SwiperSlide className="carousel-tile">
-          <p>Filter by name</p>
+          <p>Search by name</p>
         </SwiperSlide>
         <SwiperSlide className="carousel-tile">
-          <p>Filter by ingredients</p>
+          <p>Search by ingredients</p>
         </SwiperSlide>
         <SwiperSlide className="carousel-tile">
           <p>Random drink</p>

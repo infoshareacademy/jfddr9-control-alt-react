@@ -64,15 +64,7 @@ h1 {
   display: none;
 }
 
-#drinkPanel {
-  top: 60%;
-  transform: translateY(-50%);
-  height: 600px;
-  padding: 15px 5px 5px;
-}
-
 .toasty {
-  /* border: solid 1px rgb(255, 255, 255); */
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 20px;
   color: white;
@@ -104,6 +96,10 @@ h1 {
   gap: 20px;
 }
 
+.ai-response {
+  font-style: italic;
+}
+
 .ingredients {
   list-style: none;
   padding: 0;
@@ -119,6 +115,19 @@ h1 {
   display: none;
 }
 
+.sidepanel-right {
+  padding: 40px 10px 40px;
+  min-height: 450px;
+  height: auto;
+}
+@media (min-width: 1480px) {
+  .sidepanel-left {
+    left: calc(50% - 700px);
+  }
+  .sidepanel-right {
+    right: calc(50% - 700px);
+  }
+}
 @media (max-width: 1400px) {
   .main-container {
     width: 95%;
@@ -128,7 +137,16 @@ h1 {
     width: 95%;
   }
 }
-
+@media (max-width: 1300px) {
+  .panels {
+    width: 350px;
+  }
+  .sidepanel-right {
+    width: 33vw;
+    max-height: 600px;
+    min-height: 400px;
+  }
+}
 @media (max-width: 1200px) {
   h1 {
     font-size: 2rem;
@@ -147,7 +165,9 @@ h1 {
     height: calc(100vh - 152px);
     margin: 0;
   }
-
+  .panels {
+    top: calc((100% + 152px) / 2);
+  }
   .text-container {
     padding: 50px;
   }
@@ -199,10 +219,11 @@ h1 {
   }
 }
 
-.swiper-mobile {
-  display: none;
+@media (max-width: 1100px) {
+  .panels {
+    width: 350px;
+  }
 }
-
 @media (max-width: 1000px) {
   h1 {
     font-size: 1.8rem;
@@ -239,10 +260,6 @@ h1 {
     display: block;
   }
 
-  #carouselPanel {
-    height: 120px;
-  }
-
   .swiper-desktop {
     display: none;
   }
@@ -251,24 +268,8 @@ h1 {
     height: 100px;
   }
 
-  .mixit-background {
-    height: 30vh;
-    width: 70vw;
-    margin: 0 auto;
-  }
-
-  .mixit-main {
-    margin-top: 20px;
-  }
-
   .mix-container {
     flex-direction: column;
-  }
-
-  .sidepanel {
-    position: static;
-    margin: 20px auto 0 auto;
-    width: 70vw;
   }
 
   .bottom-buttons-div {
@@ -280,6 +281,20 @@ h1 {
 
   .sidepanel-bottom {
     margin-bottom: 150px;
+  }
+  .panels {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .sidepanel-left {
+    top: calc(152px + 2%);
+    height: 120px;
+  }
+  .sidepanel-right {
+    top: unset;
+    bottom: 10%;
+    min-height: 300px;
+    height: 200px;
   }
 }
 
@@ -348,12 +363,22 @@ h1 {
     height: 100%;
   }
 
-  .sidepanel {
-    width: 90vw;
+  .cup-containter {
+    top: 22%;
+    transform: translate(-50%, -25%) scale(0.5);
+    left: 50%;
   }
-
-  .mixit-background {
-    width: 90vw;
+  .sidepanel-right h1 {
+    font-size: 1rem;
+  }
+  .sidepanel-right p {
+    font-size: 0.7rem;
+  }
+  .sidepanel-right h4 {
+    font-size: 0.9rem;
+  }
+  .sidepanel-right ul {
+    font-size: 0.7rem;
   }
 }
 
@@ -380,8 +405,32 @@ h1 {
   .logo b {
     font-size: 2.8rem;
   }
-
   .nav-item .btn {
     padding: 2px 28px;
+  }
+  .panels {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .sidepanel-left {
+    top: 110px;
+  }
+  .sidepanel-right {
+    top: unset;
+    bottom: 10%;
+    min-height: 300px;
+    height: 200px;
+  }
+}
+@media (max-height: 900px) {
+  .sidepanel-right {
+    height: 360px;
+    bottom: 10%;
+  }
+}
+@media (max-height: 680px) {
+  .sidepanel-right {
+    height: 320px;
+    bottom: 12%;
   }
 }
