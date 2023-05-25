@@ -1,7 +1,6 @@
-import { Button, Card } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { FavoriteDrinksUserPanel } from "../FavouriteDrinksUserPanel";
 import { useEffect, useState } from "react";
-import { ChangeEmail } from "../auth/ChangeEmail";
 import { ChangePassword } from "../auth/ChangePassword";
 import { auth } from "../../api/firebase";
 
@@ -33,15 +32,7 @@ export const UserPanel = () => {
           <p>Hey {userEmail}!</p>
         </div>
         <div className="userpanel-options">
-          <h2>Change your email and password.</h2>
-          <Button
-            onClick={handleEmailButtonClick}
-            className="general-btn green-hover"
-          >
-            {showEmailInput ? "Hide" : "Change your email"}
-          </Button>
-          {showEmailInput ? <ChangeEmail handleClose={setUserEmail} /> : null}
-
+          <h2>Change your password.</h2>
           <Button
             onClick={handlePasswordButtonClick}
             className="general-btn green-hover"
