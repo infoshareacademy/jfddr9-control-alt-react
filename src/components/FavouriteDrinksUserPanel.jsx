@@ -12,10 +12,13 @@ import {
   collection,
   where,
 } from "firebase/firestore";
+import { createToast } from "../App";
 
 export const FavoriteDrinksUserPanel = () => {
   library.add(far);
   const [favoriteDrinkNames, setFavoriteDrinkNames] = useState([]);
+  const [hoveredDrinkId, setHoveredDrinkId] = useState(null);
+
   const fetchFavoriteDrinkNames = async () => {
     const userId = auth.currentUser.uid;
     const userRef = doc(db, "users", userId);
@@ -48,7 +51,7 @@ export const FavoriteDrinksUserPanel = () => {
       }
       setFavoriteDrinkNames(drinkNames.filter(Boolean));
     } catch (error) {
-      console.log("Error", error);
+      createToast(error);
     }
   };
   useEffect(() => {
@@ -67,6 +70,7 @@ export const FavoriteDrinksUserPanel = () => {
       await updateDoc(userRef, { favorites: updatedFavorites });
     }
     fetchFavoriteDrinkNames();
+    setHoveredDrinkId(null);
   };
   return (
     <>
@@ -80,7 +84,13 @@ export const FavoriteDrinksUserPanel = () => {
                   <p>{drink.name} </p>
 
                   <FontAwesomeIcon
-                    icon={["fas", "heart"]}
+                    icon={
+                      hoveredDrinkId === drink.id
+                        ? ["fas", "xmark"]
+                        : ["fas", "heart"]
+                    }
+                    onMouseEnter={() => setHoveredDrinkId(drink.id)}
+                    onMouseLeave={() => setHoveredDrinkId(null)}
                     onClick={() => {
                       handleFavoriteClick(drink.id);
                     }}
