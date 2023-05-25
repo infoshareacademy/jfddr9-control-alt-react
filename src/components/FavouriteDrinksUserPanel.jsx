@@ -31,7 +31,7 @@ export const FavoriteDrinksUserPanel = () => {
         const favorites = userDoc.data().favorites || [];
         const queries = favorites.map((idDrink) => {
           return query(
-            collection(db, "cocktails"),
+            collection(db, "cocktails1"),
             where("idDrink", "==", idDrink)
           );
         });
