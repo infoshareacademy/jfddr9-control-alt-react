@@ -167,6 +167,9 @@ h1 {
     font-size: 1rem;
   }
 }
+.swiper-mobile {
+  display: none;
+}
 @media (max-width: 1000px) {
   h1 {
     font-size: 1.8rem;
@@ -191,6 +194,44 @@ h1 {
   }
   .home-tile .text-container {
     margin: 0 1% 0;
+  }
+  .swiper-mobile {
+    display: block;
+  }
+  #carouselPanel {
+    height: 120px;
+  }
+  .swiper-desktop {
+    display: none;
+  }
+
+  .swiper-mobile .carousel-tile {
+    height: 100px;
+  }
+  .mixit-background {
+    height: 30vh;
+    width: 70vw;
+    margin: 0 auto;
+  }
+  .mixit-main {
+    margin-top: 20px;
+  }
+  .mix-container {
+    flex-direction: column;
+  }
+  .sidepanel {
+    position: static;
+    margin: 20px auto 0 auto;
+    width: 70vw;
+  }
+  .bottom-buttons-div {
+    position: fixed;
+    bottom: 20px;
+    margin: 0 auto;
+    z-index: 1000;
+  }
+  .sidepanel-bottom {
+    margin-bottom: 150px;
   }
 }
 @media (max-width: 875px) {
@@ -236,6 +277,12 @@ h1 {
   }
   .home-tile img {
     height: 100%;
+  }
+  .sidepanel {
+    width: 90vw;
+  }
+  .mixit-background {
+    width: 90vw;
   }
 }
 @media (max-width: 480px) {
