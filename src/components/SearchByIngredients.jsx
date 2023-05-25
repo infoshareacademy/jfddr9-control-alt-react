@@ -2,11 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import Select from "react-select";
 import { debounce } from "lodash";
 
-export const SearchByIngredients = ({
-  selectedOption,
-  setSelectedOption,
-  viewName,
-}) => {
+export const SearchByIngredients = ({ setSelectedOption, viewName }) => {
   const [ingredients, setIngredients] = useState([]);
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [matchingCocktails, setMatchingCocktails] = useState([]);

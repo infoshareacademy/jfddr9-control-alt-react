@@ -3,15 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import { auth, db } from "../api/firebase";
-import {
-  query,
-  updateDoc,
-  doc,
-  getDoc,
-  getDocs,
-  collection,
-  where,
-} from "firebase/firestore";
+import { updateDoc, doc, getDoc } from "firebase/firestore";
 export const FavouriteDrinkButton = ({
   selectedOption,
   isFavorite,
