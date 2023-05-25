@@ -28,6 +28,7 @@ export const Login = (handleClose, handleShowRemind) => {
       .then((jwt) => {
         setEmail("");
         setPassword("");
+        setServerMessage("");
         handleClose();
       })
       .catch((e) => {

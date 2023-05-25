@@ -9,7 +9,7 @@ import {
 } from "firebase/auth";
 import { createToast } from "../../App";
 
-export const ChangePassword = (handleClose) => {
+export const ChangePassword = () => {
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [serverMessage, setServerMessage] = useState("");
@@ -43,8 +43,8 @@ export const ChangePassword = (handleClose) => {
       await updatePassword(auth.currentUser, newPassword);
       setCurrentPassword("");
       setNewPassword("");
-      handleClose();
       createToast("Password changed");
+      setServerMessage("");
     } catch (error) {
       setServerMessage("Wrong current password");
     }
