@@ -77,7 +77,7 @@ export const FavoriteDrinksUserPanel = () => {
       <div>
         {favoriteDrinkNames.length > 0 ? (
           <>
-            <h1>Favourite drinks</h1>
+            <h1>Favorite drinks</h1>
             {favoriteDrinkNames.map((drink) => {
               return (
                 <div key={drink.id} className="user-panel">
