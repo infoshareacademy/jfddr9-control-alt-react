@@ -64,6 +64,7 @@ export const SidePanels = ({
             <SearchByName
               selectedOption={selectedOption}
               setSelectedOption={setSelectedOption}
+              viewName={viewName}
             />
           }
         ></SidePanel>
@@ -78,6 +79,7 @@ export const SidePanels = ({
             <SearchByIngredients
               selectedOption={selectedOption}
               setSelectedOption={setSelectedOption}
+              viewName={viewName}
             />
           }
         ></SidePanel>

@@ -2,12 +2,20 @@ import React, { useState, useEffect, useCallback } from "react";
 import Select from "react-select";
 import { debounce } from "lodash";
 
-export const SearchByIngredients = ({ selectedOption, setSelectedOption }) => {
+export const SearchByIngredients = ({
+  selectedOption,
+  setSelectedOption,
+  viewName,
+}) => {
   const [ingredients, setIngredients] = useState([]);
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [matchingCocktails, setMatchingCocktails] = useState([]);
   const [isFetchingCocktails, setIsFetchingCocktails] = useState(false);
   const [cooldown, setCooldown] = useState(false);
+  const [shownOption, setShownOption] = useState("");
+  useEffect(() => {
+    setShownOption("");
+  }, [viewName]);
 
   useEffect(() => {
     const fetchIngredients = async () => {
@@ -151,9 +159,12 @@ export const SearchByIngredients = ({ selectedOption, setSelectedOption }) => {
       />
       <Select
         className="select-bar"
-        value={selectedOption}
+        value={shownOption}
         options={matchingCocktails}
-        onChange={setSelectedOption}
+        onChange={(e) => {
+          setSelectedOption(e);
+          setShownOption(e);
+        }}
         placeholder="Search for a cocktail..."
         isClearable
         isLoading={isFetchingCocktails}

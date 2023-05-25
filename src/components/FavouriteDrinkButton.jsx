@@ -67,6 +67,7 @@ export const FavouriteDrinkButton = ({
         onClick={() => {
           handleFavoriteClick();
         }}
+        onMouseOver={console.log("ss")}
         size="2x"
       />
     </>
