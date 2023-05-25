@@ -111,14 +111,16 @@ export const Register = (handleCloseR) => {
         </Form.Control.Feedback>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check
-          required
-          type="checkbox"
-          style={{ fontSize: "0.6rem" }}
-          label="By signing up, you agree to our Terms ."
-          feedback="You must agree to terms and conditions."
-          feedbackType="invalid"
-        />
+        <div className="mb-3">
+          <Form.Check
+            required
+            type="checkbox"
+            style={{ fontSize: "0.6rem" }}
+            label="By signing up, you agree to our Terms ."
+            feedback="You must agree to terms and conditions."
+            feedbackType="invalid"
+          />
+        </div>
       </Form.Group>
       <p className="text-danger">{serverMessage}</p>
       <Modal.Footer>

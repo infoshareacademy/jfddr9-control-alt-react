@@ -60,10 +60,12 @@
   font-size: 0.8rem;
 }
 .form-check {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+  margin-top: 24px;
 }
 .form-check-label {
+  font-size: 0.8rem;
   text-align: left;
+}
+.invalid-feedback {
+  font-size: 0.8rem;
 }
