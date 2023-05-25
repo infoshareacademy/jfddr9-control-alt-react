@@ -2,7 +2,7 @@ import { Configuration, OpenAIApi } from "openai";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./api/firebase";
 
-//pobieranie klucza z API z firestore
+//getting API key from firestoree
 async function getApiKey() {
   const apiDocRef = doc(db, "api", "api");
   const apiDocSnapshot = await getDoc(apiDocRef);
@@ -15,9 +15,7 @@ async function getApiKey() {
   }
 }
 
-//TODO get key from firebase
-
-// Jesli ucina odpowiedzi zwieksz max_tokens
+// If it cuts answears increase max_tokens
 export async function describeDrink(
   drinkName,
   setFunction,
@@ -29,13 +27,12 @@ export async function describeDrink(
     const configuration = new Configuration({
       apiKey: apiKey,
     });
-    console.log(apiKey);
     const openai = new OpenAIApi(configuration);
 
     openai
       .createCompletion({
         model: "text-davinci-003",
-        prompt: `Describe cocktail named ${drinkName} in 50 words`,
+        prompt: `Tell funny and very brief story of ${drinkName} cocktail`,
         max_tokens: 50,
       })
       .then((response) => {
