@@ -13,7 +13,6 @@ import {
   where,
 } from "firebase/firestore";
 import { Panel } from "../utils/panels";
-import { drinkPanelID } from "./pages/MixIt";
 import { createToast } from "../App";
 
 export const FavoriteDrinks = ({
@@ -22,6 +21,8 @@ export const FavoriteDrinks = ({
   changeView,
 }) => {
   const [favoriteDrinkNames, setFavoriteDrinkNames] = useState([]);
+  const [hoveredDrinkId, setHoveredDrinkId] = useState(null);
+
   library.add(far);
   const fetchFavoriteDrinkNames = async () => {
     const userId = auth.currentUser.uid;
@@ -80,8 +81,7 @@ export const FavoriteDrinks = ({
       }
       setFavoriteDrinkNames(drinkNames.filter(Boolean));
     } catch (error) {
-      // createToast(error)
-      console.log("Error", error);
+      createToast(error);
     }
   };
   useEffect(() => {
@@ -100,6 +100,7 @@ export const FavoriteDrinks = ({
       await updateDoc(userRef, { favorites: updatedFavorites });
     }
     fetchFavoriteDrinkNames();
+    setHoveredDrinkId(null);
   };
   return (
     <>
@@ -110,7 +111,13 @@ export const FavoriteDrinks = ({
               return (
                 <div key={strDrink.value} className="centered-row">
                   <FontAwesomeIcon
-                    icon={["fas", "heart"]}
+                    icon={
+                      hoveredDrinkId === strDrink.value
+                        ? ["fas", "xmark"]
+                        : ["fas", "heart"]
+                    }
+                    onMouseEnter={() => setHoveredDrinkId(strDrink.value)}
+                    onMouseLeave={() => setHoveredDrinkId(null)}
                     onClick={() => {
                       handleFavoriteClick(strDrink.value);
                     }}
