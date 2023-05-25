@@ -34,6 +34,7 @@
 .home-tile .text-container {
   margin: auto;
 }
+
 .home-tile p {
   font-size: 1.2rem;
   margin: 0 50px 10px;
@@ -41,8 +42,8 @@
 }
 
 .image-container {
-  width: auto;
   height: 100%;
+  width: auto;
   display: flex;
   align-items: center;
 }
@@ -52,6 +53,7 @@
   width: 400px;
   height: 400px;
 }
+
 .tile div {
   display: flex;
   justify-content: center;
@@ -104,10 +106,12 @@
   flex-direction: column;
   padding: 30px;
 }
+
 .card-links {
   font-size: 1.4rem;
   cursor: pointer;
 }
+
 .cards-link {
   display: flex;
   flex-direction: row;
@@ -115,6 +119,7 @@
   align-items: center;
   margin-left: 0;
 }
+
 .cards-link a {
   display: flex;
   flex-wrap: nowrap;
@@ -124,21 +129,26 @@
   text-decoration: none;
   color: var(--color-dm-primary);
 }
+
 .card-links-icon {
   width: 20px;
   margin-right: 10px;
 }
+
 .card-links-text {
   font-size: 0.6rem;
 }
+
 .card-links-text p {
   font-size: 0.6rem;
   margin: auto;
 }
+
 .card-link-github {
   display: flex;
   flex-direction: row;
 }
+
 .card:hover {
   flex: 4;
 }
@@ -158,14 +168,17 @@
 .card:hover .card-name {
   transform: rotate(0);
 }
+
 .card-img {
   height: 150px;
   width: 150px;
 }
+
 .card-img img {
   height: 100%;
   width: 100%;
 }
+
 .card-hidden {
   display: none;
   opacity: 100%;
@@ -175,16 +188,20 @@
   color: var(--color-dm-primary);
   transition: transform 2s;
 }
+
 .card:hover .card-hidden {
   display: flex;
   animation: opacity-animation 2s;
 }
+
 .card-hidden:not(:hover) a {
   pointer-events: none;
 }
+
 .card-text-drink p {
   font-size: 0.8rem;
 }
+
 .card-text-drink span {
   font-size: 1rem;
 }
@@ -192,9 +209,39 @@
 .home-footer {
   margin: 0 5%;
 }
+
 .home-footer p {
   font-size: 0.8rem;
 }
+
 .home-footer span {
   font-size: 1rem;
+}
+
+.image-1 {
+  background-image: var(--background-bg-1);
+}
+
+.image-2 {
+  background-image: var(--background-bg-2);
+}
+
+.image-3 {
+  background-image: var(--background-bg-3);
+}
+
+.image-4 {
+  background-image: var(--background-bg-4);
+}
+
+.image-6 {
+  background-image: var(--background-bg-6);
+}
+
+.background-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  width: 400px;
 }

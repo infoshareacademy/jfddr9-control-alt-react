@@ -7,10 +7,7 @@ export const Home = () => {
         <div className="home">
           <div className="home-tile">
             <div className="image-container">
-              <img
-                src="/cocktail-home.png"
-                alt="Photo of Drink made from Neon"
-              />
+              <img src="/cocktail_2.svg" alt="Photo of Drink made from Neon" />
             </div>
             <div className="text-container">
               <h1>
@@ -43,18 +40,12 @@ export const Home = () => {
               </p>
             </div>
             <div className="image-container">
-              <img
-                src="/ingredient-search.png"
-                alt="An image of a card with an example of a drink"
-              />
+              <div className="background-image image-1"></div>
             </div>
           </div>
           <div className="home-tile">
             <div className="image-container">
-              <img
-                src="/example-cocktail.png"
-                alt="An image of a card with an example of a drink"
-              />
+              <div className="background-image image-3"></div>
             </div>
             <div className="text-container">
               <h2>
@@ -87,18 +78,12 @@ export const Home = () => {
               <p>Cheers to discovering the unexpected!</p>
             </div>
             <div className="image-container">
-              <img
-                src="/random-cocktail.png"
-                alt="Picture showing the 'choose random drink card'"
-              />
+              <div className="background-image image-4"></div>
             </div>
           </div>
           <div className="home-tile">
             <div className="image-container">
-              <img
-                src="/cocktail-pour.png"
-                alt="Picture showing glass with a liquid in it"
-              />
+              <div className="background-image image-6"></div>
             </div>
             <div className="text-container">
               <h2>
