@@ -125,6 +125,8 @@
 
 .teal-bg {
   background-color: var(--color-button-teal);
+  --bs-btn-active-bg: var(--color-button-teal);
+  --bs-btn-active-border-color: var(--color-button-teal);
 }
 
 .teal-bg:hover,
