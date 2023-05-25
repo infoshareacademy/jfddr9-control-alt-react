@@ -20,7 +20,7 @@ export const MixIt = () => {
     <>
       <div className="mix-container">
         {/* --- Carousel --- */}
-        <div id="carouselPanel" className="sidepanel no-padding">
+        <div id="carouselPanel" className="panels sidepanel-left">
           <Carousel changeView={changeView} />
         </div>
         {/* --- Center - glass and drink --- */}
