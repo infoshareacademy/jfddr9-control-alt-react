@@ -4,6 +4,7 @@ import { useState } from "react";
 import { auth } from "../../api/firebase";
 import { updatePassword } from "firebase/auth";
 import { firebaseErrors } from "../../utils/firebaseErrors";
+import { createToast } from "../../App";
 
 export const ChangePassword = (handleClose) => {
   const [password, setPassword] = useState("");
@@ -25,6 +26,7 @@ export const ChangePassword = (handleClose) => {
 
       setPassword("");
       handleClose();
+      createToast("Password changed successfully.");
     } catch (error) {
       setServerMessage(firebaseErrors[error.code]);
     }
