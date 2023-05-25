@@ -27,9 +27,7 @@ export const ChangePassword = (handleClose) => {
 
     // Check if the new password is the same as the current password
     if (currentPassword === newPassword) {
-      setServerMessage(
-        "New password cannot be the same as the current password."
-      );
+      setServerMessage("Passwords must be different");
       return;
     }
 
@@ -45,8 +43,8 @@ export const ChangePassword = (handleClose) => {
       await updatePassword(auth.currentUser, newPassword);
       setCurrentPassword("");
       setNewPassword("");
-      createToast("Password changed");
       handleClose();
+      createToast("Password changed");
     } catch (error) {
       setServerMessage("Wrong current password");
     }
