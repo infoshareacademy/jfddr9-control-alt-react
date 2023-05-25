@@ -21,13 +21,16 @@
   border: 1px solid var(--color-dm-primary);
   background-color: transparent;
 }
+
 .general-btn:hover {
   background-color: transparent;
 }
+
 .general-btn:active {
   background-color: transparent;
   --bs-btn-active-color: black;
 }
+
 .green-hover:hover,
 .green-hover:active {
   --bs-btn-active-bg: var(--color-green);
@@ -35,6 +38,7 @@
   border: 1px solid var(--color-green);
   color: var(--color-green);
 }
+
 .red-hover:hover,
 .red-hover:active {
   --bs-btn-active-bg: var(--color-red);
@@ -50,6 +54,7 @@
   padding: 12px 25px;
   transition: 0s;
 }
+
 .navbar-btn:hover,
 .navbar-btn:focus,
 .navbar-btn:active {
@@ -63,14 +68,17 @@
   padding-top: 0;
   padding-bottom: 24px;
 }
+
 .navbar-btn:active {
   margin-top: -6px;
   padding-top: 0;
   padding-bottom: 18px;
 }
+
 .lime-bg {
   background-color: var(--color-button-lime);
 }
+
 .lime-bg:hover,
 .lime-bg:active {
   --bs-btn-active-bg: var(--color-button-lime);
@@ -82,6 +90,7 @@
 .red-bg {
   background-color: var(--color-buttom-red);
 }
+
 .red-bg:hover,
 .red-bg:active {
   --bs-btn-active-bg: var(--color-buttom-red);
@@ -95,14 +104,17 @@
   --bs-btn-active-bg: var(--color-green);
   --bs-btn-active-border-color: var(--color-green);
 }
+
 .green-bg:hover,
 .green-bg:active {
   background-color: var(--color-green);
   border-top: 12px solid var(--color-green);
 }
+
 .purple-bg {
   background-color: var(--color-button-purple);
 }
+
 .purple-bg:hover,
 .purple-bg:active {
   --bs-btn-active-bg: var(--color-button-purple);
@@ -110,9 +122,13 @@
   background-color: var(--color-button-purple);
   border-top: 12px solid var(--color-button-purple);
 }
+
 .teal-bg {
   background-color: var(--color-button-teal);
+  --bs-btn-active-bg: var(--color-button-teal);
+  --bs-btn-active-border-color: var(--color-button-teal);
 }
+
 .teal-bg:hover,
 .teal-bg:active {
   --bs-btn-active-bg: var(--color-button-teal);

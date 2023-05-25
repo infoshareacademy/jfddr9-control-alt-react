@@ -14,11 +14,16 @@ npm run dev
 ## Technologies used
 
 - Vite
+- JavaScript
 - React
 - Css
-- styled-components
+- HTML5
 - Bootstrap
 - Firebase
+- fontawesome
+- openai
+- react-select
+- swiper
 
 ## Usage
 
@@ -26,8 +31,8 @@ Due to the topic of alcohol, our application is for adults only. To take full ad
 
 ## Team
 
-- [Natalia Konopińska](https://github.com/natalia-konopinska)
-- [Szymon Lamparski](https://github.com/szylampa)
-- [Magdalena Ledwoń](https://github.com/Magdalenaledwon)
-- [Jakub Łuczkiewicz](https://github.com/JakubLuczkiewicz)
-- [Jakub Wiśniewski](https://github.com/jakubrw)
+- Natalia Konopińska [Github](https://github.com/natalia-konopinska) [LinkedIn](https://www.linkedin.com/in/natalia-konopi%C5%84ska-a39057173/)
+- Szymon Lamparski [Github](https://github.com/szylampa) [LinkedIn](https://www.linkedin.com/in/szylampa/)
+- Magdalena Ledwoń [Github](https://github.com/Magdalenaledwon) [LinkedIn](https://www.linkedin.com/in/magdalena-ledwo%C5%84/)
+- Jakub Łuczkiewicz [Github](https://github.com/JakubLuczkiewicz) [LinkedIn](https://www.linkedin.com/in/jakub-luczkiewicz/)
+- Jakub Wiśniewski [Github](https://github.com/jakubrw) [LinkedIn](https://www.linkedin.com/in/jakubrw/)

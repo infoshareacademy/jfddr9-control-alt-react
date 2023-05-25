@@ -1,6 +1,6 @@
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -17,7 +17,7 @@ export const NavbarComponent = (props) => {
         className="flex-column pb-0"
       >
         {props.child}
-        <Navbar.Brand as={NavLink} to="/mixit">
+        <Navbar.Brand as={NavLink} to="/">
           <div className="logo">
             <b>
               m<span>i</span>x.<span>it</span>
@@ -51,7 +51,7 @@ export const NavbarComponent = (props) => {
         {props.isAuth && (
           <Nav>
             <Nav.Item>
-              <Button as={NavLink} to="/" className="navbar-btn teal-bg">
+              <Button as={NavLink} to="/mixit" className="navbar-btn teal-bg">
                 <FontAwesomeIcon icon="fa-solid fa-martini-glass" />
               </Button>
             </Nav.Item>
