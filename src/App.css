@@ -125,6 +125,7 @@ h1 {
     font-size: 4rem;
   }
   .home {
+    height: calc(100vh - 152px);
     margin: 0;
   }
   .text-container {
@@ -228,6 +229,28 @@ h1 {
 @media (max-width: 640px) {
   .home-tile .text-container {
     margin: 0 2% 0;
+  }
+  .home-tile .image-container {
+    height: 300px;
+    width: 300px;
+  }
+  .home-tile img {
+    height: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .text-container p {
+    margin: 0 5px 0;
+  }
+  .card-hidden {
+    flex-direction: row;
+    height: 220px;
+  }
+  .card-text p {
+    margin-bottom: 2px;
+  }
+  .card-img {
+    height: 100px;
   }
 }
 @media (max-width: 420px) {

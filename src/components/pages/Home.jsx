@@ -110,7 +110,6 @@ export const Home = () => {
                 your selected cocktail right before your eyes.
               </p>
               <p>
-                {" "}
                 So, grab a virtual shaker, click 'Mix,' and witness the magic
                 unfold as your favorite cocktail comes to life in front of you.
               </p>
@@ -142,6 +141,27 @@ export const Home = () => {
               />
             </div>
           </div>
+          <div className="home-tile">
+            <div className="image-container">
+              <img
+                src="/openai.jpg"
+                alt="Picture showing the 'choose random drink card'"
+              />
+            </div>
+            <div className="text-container">
+              <h2>
+                🍹 Quench Your Thirst for Humor: Chat GPT's Delightful Drink
+                Descriptions! 🍻.
+              </h2>
+              <p>
+                Discover the endless possibilities of using Chat GPT to create
+                fun and informative descriptions of your favorite drinks.
+                Whether you're a mixologist looking for new cocktail ideas or
+                simply a beverage enthusiast, Chat GPT is here to serve up some
+                delightful facts with a twist!
+              </p>
+            </div>
+          </div>
           <div className="team-tile">
             <div>
               <h2>Our team</h2>
@@ -155,24 +175,29 @@ export const Home = () => {
                   <div className="card-img">
                     <img src="prezes.svg" alt="" />
                   </div>
-                  <div className="card-title">
-                    <p>
-                      <span>
-                        Main Software Engineer
-                        <br />
-                        CEO
-                      </span>
-                    </p>
-                  </div>
-                  <div className="card-text-drink">
-                    <p>
-                      Favorite drink:
-                      <span> Bloody mary</span>
-                    </p>
+                  <div className="card-text">
+                    <div className="card-text-role">
+                      <p>
+                        <span>
+                          Main Software Engineer
+                          <br />
+                          CEO
+                        </span>
+                      </p>
+                    </div>
+                    <div className="card-text-drink">
+                      <p>
+                        Favorite drink:
+                        <span> Bloody mary</span>
+                      </p>
+                    </div>
                   </div>
                   <div className="card-links">
                     <div className="card-links-github cards-link">
-                      <a href="http://" target="blank">
+                      <a
+                        href="https://github.com/JakubLuczkiewicz"
+                        target="blank"
+                      >
                         <div className="card-links-icon">
                           <FontAwesomeIcon icon="fa-brands fa-github" />
                         </div>
@@ -182,7 +207,10 @@ export const Home = () => {
                       </a>
                     </div>
                     <div className="card-links-linkedin cards-link">
-                      <a href="http://" target="blank">
+                      <a
+                        href="https://www.linkedin.com/in/jakub-luczkiewicz/"
+                        target="blank"
+                      >
                         <div className="card-links-icon">
                           <FontAwesomeIcon icon="fa-brands fa-linkedin" />
                         </div>
@@ -217,7 +245,10 @@ export const Home = () => {
                   </div>
                   <div className="card-links">
                     <div className="card-links-github cards-link">
-                      <a href="http://" target="blank">
+                      <a
+                        href="https://github.com/Magdalenaledwon"
+                        target="blank"
+                      >
                         <div className="card-links-icon">
                           <FontAwesomeIcon icon="fa-brands fa-github" />
                         </div>
@@ -227,12 +258,15 @@ export const Home = () => {
                       </a>
                     </div>
                     <div className="card-links-linkedin cards-link">
-                      <a href="http://" target="blank">
+                      <a
+                        href="https://www.linkedin.com/in/magdalena-ledwo%C5%84/"
+                        target="blank"
+                      >
                         <div className="card-links-icon">
                           <FontAwesomeIcon icon="fa-brands fa-linkedin" />
                         </div>
                         <div className="card-links-text">
-                          <p>magdalena-ledwoń-126492255</p>
+                          <p>magdalena-ledwoń</p>
                         </div>
                       </a>
                     </div>
@@ -263,7 +297,7 @@ export const Home = () => {
                   </div>
                   <div className="card-links">
                     <div className="card-links-github cards-link">
-                      <a href="http://" target="blank">
+                      <a href="https://github.com/szylampa" target="blank">
                         <div className="card-links-icon">
                           <FontAwesomeIcon icon="fa-brands fa-github" />
                         </div>
@@ -273,7 +307,10 @@ export const Home = () => {
                       </a>
                     </div>
                     <div className="card-links-linkedin cards-link">
-                      <a href="http://" target="blank">
+                      <a
+                        href="https://www.linkedin.com/in/szylampa/"
+                        target="blank"
+                      >
                         <div className="card-links-icon">
                           <FontAwesomeIcon icon="fa-brands fa-linkedin" />
                         </div>
@@ -309,7 +346,10 @@ export const Home = () => {
                   </div>
                   <div className="card-links">
                     <div className="card-links-github cards-link">
-                      <a href="http://" target="blank">
+                      <a
+                        href="https://github.com/natalia-konopinska"
+                        target="blank"
+                      >
                         <div className="card-links-icon">
                           <FontAwesomeIcon icon="fa-brands fa-github" />
                         </div>
@@ -319,12 +359,15 @@ export const Home = () => {
                       </a>
                     </div>
                     <div className="card-links-linkedin cards-link">
-                      <a href="http://" target="blank">
+                      <a
+                        href="https://www.linkedin.com/in/natalia-konopi%C5%84ska-a39057173/"
+                        target="blank"
+                      >
                         <div className="card-links-icon">
                           <FontAwesomeIcon icon="fa-brands fa-linkedin" />
                         </div>
                         <div className="card-links-text">
-                          <p>natalia-konopińska-638974268</p>
+                          <p>natalia-konopińska</p>
                         </div>
                       </a>
                     </div>
@@ -355,7 +398,7 @@ export const Home = () => {
                   </div>
                   <div className="card-links">
                     <div className="card-links-github cards-link">
-                      <a href="http://" target="blank">
+                      <a href="https://github.com/jakubrw" target="blank">
                         <div className="card-links-icon">
                           <FontAwesomeIcon icon="fa-brands fa-github" />
                         </div>
@@ -365,12 +408,15 @@ export const Home = () => {
                       </a>
                     </div>
                     <div className="card-links-linkedin cards-link">
-                      <a href="http://" target="blank">
+                      <a
+                        href="https://www.linkedin.com/in/jakubrw/"
+                        target="blank"
+                      >
                         <div className="card-links-icon">
                           <FontAwesomeIcon icon="fa-brands fa-linkedin" />
                         </div>
                         <div className="card-links-text">
-                          <p>jakub-wiśniewski-480156273</p>
+                          <p>jakubrw</p>
                         </div>
                       </a>
                     </div>
