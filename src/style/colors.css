@@ -32,7 +32,16 @@
 
   /* glass animation */
   --liquid-height: 160px;
+
+  /*  background url */
+  --background-bg-1: url("/by-ingredients-black.png");
+  --background-bg-2: url("/by-name-black.png");
+  --background-bg-3: url("/cocktail-black.png");
+  --background-bg-4: url("/favorite-black.png");
+  --background-bg-5: url("/random-black.png");
+  --background-bg-6: url("/cocktail-pour-black.png");
 }
+
 .lightmode {
   --color-dm-primary: #000000;
   --color-dm-secondary: #7c7c7c;
@@ -44,6 +53,12 @@
   --mixit-table-darker-gradient: #cecece;
   --color-dm-background-see-through: rgba(0, 0, 0, 0.1);
   --color-dm-background-see-through-7: rgba(255, 255, 255, 0.1);
+  --background-bg-1: url("/by-ingredients-white.png");
+  --background-bg-2: url("/by-name-white.png");
+  --background-bg-3: url("/cocktail-white.png");
+  --background-bg-4: url("/favorite-white.png");
+  --background-bg-5: url("/random-white.png");
+  --background-bg-6: url("/cocktail-pour-white.png");
 }
 
 /* KEYFRAMES */
@@ -54,21 +69,25 @@
       0 0 5em var(--logo-blue), 0 0 0.1em var(--logo-blue),
       0 10px 3px var(--color-dm-background);
   }
+
   25% {
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-pink),
       0 0 5em var(--logo-pink), 0 0 0.1em var(--logo-pink),
       0 10px 3px var(--color-dm-background);
   }
+
   40% {
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-red),
       0 0 5em var(--logo-red), 0 0 0.1em var(--logo-red),
       0 10px 3px var(--color-dm-background);
   }
+
   60% {
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-yellow),
       0 0 5em var(--logo-yellow), 0 0 0.1em var(--logo-yellow),
       0 10px 3px var(--color-dm-background);
   }
+
   80% {
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--logo-green),
       0 0 5em var(--logo-green), 0 0 0.1em var(--logo-green),
@@ -80,21 +99,27 @@
   0% {
     box-shadow: 0 0 8px var(--color--dm-primary);
   }
+
   10% {
     box-shadow: 0 0 8px var(--logo-blue);
   }
+
   25% {
     box-shadow: 0 0 8px var(--logo-pink);
   }
+
   40% {
     box-shadow: 0 0 8px var(--logo-red);
   }
+
   60% {
     box-shadow: 0 0 8px var(--logo-yellow);
   }
+
   80% {
     box-shadow: 0 0 8px var(--logo-green);
   }
+
   100% {
     box-shadow: 0 0 8px var(--color--dm-primary);
   }
@@ -104,21 +129,27 @@
   0% {
     background-color: var(--color--dm-primary);
   }
+
   10% {
     background-color: var(--logo-blue);
   }
+
   25% {
     background-color: var(--logo-pink);
   }
+
   40% {
     background-color: var(--logo-red);
   }
+
   60% {
     background-color: var(--logo-yellow);
   }
+
   80% {
     background-color: var(--logo-green);
   }
+
   100% {
     background-color: var(--color--dm-primary);
   }
@@ -128,6 +159,7 @@
   from {
     opacity: 0%;
   }
+
   to {
     opacity: 100%;
   }
@@ -138,38 +170,47 @@
     opacity: 0;
     transform: scale(0.5);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
   }
 }
+
 @keyframes blink {
   78% {
     color: inherit;
     text-shadow: inherit;
   }
+
   79% {
     color: #333;
   }
+
   80% {
     text-shadow: none;
   }
+
   81% {
     color: inherit;
     text-shadow: inherit;
   }
+
   82% {
     color: #333;
     text-shadow: none;
   }
+
   83% {
     color: inherit;
     text-shadow: inherit;
   }
+
   92% {
     color: #333;
     text-shadow: none;
   }
+
   92.5% {
     color: inherit;
     text-shadow: inherit;
