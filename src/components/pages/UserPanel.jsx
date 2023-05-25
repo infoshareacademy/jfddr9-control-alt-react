@@ -9,11 +9,6 @@ export const UserPanel = () => {
   const [showPasswordInput, setShowPasswordInput] = useState(false);
   const [userEmail, setUserEmail] = useState("");
 
-  const handleEmailButtonClick = () => {
-    setShowEmailInput(!showEmailInput);
-    setShowPasswordInput(false);
-  };
-
   const handlePasswordButtonClick = () => {
     setShowPasswordInput(!showPasswordInput);
     setShowEmailInput(false);
