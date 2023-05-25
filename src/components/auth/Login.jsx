@@ -1,12 +1,14 @@
 import Form from "react-bootstrap/Form";
 import { Button, Modal } from "react-bootstrap";
 import { useState } from "react";
-import { auth } from "../../api/firebase";
+import { auth, db } from "../../api/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { firebaseErrors } from "../../utils/firebaseErrors";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { doc, setDoc } from "firebase/firestore";
+import { createToast } from "../../App";
 
 export const Login = (handleClose, handleShowRemind) => {
   const [email, setEmail] = useState("");
