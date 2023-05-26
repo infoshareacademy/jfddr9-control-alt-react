@@ -46,7 +46,7 @@ export const Login = (handleClose, handleShowRemind) => {
         const userRef = doc(db, "users", user.uid);
         setDoc(userRef, { email: user.email, favorites: [] });
         createToast("Thanks for logging in!");
-        setServerMessage("Thanks for logging in!");
+        setServerMessage("");
       })
       .catch((error) => {
         setServerMessage(firebaseErrors[error.code]);
