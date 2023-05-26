@@ -32,8 +32,8 @@ export async function describeDrink(
     openai
       .createCompletion({
         model: "text-davinci-003",
-        prompt: `Tell funny and very brief story of ${drinkName} cocktail`,
-        max_tokens: 50,
+        prompt: `Tell funny and very brief story of ${drinkName} cocktail, use up to 50 words`,
+        max_tokens: 100,
       })
       .then((response) => {
         processSetFuncation("Done");
