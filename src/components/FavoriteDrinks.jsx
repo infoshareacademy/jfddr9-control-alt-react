@@ -124,6 +124,7 @@ export const FavoriteDrinks = ({
                     size="2x"
                   />
                   <p
+                    className="favourite-drink-name"
                     onClick={() => {
                       setSelectedOption(strDrink);
                       changeView(Panel.DRINK_PANEL);
