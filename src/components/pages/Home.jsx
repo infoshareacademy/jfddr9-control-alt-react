@@ -345,7 +345,7 @@ export const Home = () => {
                     </div>
                     <div className="card-links-linkedin cards-link">
                       <a
-                        href="https://www.linkedin.com/in/natalia-konopi%C5%84ska-a39057173/"
+                        href="https://www.linkedin.com/in/natalia-konopinska/"
                         target="blank"
                       >
                         <div className="card-links-icon">
