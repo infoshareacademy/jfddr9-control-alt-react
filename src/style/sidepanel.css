@@ -55,3 +55,8 @@
 .openbtn:hover {
   background-color: var(--color-dm-background);
 }
+
+.favourite-drink-name:hover {
+  color: var(--color-blue);
+  cursor: pointer;
+}
