@@ -40,7 +40,7 @@ export const Register = (handleCloseR) => {
         setDoc(userRef, { email: email, favorites: [] });
         window.localStorage.setItem("user", JSON.stringify(jwt.user));
         createToast("Thanks for registration!");
-        setServerMessage("Thanks for registration!");
+        setServerMessage("");
       })
       .catch((e) => {
         setServerMessage(firebaseErrors[e.code]);
@@ -58,7 +58,7 @@ export const Register = (handleCloseR) => {
         const userRef = doc(db, "users", user.uid);
         setDoc(userRef, { email: user.email, favorites: [] });
         createToast("Thanks for logging in!");
-        setServerMessage("Thanks for logging in!");
+        setServerMessage("");
       })
       .catch((error) => {
         setServerMessage(firebaseErrors[error.code]);
